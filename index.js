@@ -93,6 +93,7 @@ fs.readdir("./commands/services/", (err, files) => {
 
 
 bot.on("ready", async () => {
+  console.log("Bot Online!");
     bot.user.setActivity(subnick);
 
     //UFSM Reminders
