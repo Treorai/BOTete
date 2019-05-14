@@ -7,6 +7,7 @@ const fccitycode = require("../../tables/citycoordtable.json");
 
 module.exports.run = async (bot, message, args) => {
     if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
+    console.log(`${message.author.username} called forecast to ${args} at ${message.guild.name}.`);
 
     
     for (var i = 0; i < fccitycode.length; i++){
@@ -35,7 +36,7 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(wembed);
 
-    } catch(error) { return; }
+    } catch(error) { console.error(`${error}`); }
 
 }
 

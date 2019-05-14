@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
     
     adchannels.forEach((channelid, index) => {
         bot.channels.get(channelid).send(tosayademb);
-        bot.channels.get(chtable.console).send(`Advertisement sent to ${channelid}.`);    
+        console.log(`Advertisement sent to ${channelid}.`);    
     });
 }
 

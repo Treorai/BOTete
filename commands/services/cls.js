@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
     //if(message.author.id != userids.treorai) return;
     message.delete().catch(O_o=>{});
     message.channel.send("cls command: \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n.");
-    bot.channels.get(chtable.console).send(`${message.author.username} cleared ${message.channel.name}'s screen at ${message.guild.name}.`);
+    console.log(`${message.author.username} cleared ${message.channel.name}'s screen at ${message.guild.name}.`);
 }
 module.exports.help = {
     name: "cls"

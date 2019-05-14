@@ -7,11 +7,11 @@ const userids = require("../tables/userids.json");
 
 module.exports.run = async (bot, message, args) => {
     if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
-    bot.channels.get(chtable.console).send(`${message.author.username} called boobs at ${message.guild.name}.`);
+    console.log(`${message.author.username} called boobs at ${message.guild.name}.`);
 
     if(message.channel.nsfw === false){
         message.reply(safead.negated);
-        bot.channels.get(chtable.console).send(`Forbidden: SFW Channel.`);
+        console.warn(`Forbidden: SFW Channel.`);
     } else {
         try{
             let {body} = await superagent
@@ -29,7 +29,7 @@ module.exports.run = async (bot, message, args) => {
 
             message.channel.send(boobemb);
 
-        } catch(error) { return; }
+        } catch(error) { console.error(`${error}`); }
     }
 }
 

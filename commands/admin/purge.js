@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     if(isNaN(args)) return;
 
     message.channel.bulkDelete(args[0]).then(() => {
-        bot.channels.get(chtable.console).send(`Deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
+        console.log(`Deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
     })
     }
 

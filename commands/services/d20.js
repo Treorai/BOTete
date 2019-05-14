@@ -8,12 +8,14 @@ module.exports.run = async (bot, message, args) => {
     else if(args.length == 0) {
         let randomnumber = 1 + Math.floor(Math.random() * 20);
         message.channel.send(`Deu ${randomnumber}.`);
+        console.log(`${message.author.username} rolled a d20 and got ${randomnumber}.`);
     }
     else if(args <=0) {message.channel.send(`Um dado não pode ter ${args} lados...`);    
     }
     else {
         let randomarg = 1 + Math.floor(Math.random() * args);
         message.channel.send(`O dado de ${args} lados caiu no ${randomarg}`);
+        console.log(`${message.author.username} rolled a d${args} and got ${randomarg}.`);
     };
 
 }

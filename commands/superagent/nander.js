@@ -7,7 +7,7 @@ const userids = require("../../tables/userids.json");
 
 module.exports.run = async (bot, message, args) => {
     if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
-    bot.channels.get(chtable.console).send(`${message.author.username} called birb at ${message.guild.name}.`);
+    console.log(`${message.author.username} called birb at ${message.guild.name}.`);
 
     try{
         let body = await superagent
@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
             .setImage(birdimg);
         message.channel.send(birdemb);
 
-    } catch(error) { return; }
+    } catch(error) { console.error(`${error}`); }
 }
 
 module.exports.help = {

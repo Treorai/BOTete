@@ -21,84 +21,112 @@ const subnick = botconfig.activity;
 
 //command loader
 fs.readdir("./commands/", (err, files) => {
-  if(err) return;
+  console.info("Loading general commands.");
+  if(err) console.error(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0) return;
-
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find commands.");
+    return;
+  }
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/${f}`);
+    console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
 });
 fs.readdir("./commands/admin/", (err, files) => {
-  if(err) return;
+  console.info("Loading adm commands.");
+  if(err) console.error(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0) return;
-
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find commands.");
+    return;
+  }
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/admin/${f}`);
+    console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
 });
 fs.readdir("./nsfw/", (err, files) => {
-  if(err) return;
+  console.info("Loading nsfw commands.");
+  if(err) console.error(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0) return;
-
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find commands.");
+    return;
+  }
   jsfile.forEach((f, i) =>{
     let props = require(`./nsfw/${f}`);
+    console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
 });
 fs.readdir("./commands/superagent/", (err, files) => {
-  if(err) return;
+  console.info("Loading search engines.");
+  if(err) console.error(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0) return;
-
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find commands.");
+    return;
+  }
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/superagent/${f}`);
+    console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
 });
 fs.readdir("./commands/rag/", (err, files) => {
-  if(err) return;
+  console.info("Loading ragnarok related.");
+  if(err) console.error(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0) return;
-
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find commands.");
+    return;
+  }
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/rag/${f}`);
+    console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
 });
 fs.readdir("./commands/help/", (err, files) => {
-  if(err) return;
+  console.info("Loading helper.");
+  if(err) console.error(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0) return;
-
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find commands.");
+    return;
+  }
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/help/${f}`);
+    console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
 });
 fs.readdir("./commands/services/", (err, files) => {
-  if(err) return;
+  console.info("Loading Services.");
+  if(err) console.error(err);
   let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0) return;
-
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find commands.");
+    return;
+  }
   jsfile.forEach((f, i) =>{
     let props = require(`./commands/services/${f}`);
+    console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
 });
 
 
 bot.on("ready", async () => {
-  console.log("Bot Online!");
+    console.log(`Bot online, serving ${bot.users.size} users, in ${bot.guilds.size} guilds.`);
     bot.user.setActivity(subnick);
 
     //UFSM Reminders
     schedule.scheduleJob('0 11 * * 7', async function(){
-      bot.channels.get(chtable.armadareminders).send("Agendar RU!");
+      bot.channels.get(chtable.armadareminders).send("Lembrete: Agende as refeições da semana!");
     });
 
     //autoposts 
@@ -135,17 +163,17 @@ bot.on("ready", async () => {
   });
 
 bot.on("guildCreate", guild => {
-  bot.channels.get(chtable.console).send(`Bot joined ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
-  }
+    console.info(`New guild joined ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    }
 );
 
 bot.on("guildDelete", guild => {
-  bot.channels.get(chtable.console).send(`Bot removed from ${guild.name} (id: ${guild.id})`);
-  }
+    console.info(`Bot removed from ${guild.name} (id: ${guild.id})`);
+    }
 );
 
 bot.on("guildMemberAdd", (member) => {
-  bot.channels.get(chtable.console).send(`${member.user.username} joined ${member.guild.name}.`);
+  console.info(`${member.user.username} joined ${member.guild.name}.`);
   
     //Welcome message to ${Lenhadores Guild}
       if(member.guild.id == "270745177671335938"){
@@ -156,6 +184,8 @@ bot.on("guildMemberAdd", (member) => {
         .setTimestamp()
         .setFooter("BOTete service(receptionist)", "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png");
       bot.channels.get("520433945322455060").send(welcomeLenhadoresEmb);
+
+      console.info(`A welcome message was sent to ${member.guild.name}.`);
     }
   }
 );
@@ -200,23 +230,23 @@ bot.on("message", async message => {
 
 //Event Logger
 bot.on("channelCreate", (channel) => {
-  bot.channels.get(chtable.console).send(`Channel "${channel.name}" was created in ${channel.guild.name}.`);
+  console.info(`Channel "${channel.name}" was created in ${channel.guild.name}.`);
 });
 
 bot.on("channelDelete", (channel) => {
-  bot.channels.get(chtable.console).send(`Channel "${channel.name}" was deleted from ${channel.guild.name}.`);
+  console.info(`Channel "${channel.name}" was deleted from ${channel.guild.name}.`);
 });
 
 bot.on("guildBanAdd", (guild, user) => {
-  bot.channels.get(chtable.console).send(`${user.username} was banned from ${guild.name}.`);
+  console.info(`${user.username} was banned from ${guild.name}.`);
 });
 
 bot.on("guildMemberRemove", (member) => {
-  bot.channels.get(chtable.console).send(`${member.user.username} left ${member.guild.name}.`);
+  console.info(`${member.user.username} left ${member.guild.name}.`);
 });
 
 bot.on("error", (error) => {
-    return;
+    console.error("Unexpected error occurred.");
 });
 
 
