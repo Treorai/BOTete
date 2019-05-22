@@ -17,7 +17,8 @@ const superagent = require("superagent");
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const subnick = botconfig.activity;
-
+//musicLoadups
+global.servers = {};
 
 //command loader
 fs.readdir("./commands/", (err, files) => {
@@ -59,6 +60,20 @@ fs.readdir("./nsfw/", (err, files) => {
   jsfile.forEach((f, i) =>{
     let props = require(`./nsfw/${f}`);
     console.info(`${f} loaded.`);
+    bot.commands.set(props.help.name, props);
+  });
+});
+fs.readdir("./music/", (err, files) => {
+  console.log("Loading music commands.");
+  if(err) console.log(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("Couldn't find commands.");
+    return;
+  }
+  jsfile.forEach((f, i) =>{
+    let props = require(`./music/${f}`);
+    console.log(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
 });
