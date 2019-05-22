@@ -12,6 +12,7 @@ const chalk = require('chalk');
 const Discord = require("discord.js");
 const schedule = require("node-schedule");
 const fs = require("fs");
+const YTDL = require("ytdl-core-discord");
 const superagent = require("superagent");
 //setVnC
 const bot = new Discord.Client({disableEveryone: true});
