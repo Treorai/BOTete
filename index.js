@@ -174,6 +174,7 @@ bot.on("ready", async () => {
     let forecastss = schedule.scheduleJob('10 7 * * *', async function(){
       bot.channels.get(chtable.weeweemusic).send(".forecast poa");
       bot.channels.get(chtable.weeweemusic).send(".forecast rj");
+      bot.channels.get(chtable.weeweemusic).send(".forecast sp");
     });
 
   });
