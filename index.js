@@ -7,6 +7,7 @@ const url = require("./tables/urltable.json");
 const hensourse = require("./nsfw/hensoursetable.json");
 const nsfwchtable = require("./nsfw/nsfwchannelidtable.json");
 const chtable = require("./tables/channelidtable.json");
+const guildtable = require("./tables/guildidtable.json");
 //setModules
 const chalk = require('chalk');
 const Discord = require("discord.js");
@@ -193,7 +194,7 @@ bot.on("guildMemberAdd", (member) => {
   console.info(`${member.user.username} joined ${member.guild.name}.`);
   
     //Welcome message to ${Lenhadores Guild}
-      if(member.guild.id == "270745177671335938"){
+      if(member.guild.id == guildtable.lenhadores){
     
       let welcomeLenhadoresEmb = new Discord.RichEmbed()
         .setTitle('Saudações, '+member.user.username+'!')
@@ -210,7 +211,7 @@ bot.on("guildMemberAdd", (member) => {
 bot.on("message", async message => {
 
     //music rules
-    if(message.guild.id == "527281390417608724" && message.channel.id !== chtable.weeweemusic && message.content.toLowerCase().startsWith(';;play') ){
+    if(message.guild.id == guildtable.weeweecrew && message.channel.id !== chtable.weeweemusic && message.content.toLowerCase().startsWith(';;play') ){
       message.reply(`use o canal ${bot.channels.get(chtable.weeweemusic)} para pedir musiquinhas!`);
     }
 
@@ -246,7 +247,7 @@ bot.on("message", async message => {
 );
 //Voice Channel Logger
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
-  if(oldMember.guild.id == '527281390417608724'){ //weeweecrew
+  if(oldMember.guild.id == guildtable.weeweecrew){ //weeweecrew
       if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
         // User Joins a voice channel
         bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
