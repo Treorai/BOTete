@@ -244,6 +244,25 @@ bot.on("message", async message => {
     if(commandfile) commandfile.run(bot,message,args);
   }
 );
+//Voice Channel Logger
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+  if(oldMember.guild.id == '527281390417608724'){ //weeweecrew
+      if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+        // User Joins a voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
+ 
+      } else if(newMember.voiceChannel === undefined){
+        // User leaves a voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${oldMember.user.username} left ${oldMember.voiceChannel}.`);
+      } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+        // User changes voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
+      };
+
+  };
+  //notWWC
+
+});
 
 //Event Logger
 bot.on("channelCreate", (channel) => {
