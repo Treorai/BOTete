@@ -8,6 +8,7 @@ const ms = require("ms");
 module.exports.run = async (bot, message, args) => {
     let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!tomute) return message.reply("Couldn't find user.");
+    if(tomute == userids.treorai) return message.reply("Nem fodendo rs xD");
     let muterole = message.guild.roles.find(`name`, "muted");
     if(!muterole){
         try{
