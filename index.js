@@ -1,4 +1,4 @@
-//setTables
+//tables
 const botconfig = require("./botconfig.json");
 const color = require("./tables/colortable.json");
 const userids = require("./tables/userids.json");
@@ -8,18 +8,19 @@ const hensourse = require("./nsfw/hensoursetable.json");
 const nsfwchtable = require("./nsfw/nsfwchannelidtable.json");
 const chtable = require("./tables/channelidtable.json");
 const guildtable = require("./tables/guildidtable.json");
-//setModules
+//modules
 const chalk = require('chalk');
 const Discord = require("discord.js");
 const schedule = require("node-schedule");
 const fs = require("fs");
 const YTDL = require("ytdl-core-discord");
 const superagent = require("superagent");
-//setVnC
+const ms = require("ms");
+//vnc
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
 const subnick = botconfig.activity;
-//musicLoadups
+//musicVars
 global.servers = {};
 
 //command loader
@@ -138,25 +139,27 @@ fs.readdir("./commands/services/", (err, files) => {
 
 
 bot.on("ready", async () => {
+  //login
     console.log(`Bot online, serving ${bot.users.size} users, in ${bot.guilds.size} guilds.`);
     bot.user.setActivity(subnick);
 
+  //guildDedicated
     //UFSM Reminders
     schedule.scheduleJob('0 11 * * 7', async function(){
-      bot.channels.get(chtable.armadareminders).send("Lembrete: Agende as refeições da semana!");
+      bot.channels.get(chtable.wipinkreminders).send("Lembrete: Agende as refeições da semana!");
     });
 
     //autoposts 
     let autoboobs = schedule.scheduleJob('10 * * * *', async function(){
-      bot.channels.get(nsfwchtable.armttaboobch).send(`.boobs`);
+      bot.channels.get(nsfwchtable.wipinkaboobch).send(`.boobs`);
     });
 
     let autobutts = schedule.scheduleJob('30 * * * *', async function(){
-      bot.channels.get(nsfwchtable.armttabuttch).send(`.butts`);
+      bot.channels.get(nsfwchtable.wipinkabuttch).send(`.butts`);
     });
 
     let autohen = schedule.scheduleJob('50 * * * *', async function(){
-      bot.channels.get(nsfwchtable.armtthench).send(`.hentai`);
+      bot.channels.get(nsfwchtable.wipinkhench).send(`.hentai`);
     });
 
     let autobird = schedule.scheduleJob('00 * * * *', async function(){
@@ -172,7 +175,7 @@ bot.on("ready", async () => {
     });
 
     //Forecast
-    let forecastss = schedule.scheduleJob('10 7 * * *', async function(){
+    let autoforecasts = schedule.scheduleJob('50 7 * * *', async function(){
       bot.channels.get(chtable.weeweemusic).send(".forecast poa");
       bot.channels.get(chtable.weeweemusic).send(".forecast rj");
       bot.channels.get(chtable.weeweemusic).send(".forecast sp");
@@ -195,8 +198,7 @@ bot.on("guildMemberAdd", (member) => {
   
     //Welcome message to ${Lenhadores Guild}
       if(member.guild.id == guildtable.lenhadores){
-    
-      let welcomeLenhadoresEmb = new Discord.RichEmbed()
+        let welcomeLenhadoresEmb = new Discord.RichEmbed()
         .setTitle('Saudações, '+member.user.username+'!')
         .setDescription('Como vocês chegou até aqui, imagino que já saiba quem somos, mas nós ainda não te conhecemos, e estamos anciosos para saber quem você é. Por favor, apresente-se enquanto espera nossa Staff.\n Ja chamei alguém para providenciar uma recepção mais humana pra você.\nAgradeço sua paciência e enquanto espera, por favor leia as '+` ${bot.channels.get('520432740273750036')}`+`\nSe quiser falar diretamente com alguém da liderança, basta mencionar ${member.guild.roles.get('271357413288837120')}.`)
         .setTimestamp()
