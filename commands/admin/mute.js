@@ -35,7 +35,9 @@ module.exports.run = async (bot, message, args) => {
     tomute.setVoiceChannel(reconnect);
 
     setTimeout(function(){
-        tomute.removeRole(muterole.id);
+        tomute.removeRole(muterole.id).then(msg =>{
+            tomute.setVoiceChannel(reconnect);
+        });
         message.channel.send(`<@${tomute.id}> tá liberado, irmão!`);
     }, ms(mutetime));
 }
