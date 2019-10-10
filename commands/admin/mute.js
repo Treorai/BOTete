@@ -31,6 +31,8 @@ module.exports.run = async (bot, message, args) => {
     await(tomute.addRole(muterole.id));
     message.channel.send(`<@${tomute.id}> fica xiu aí!`);
 
+    console.log(message.member.voiceChannel);
+
     setTimeout(function(){
         tomute.removeRole(muterole.id);
         message.channel.send(`<@${tomute.id}> tá liberado, irmão!`);
