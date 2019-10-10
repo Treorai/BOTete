@@ -141,7 +141,7 @@ fs.readdir("./commands/services/", (err, files) => {
 bot.on("ready", async () => {
   //login
     console.log(`Bot online, serving ${bot.users.size} users, in ${bot.guilds.size} guilds.`);
-    bot.user.setActivity(subnick);
+    bot.user.setActivity(subnick, {type: "WATCHING"});
 
   //guildDedicated
     //UFSM Reminders

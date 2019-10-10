@@ -14,7 +14,7 @@ module.exports.run = async (bot, message, args) => {
             muterole = await message.guild.createRole({
                 name: "muted",
                 permissions:[]
-            });
+            })
             message.guild.channels.forEach(async (channel, id) => {
                 await channel.overwritePermissions(muterole, {
                     SPEAK: false
@@ -29,11 +29,11 @@ module.exports.run = async (bot, message, args) => {
     if(!mutetime) return message.reply("Set up time for that");
 
     await(tomute.addRole(muterole.id));
-    message.reply(`<@${tomute.id}> fica xiu aí!`);
+    message.channel.send(`<@${tomute.id}> fica xiu aí!`);
 
     setTimeout(function(){
         tomute.removeRole(muterole.id);
-        message.channel.send(`<@${tomute.id}> tá liberado, irmão!`)
+        message.channel.send(`<@${tomute.id}> tá liberado, irmão!`);
     }, ms(mutetime));
 }
 
