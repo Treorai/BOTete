@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
     await(tomute.addRole(muterole.id));
     message.channel.send(`<@${tomute.id}> fica xiu aí!`);
 
-    reconnect = tomute.get(voiceChannel.id);
+    reconnect = tomute.voiceChannel.id;
     tomute.setVoiceChannel(reconnect);
 
     setTimeout(function(){
