@@ -1,6 +1,4 @@
 const Discord = require ("discord.js");
-const color = require("../tables/colortable.json");
-const url = require("../tables/urltable.json");
 
 module.exports.run = async (bot, message, args) => {
     if(args <=0 || args > 9999999) {message.channel.send("Ta exagerando, irmão :c"); return;};
