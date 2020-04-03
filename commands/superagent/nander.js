@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});};
 
     try{
-        let body = await superagent
+        let {body} = await superagent
             .get(`https://some-random-api.ml/img/birb`);
 
             if(!{body}) return message.channel.send("Error 404. Source offline.");
