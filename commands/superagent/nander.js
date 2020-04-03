@@ -18,10 +18,12 @@ module.exports.run = async (bot, message, args) => {
         if(!{body}) return message.channel.send("Error 404. Source offline.");
         if(!{fact}) return message.channel.send("Error 404. Source offline.");
         
-        
+        console.log(body);
+        console.log(fact);
+
         let birdemb = new Discord.RichEmbed()
             .setColor(color.Verdiagua)
-            .setTitle(body.fact)
+            .setTitle(fact.fact)
             .setImage(body.link);
         message.channel.send(birdemb);
 
