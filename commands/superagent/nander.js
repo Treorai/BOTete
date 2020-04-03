@@ -13,16 +13,20 @@ module.exports.run = async (bot, message, args) => {
             .get(`https://some-random-api.ml/img/birb`);
 
             if(!{body}) return message.channel.send("Error 404. Source offline.");
-        
-        let {bfact} = await superagent
+        let bimg = body.link;
+
+
+        let {body} = await superagent
             .get(`https://some-random-api.ml/facts/bird`);
 
-            if(!{bfact}) return message.channel.send("Error 404. Source offline.");
+            if(!{body}) return message.channel.send("Error 404. Source offline.");
+        let bfact = body.fact;
+
         
         let birdemb = new Discord.RichEmbed()
             .setColor(color.Verdiagua)
-            .setTitle(bfact.fact)
-            .setImage(body.link);
+            .setTitle(bfact)
+            .setImage(bimg);
         message.channel.send(birdemb);
 
     } catch(error) { console.error(`${error}`); }
