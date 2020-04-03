@@ -26,9 +26,8 @@ module.exports.run = async (bot, message, args) => {
         }
     }
 
-
-    if(!args[1]){ let mutetime = '10s'}
-    else { let mutetime = args[1]; };
+    let mutetime = args[1];
+    if(!mutetime) return message.reply("Set up time for that");
 
     await(tomute.addRole(muterole.id));
     message.channel.send(`<@${tomute.id}> fica xiu aí!`);
