@@ -9,22 +9,20 @@ module.exports.run = async (bot, message, args) => {
     if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});};
 
     try{
-        let body = await superagent
+        let bodyimg = await superagent
             .get(`https://some-random-api.ml/img/birb`);
+
+            if(!{bodyimg}) return message.channel.send("Error 404. Source offline.");
         
-        let fact = await superagent
+        let bodyfact = await superagent
             .get(`https://some-random-api.ml/facts/bird`);
 
-        if(!{body}) return message.channel.send("Error 404. Source offline.");
-        if(!{fact}) return message.channel.send("Error 404. Source offline.");
+            if(!{bodyfact}) return message.channel.send("Error 404. Source offline.");
         
-        console.log(body);
-        console.log(fact);
-
         let birdemb = new Discord.RichEmbed()
             .setColor(color.Verdiagua)
-            .setTitle(fact.fact)
-            .setImage(body.link);
+            .setTitle(bodyfact.fact)
+            .setImage(bodyimg.link);
         message.channel.send(birdemb);
 
     } catch(error) { console.error(`${error}`); }
