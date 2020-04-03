@@ -13,15 +13,15 @@ module.exports.run = async (bot, message, args) => {
             .get(`https://some-random-api.ml/img/birb`);
 
             if(!{body}) return message.channel.send("Error 404. Source offline.");
-        /*
-        let bodyfact = await superagent
+        
+        let {bfact} = await superagent
             .get(`https://some-random-api.ml/facts/bird`);
 
-            if(!{bodyfact}) return message.channel.send("Error 404. Source offline.");
-        */
+            if(!{bfact}) return message.channel.send("Error 404. Source offline.");
+        
         let birdemb = new Discord.RichEmbed()
             .setColor(color.Verdiagua)
-            .setTitle('bodyfact.fact')
+            .setTitle(bfact.fact)
             .setImage(body.link);
         message.channel.send(birdemb);
 
