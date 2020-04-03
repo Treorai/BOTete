@@ -6,24 +6,23 @@ const fs = require("fs");
 const userids = require("../../tables/userids.json");
 
 module.exports.run = async (bot, message, args) => {
-    if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
-    console.log(`${message.author.username} called birb at ${message.guild.name}.`);
+    if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});};
 
     try{
         let body = await superagent
-            .get(`http://random.birb.pw/tweet.json`);
+            .get(`https://some-random-api.ml/img/birb`);
+        
+        let fact = await superagent
+            .get(`https://some-random-api.ml/facts/bird`);
 
         if(!{body}) return message.channel.send("Error 404. Source offline.");
+        if(!{fact}) return message.channel.send("Error 404. Source offline.");
         
-        var bcutA = body.text.replace('{"file": "','');
-        var bcutB = bcutA.replace('"}','');
-
-        var birdimg = "https://random.birb.pw/img/"+bcutB;
         
         let birdemb = new Discord.RichEmbed()
             .setColor(color.Verdiagua)
-            .setTitle(":bird:")
-            .setImage(birdimg);
+            .setTitle(body.fact)
+            .setImage(body.link);
         message.channel.send(birdemb);
 
     } catch(error) { console.error(`${error}`); }
