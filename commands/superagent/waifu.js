@@ -13,24 +13,14 @@ module.exports.run = async (bot, message, args) => {
 
             var { body } = await superagent
                 .get(sourse[randomnumber]);
-                let bodyimg = body.link;
-
-            var { body } = await superagent
-                .get(sourse[randomnumber].txt);
-                let bodytxt = body.fact;
-
 
             let waifuemb = new Discord.RichEmbed()
                 .setColor(color.Verdiagua)
-                .setDescription(bodytxt)
-                .setImage(bodyimg)
+                .setImage(body.link)
                 .setTimestamp()
                 .setFooter('BOTete service(superagent)');
             message.channel.send(waifuemb);
         
-
-
-
         } catch(error) { console.error(`${error}`); }
     }
 
