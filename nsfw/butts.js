@@ -7,7 +7,6 @@ const userids = require("../tables/userids.json");
 
 module.exports.run = async (bot, message, args) => {
     if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
-    console.log(`${message.author.username} called butts at ${message.guild.name}.`);
 
     if(message.channel.nsfw === false){
         message.reply(safead.negated);

@@ -141,7 +141,7 @@ fs.readdir("./commands/services/", (err, files) => {
 bot.on("ready", async () => {
   //login
     console.log(`Bot online, serving ${bot.users.size} users, in ${bot.guilds.size} guilds.`);
-    bot.user.setActivity(subnick, {type: "WATCHING"});
+    bot.user.setActivity(subnick, {type: "STREAMING"});
 
   //guildDedicated
     //UFSM Reminders
@@ -162,22 +162,18 @@ bot.on("ready", async () => {
       bot.channels.get(nsfwchtable.wipinkhench).send(`.hentai`);
     });
 
-    let autobird = schedule.scheduleJob('00 * * * *', async function(){
-      bot.channels.get(chtable.weeweepupies).send(`.nander`);
+    let autopupies = schedule.scheduleJob('00 * * * *', async function(){
+      bot.channels.get(chtable.weeweepupies).send(`.pupies`);
+      bot.channels.get(chtable.wipinkpupies).send(`.pupies`);
     });
 
-    let autocat = schedule.scheduleJob('20 * * * *', async function(){
-      bot.channels.get(chtable.weeweepupies).send(`.meow`);
+    let autowaifu = schedule.scheduleJob('40 * * * *', async function(){
+      bot.channels.get(chtable.wipinkwaifus).send(`.waifu`);
     });
-
-    let autodog = schedule.scheduleJob('40 * * * *', async function(){
-      bot.channels.get(chtable.weeweepupies).send(`.auau`);
-    });
-
   });
 
 bot.on("guildCreate", guild => {
-    console.info(`New guild joined ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    console.info(`Joined ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
     }
 );
 
@@ -199,6 +195,17 @@ bot.on("guildMemberAdd", (member) => {
       bot.channels.get("520433945322455060").send(welcomeLenhadoresEmb);
 
       console.info(`A welcome message was sent to ${member.guild.name}.`);
+    }
+    //Welcome message to ${Wipink}
+      if(member.guild.id == guildtable.wipink){
+        let welcomeWipinkEmb = new Discord.RichEmbed()
+        .setTitle('Oii '+member.urser.username+'! Seja bem vindo ao discord da Wipink!')
+        .setDescription('Se você chegou aqui para participar de um grupo, ou se já é conhecido dos admins, aguarde um instante que logo receberá registro.\nCaso tenha chegado por outro motivo, por favor, apresente-se enquanto esperamos alguém vir buscá-lo.')
+        .setTimestamp()
+        .setFooter("BOTete service(receptionist)", "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png");
+    bot.channels.get("511103583245172758").send(welcomeWipinkEmb);
+
+    console.info(`A welcome message was sent to ${member.guild.name}`);
     }
   }
 );
@@ -256,6 +263,20 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
       };
 
   };
+  if(oldMember.guild.id == guildtable.wipink){ //wipink
+    if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+      // User Joins a voice channel
+      bot.channels.get(chtable.wipinklogs).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
+
+    } else if(newMember.voiceChannel === undefined){
+      // User leaves a voice channel
+      bot.channels.get(chtable.wipinklogs).send(`${oldMember.user.username} left ${oldMember.voiceChannel}.`);
+    } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+      // User changes voice channel
+      bot.channels.get(chtable.wipinklogs).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
+    };
+
+};
   //notWWC
 
 });
