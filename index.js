@@ -167,7 +167,7 @@ bot.on("ready", async () => {
       bot.channels.get(chtable.wipinkpupies).send(`.pupies`);
     });
 
-    let autowaifu = schedule.scheduleJob('40 * * * *', async function(){
+    let autowaifu = schedule.scheduleJob('00 10 * * *', async function(){
       bot.channels.get(chtable.wipinkwaifus).send(`.waifu`);
     });
   });
