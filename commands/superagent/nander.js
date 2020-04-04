@@ -26,7 +26,7 @@ module.exports.run = async (bot, message, args) => {
             .setDescription(bodytxt)
             .setImage(bodyimg)
             .setTimestamp()
-            .setFooter('BOTete service(superagent)', url.BotetePP);
+            .setFooter('BOTete service(superagent)');
         message.channel.send(birdemb);
 
     } catch(error) { console.error(`${error}`); }

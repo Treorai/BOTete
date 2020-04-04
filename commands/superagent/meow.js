@@ -5,9 +5,8 @@ const url = require("../../tables/urltable.json");
 const userids = require("../../tables/userids.json");
 
 module.exports.run = async (bot, message, args) => {
-    if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
-    console.log(`${message.author.username} called meow at ${message.guild.name}.`);
-
+    if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});};
+/* Outdated backup
     try{
         let {body} = await superagent
             .get(`https://aws.random.cat/meow`);
@@ -19,6 +18,30 @@ module.exports.run = async (bot, message, args) => {
             .setTitle(":cat:")
             .setImage(body.file);
 
+        message.channel.send(catemb);
+
+    } catch(error) { console.error(`${error}`); } */
+
+    try{
+        var {body} = await superagent
+            .get(`https://some-random-api.ml/img/cat`);
+
+            if(!{body}) return message.channel.send("Error 404. Source offline.");
+            let bodyimg = body.link;
+
+        var {body} = await superagent
+            .get(`https://some-random-api.ml/facts/cat`);
+
+            if(!{body}) return message.channel.send("Error 404. Source offline.");
+        
+            let bodytxt = body.fact;
+
+        let catemb = new Discord.RichEmbed()
+            .setColor(color.Verdiagua)
+            .setDescription(bodytxt)
+            .setImage(bodyimg)
+            .setTimestamp()
+            .setFooter('BOTete service(superagent)');
         message.channel.send(catemb);
 
     } catch(error) { console.error(`${error}`); }

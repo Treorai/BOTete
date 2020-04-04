@@ -6,8 +6,7 @@ const userids = require("../../tables/userids.json");
 
 module.exports.run = async (bot, message, args) => {
     if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
-    console.log(`${message.author.username} called doggo at ${message.guild.name}.`);
-
+/* Outdated backup
     try{
         let {body} = await superagent
             .get(`https://random.dog/woof.json`);
@@ -21,7 +20,32 @@ module.exports.run = async (bot, message, args) => {
 
         message.channel.send(dogemb);
 
+    } catch(error) { console.error(`${error}`); } */
+
+    try{
+        var {body} = await superagent
+            .get(`https://some-random-api.ml/img/dog`);
+
+            if(!{body}) return message.channel.send("Error 404. Source offline.");
+            let bodyimg = body.link;
+
+        var {body} = await superagent
+            .get(`https://some-random-api.ml/facts/dog`);
+
+            if(!{body}) return message.channel.send("Error 404. Source offline.");
+        
+            let bodytxt = body.fact;
+
+        let dogemb = new Discord.RichEmbed()
+            .setColor(color.Verdiagua)
+            .setDescription(bodytxt)
+            .setImage(bodyimg)
+            .setTimestamp()
+            .setFooter('BOTete service(superagent)');
+        message.channel.send(dogemb);
+
     } catch(error) { console.error(`${error}`); }
+
 }
 
 module.exports.help = {
