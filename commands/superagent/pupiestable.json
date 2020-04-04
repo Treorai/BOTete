@@ -1,0 +1,26 @@
+[
+    {
+        "img": "https://some-random-api.ml/img/birb",
+        "txt": "https://some-random-api.ml/facts/bird"
+    },
+    {
+        "img": "https://some-random-api.ml/img/cat",
+        "txt": "https://some-random-api.ml/facts/cat"
+    },
+    {
+        "img": "https://some-random-api.ml/img/dog",
+        "txt": "https://some-random-api.ml/facts/dog"
+    },
+    {
+        "img": "https://some-random-api.ml/img/panda",
+        "txt": "https://some-random-api.ml/facts/panda"
+    },
+    {
+        "img": "https://some-random-api.ml/img/fox",
+        "txt": "https://some-random-api.ml/facts/fox"
+    },
+    {
+        "img": "https://some-random-api.ml/img/koala",
+        "txt": "https://some-random-api.ml/facts/koala"
+    }
+]
