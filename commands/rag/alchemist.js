@@ -4,8 +4,8 @@ const url = require("../../tables/urltable.json");
 
 module.exports.run = async (bot, message, args) => {
         var chimestryemb = new Discord.RichEmbed()
-            .setTitle("Aquimia")
-            .setDescription("Chance = `[(Nv. de A) + (Nv. de B × 3) + (Nv. de C) + (Nv. de classe × 0,2) + (DES × 0,1) + (SOR × 0,1) + (INT × 0,05) + (Dificuldade)]%`")
+            .setTitle("Alquimia")
+            .setDescription("Chance = `[(Nv. de Pesquisa de Poções) + (Nv. de Preparar Poção × 3) + (Nv. de Mudança de Planos) + (Nv. de classe × 0,2) + (DES × 0,1) + (SOR × 0,1) + (INT × 0,05) + (Dificuldade)]%`")
             .setURL("https://browiki.org/wiki/Alquimia")
             .setColor(color.PoringPink)
             .addField("1.Poções: `Dificuldade +20%`","- 1 Erva da cor da poção\n- 1 Garrafa de Poção")
