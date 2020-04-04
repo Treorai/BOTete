@@ -5,7 +5,6 @@ const url = require("../../tables/urltable.json");
 module.exports.run = async (bot, message, args) => {
         var commandEmb = new Discord.RichEmbed()
             .setTitle("**BOTete Command List**")
-            .setURL(url.botetehelp)
             .setColor(color.DarkBlue)
             .addField("Services", "`.help` Show BOTete command list.\n`.ping` Show Ping time.\n`.cls` Clear screen.\n`.sort` Faz sorteio entre os argumentos (separados por espaço).\n`.d20` Roda um d20 (pode-ser passar um argumento mudando o número de faces).\n`.tts` Talks a text message.")
             .addField("NFSW Commands", "`.boobs` Post a random boob img.\n`.butts` Post a random butt img.\n`.hentai` Post a random hentai img from reddit.\n`.rule34` If it is exists, there is porn of it.")
