@@ -162,7 +162,7 @@ bot.on("ready", async () => {
       bot.channels.get(nsfwchtable.wipinkhench).send(`.hentai`);
     });
 
-    let autopupies = schedule.scheduleJob('00 11 * * *', async function(){
+    let autopupies = schedule.scheduleJob('00 * * * *', async function(){
       bot.channels.get(chtable.weeweepupies).send(`.pupies`);
       bot.channels.get(chtable.wipinkpupies).send(`.pupies`);
     });
