@@ -6,23 +6,28 @@ const userids = require("../tables/userids.json");
 const rcoins = require("./razzorcoinstable.json");
 
 module.exports.run = async (bot, message, args) => {
-    console.log("hw");
-/*
     if(!rcoins[message.author.id]){
         rcoins[message.author.id] = {
-            coins: 0
+            rcoins: 0
         };
     }
 
+    let userCoins = rcoins[message.author.id].rcoins;
+    
+    let coinAmt = 1;
+    rcoins[message.author.id] = {
+    rcoins: rcoins[message.author.id].rcoins+ coinAmt};
+    fs.writeFile("./razzorcoinstable.json", JSON.stringify(rcoins), (err) => {
+        if (err) console.log(err)
+	});
 
 
-    var rcemb = new Discord.RichEmbed()
-            .setTitle("")
+    var rcEmb = new Discord.RichEmbed()
+            .setTitle("Recibo")
             .setColor(color.LightGreen)
-            .addField("", "")
+            .addField("Saldo:", `RZ$: ${userCoins}`)
             .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
-        message.channel.send(rcemb);
-*/
+        message.channel.send(rcEmb);
 }
 
 module.exports.help = {
