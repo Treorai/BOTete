@@ -146,7 +146,7 @@ fs.readdir("./currency/", (err, files) => {
     return;
   }
   jsfile.forEach((f, i) =>{
-    let props = require(`./commands/${f}`);
+    let props = require(`./currency/${f}`);
     console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
