@@ -8,6 +8,7 @@ const hensourse = require("./nsfw/hensoursetable.json");
 const nsfwchtable = require("./nsfw/nsfwchannelidtable.json");
 const chtable = require("./tables/channelidtable.json");
 const guildtable = require("./tables/guildidtable.json");
+const rcoins = require("./currency/razzorcoinstable.json");
 //modules
 const chalk = require('chalk');
 const Discord = require("discord.js");
