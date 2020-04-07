@@ -6,7 +6,7 @@ const userids = require("../tables/userids.json");
 const rcoins = require("./razzorcoinstable.json");
 
 module.exports.run = async (bot, message, args) => {
-    console.log("hw");
+    console.log("reboottest");
 /*
     if(!rcoins[message.author.id]){
         rcoins[message.author.id] = {
