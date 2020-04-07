@@ -10,6 +10,9 @@ module.exports.run = async (bot, message, args) => {
         rcoins[message.author.id] = {
             rcoins: 0
         };
+        fs.writeFile("./razzorcoinstable.json", JSON.stringify(coins), (err) => {
+            if (err) console.log(err)
+        });
     }
 
     let userCoins = rcoins[message.author.id].rcoins;

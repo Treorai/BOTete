@@ -9,7 +9,7 @@ module.exports.run = async (bot, message, args) => {
     var rchelp = new Discord.RichEmbed()
             .setTitle("Razzor Bank:")
             .setColor(color.LightGreen)
-            .addField("Comandos:", "`.checkrcoins` Confere o saldo de Razzor Coins.\n`.givercoins <@> <#>` Dá ao <@ mensionado> <# valor>.\n`.takercoins <@> <#> Tira do <@ mensionado> <# valor>.\n")
+            .addField("Comandos:", "`.checkrcoins` Confere o saldo de Razzor Coins.\n`.givercoins <@> <#>` Dá ao <@ mensionado> <# valor>.\n`.takercoins <@> <#>` Tira do <@ mensionado> <# valor>.\n")
             .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
         message.channel.send(rchelp);
 }
