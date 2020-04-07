@@ -137,6 +137,20 @@ fs.readdir("./commands/services/", (err, files) => {
     bot.commands.set(props.help.name, props);
   });
 });
+fs.readdir("./currency/", (err, files) => {
+  console.info("Loading bank protocols.");
+  if(err) console.error(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find commands.");
+    return;
+  }
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    console.info(`${f} loaded.`);
+    bot.commands.set(props.help.name, props);
+  });
+});
 
 
 bot.on("ready", async () => {
