@@ -213,8 +213,8 @@ bot.on("guildMemberAdd", (member) => {
     } else if(member.guild.id == guildtable.wipink){ 
       //Welcome message to ${Wipink}
         let welcomeWipinkEmb = new Discord.RichEmbed()
-        .setTitle('Oii '+member.urser.username+'! Seja bem vindo ao discord da Wipink!')
-        .setDescription('Se você chegou aqui para participar de um grupo, ou se já é conhecido dos admins, aguarde um instante que logo receberá registro.\nCaso tenha chegado por outro motivo, por favor, apresente-se enquanto esperamos alguém vir buscá-lo.')
+        .setTitle('Oii '+member.user.username+'! Seja bem vindo ao discord da Wipink!')
+        .setDescription('Se você chegou aqui para participar de um grupo no ragnarok, as salas já estão abertas, é só colar com nós!\nCaso tenha chegado por outro motivo, por favor, apresente-se enquanto esperamos alguém vir buscá-lo.')
         .setTimestamp()
         .setFooter("BOTete service(receptionist)", "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png");
     bot.channels.get("511103583245172758").send(welcomeWipinkEmb);
