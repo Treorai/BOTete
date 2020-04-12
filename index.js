@@ -199,9 +199,9 @@ bot.on("guildDelete", guild => {
 
 bot.on("guildMemberAdd", (member) => {
   console.info(`${member.user.username} joined ${member.guild.name}.`);
-  
-    //Welcome message to ${Lenhadores Guild}
+
       if(member.guild.id == guildtable.lenhadores){
+        //Welcome message to ${Lenhadores Guild}
         let welcomeLenhadoresEmb = new Discord.RichEmbed()
         .setTitle('Saudações, '+member.user.username+'!')
         .setDescription('Como vocês chegou até aqui, imagino que já saiba quem somos, mas nós ainda não te conhecemos, e estamos anciosos para saber quem você é. Por favor, apresente-se enquanto espera nossa Staff.\n Ja chamei alguém para providenciar uma recepção mais humana pra você.\nAgradeço sua paciência e enquanto espera, por favor leia as '+` ${bot.channels.get('520432740273750036')}`+`\nSe quiser falar diretamente com alguém da liderança, basta mencionar ${member.guild.roles.get('271357413288837120')}.`)
@@ -210,9 +210,8 @@ bot.on("guildMemberAdd", (member) => {
       bot.channels.get("520433945322455060").send(welcomeLenhadoresEmb);
 
       console.info(`A welcome message was sent to ${member.guild.name}.`);
-    }
-    //Welcome message to ${Wipink}
-      if(member.guild.id == guildtable.wipink){
+    } else if(member.guild.id == guildtable.wipink){ 
+      //Welcome message to ${Wipink}
         let welcomeWipinkEmb = new Discord.RichEmbed()
         .setTitle('Oii '+member.urser.username+'! Seja bem vindo ao discord da Wipink!')
         .setDescription('Se você chegou aqui para participar de um grupo, ou se já é conhecido dos admins, aguarde um instante que logo receberá registro.\nCaso tenha chegado por outro motivo, por favor, apresente-se enquanto esperamos alguém vir buscá-lo.')
@@ -221,9 +220,8 @@ bot.on("guildMemberAdd", (member) => {
     bot.channels.get("511103583245172758").send(welcomeWipinkEmb);
 
     console.info(`A welcome message was sent to ${member.guild.name}`);
-    }
-  }
-);
+    } else{ return; }
+});
 
 bot.on("message", async message => {
 
