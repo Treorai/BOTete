@@ -30,7 +30,6 @@ module.exports.run = async (bot, message, args) => {
             }
         });
     } else {
-        console.log(target);
         rcembed.setAuthor('Recibo', target.user.displayAvatarURL);
         Money.findOne({
             userID: target.id,

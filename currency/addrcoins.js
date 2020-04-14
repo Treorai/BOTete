@@ -8,10 +8,11 @@ mongoose.connect(process.env.MONGODB_URI);
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
+    if(message.author.id !== userids.treorai || message.author.id !== userids.razzor) { return };
 
     let rcembed = new Discord.RichEmbed()
         .setTitle("Recibo")
-        .setDescription("Transferência efetuada.")
+        .setDescription("Depósito efetuado.")
         .addField("Confira seu saldo digitando `.checkrcoins`.")
         .setColor(color.LightGreen)
         .setAuthor('Recibo', message.author.displayAvatarURL)
@@ -23,43 +24,27 @@ module.exports.run = async (bot, message, args) => {
     tradevalue = args[1];
     if(isNaN(tradevalue)) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
 
-    //checkSaldo
     Money.findOne({
-        userID: message.author.id,
+        userID: target.user.id,
         serverID: message.guild.id
     }, (err, money) => {
         if(err) console.log(err);
 
-        if(!money || money.money < tradevalue){
-            return message.channel.send("Saldo insuficiente para esta transação.");
-        } else {
-            money.money = money.money - tradevalue;
-            money.save().catch(err => console.log(err));
-            //giveValue
-            Money.findOne({
+        if(!money){
+            const newMoney = new Money({
                 userID: target.user.id,
-                serverID: message.guild.id
-            }, (err, money) => {
-                if(err) console.log(err);
-
-                if(!money){
-                    const newMoney = new Money({
-                        userID: target.user.id,
-                        serverID: message.guild.id,
-                        money: tradevalue
-                    });
-                    newMoney.save().catch(err => console.log(err));
-
-                } else {
-                    money.money = money.money + tradevalue;
-                    money.save().catch(err => console.log(err));
-                }
+                serverID: message.guild.id,
+                money: tradevalue
             });
+            newMoney.save().catch(err => console.log(err));
+
+        } else {
+            money.money = money.money + tradevalue;
+            money.save().catch(err => console.log(err));
         }
     });
-
 }
 
 module.exports.help = {
-    name: "givercoins"
+    name: "addrcoins"
 }
