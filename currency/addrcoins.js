@@ -11,9 +11,8 @@ module.exports.run = async (bot, message, args) => {
     if(message.author.id !== userids.treorai && message.author.id !== userids.razzor) { return };
 
     let rcembed = new Discord.RichEmbed()
-        .setTitle("Recibo")
         .setDescription("Depósito efetuado.")
-        .addField("Confira seu saldo digitando `.checkrcoins`.")
+        .addField("Confira seu saldo digitando `.checkrcoins`.", "")
         .setColor(color.LightGreen)
         .setAuthor('Recibo', message.author.displayAvatarURL)
         .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);

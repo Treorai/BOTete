@@ -46,10 +46,12 @@ module.exports.run = async (bot, message, args) => {
                         money: tradevalue
                     });
                     newMoney.save().catch(err => console.log(err));
+                    message.channel.send(rcembed);
 
                 } else {
                     money.money = money.money + tradevalue;
                     money.save().catch(err => console.log(err));
+                    message.channel.send(rcembed);
                 }
             });
         }
