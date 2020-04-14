@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGODB_URI);
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
-    if(message.author.id !== userids.treorai || message.author.id !== userids.razzor) { return };
+    if(message.author.id !== userids.treorai && message.author.id !== userids.razzor) { return };
 
     let rcembed = new Discord.RichEmbed()
         .setTitle("Recibo")
