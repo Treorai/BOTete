@@ -228,11 +228,6 @@ bot.on("guildMemberAdd", (member) => {
 
 bot.on("message", async message => {
 
-    //music rules
-    if(message.guild.id == guildtable.weeweecrew && message.channel.id !== chtable.weeweemusic && message.content.toLowerCase().startsWith(';;play') ){
-      message.reply(`use o canal ${bot.channels.get(chtable.weeweemusic)} para pedir musiquinhas!`);
-    }
-
     //replies
     if(message.author.id == userids.treorai && message.content.toLowerCase().endsWith('to mentindo?')){
           message.channel.send("Não está, senhor. É tudo verdade!").then(console.log(`Message answer sent to ${message.author.username} at channel ${message.channel.name} of ${message.guild.name}.`));
@@ -292,8 +287,36 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
       bot.channels.get(chtable.wipinklogs).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
     };
 
-};
-  //notWWC
+  };
+  if(oldMember.guild.id == guildtable.camsguild){ //camsguild
+    if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+      // User Joins a voice channel
+      bot.channels.get(chtable.camsgbotch).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
+
+    } else if(newMember.voiceChannel === undefined){
+      // User leaves a voice channel
+      bot.channels.get(chtable.camsgbotch).send(`${oldMember.user.username} left ${oldMember.voiceChannel}.`);
+    } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+      // User changes voice channel
+      bot.channels.get(chtable.camsgbotch).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
+    };
+
+  };
+  if(oldMember.guild.id == guildtable.lenhadores){ //LdB
+    if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+      // User Joins a voice channel
+      bot.channels.get(chtable.ldbbotch).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
+
+    } else if(newMember.voiceChannel === undefined){
+      // User leaves a voice channel
+      bot.channels.get(chtable.ldbbotch).send(`${oldMember.user.username} left ${oldMember.voiceChannel}.`);
+    } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+      // User changes voice channel
+      bot.channels.get(chtable.ldbbotch).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
+    };
+
+  };
+  //notThose
 
 });
 
