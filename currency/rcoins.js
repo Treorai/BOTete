@@ -8,6 +8,7 @@ mongoose.connect(process.env.MONGODB_URI);
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
+    
     var rchelp = new Discord.RichEmbed()
             .setTitle("Razzor Bank:")
             .setColor(color.LightGreen)

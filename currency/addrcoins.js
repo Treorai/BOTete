@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGODB_URI);
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
-    if(message.author.id !== userids.treorai && message.author.id !== userids.razzor) { return message.reply("Apenas o gerente pode depositar Razzor Coins."); };
+    if(message.author.id !== userids.treorai) { return };
 
     let rcembed = new Discord.RichEmbed()
         .setDescription("Depósito efetuado.")
@@ -17,11 +17,10 @@ module.exports.run = async (bot, message, args) => {
         .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
 
     let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!target) { return message.channel.send("Especifique para quem você quer transferir Razzor Coins.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
-    if(!args[1]) { return message.channel.send("Especifique o valor a ser transferido.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
-    if(isNaN(args[1])) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
+    if(!target) { return message.channel.send("Especifique para quem você quer transferir Razzor Coins.\nUso correto: `.addrcoins <@destinatário> <#valor>`"); }
+    if(!args[1]) { return message.channel.send("Especifique o valor a ser transferido.\nUso correto: `.addrcoins <@destinatário> <#valor>`"); }
+    if(isNaN(args[1])) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.addrcoins <@destinatário> <#valor>`"); }
     let tradevalue = Math.floor(args[1]);
-    console.log(tradevalue);
 
     Money.findOne({
         userID: target.user.id

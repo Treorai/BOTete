@@ -18,8 +18,9 @@ module.exports.run = async (bot, message, args) => {
     let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!target) { return message.channel.send("Especifique para quem você quer transferir Razzor Coins.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
     if(!args[1]) { return message.channel.send("Especifique o valor a ser transferido.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
-    let tradevalue = args[1];
-    if(isNaN(tradevalue)) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
+    if(isNaN(args[1])) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
+    let tradevalue = Math.floor(args[1]);
+    let imposto = Math.floor(tradevalue/10);
 
     //checkSaldo
     Money.findOne({
@@ -52,6 +53,17 @@ module.exports.run = async (bot, message, args) => {
                     message.channel.send(rcembed);
                 }
             });
+            //imposto
+            Money.findOne({
+                userID: "247043627501486084"
+            }, (err, money) => {
+                if(err) console.log(err);
+                
+                money.money = money.money + imposto;
+                money.save().catch(err => console.log(err));
+                console.log(`Recebidos ${imposto} RazzorCoins.`)
+            });
+
         }
     });
 

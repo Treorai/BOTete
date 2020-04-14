@@ -8,7 +8,56 @@ mongoose.connect(process.env.MONGODB_URI);
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
-    return message.channel.send("Não implementado.");
+    if(message.author.id !== userids.treorai && message.author.id !== userids.razzor) { return message.reply("Apenas o gerente pode cobrar Razzor Coins."); };
+
+    let rcembed = new Discord.RichEmbed()
+        .setDescription("Cobrança efetuada.")
+        .setColor(color.LightGreen)
+        .setAuthor('Recibo', message.author.displayAvatarURL)
+        .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
+
+    let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!target) { return message.channel.send("Especifique de quem você quer cobrar Razzor Coins.\nUso correto: `.takercoins <@destinatário> <#valor>`"); }
+    if(!args[1]) { return message.channel.send("Especifique o valor a ser cobrado.\nUso correto: `.takercpoms <@destinatário> <#valor>`"); }
+    if(isNaN(args[1])) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.takercoins <@destinatário> <#valor>`"); }
+    let tradevalue = Math.floor(args[1]);
+    let imposto = Math.floor(tradevalue/10);
+
+    //checkSaldo
+    Money.findOne({
+        userID: target.user.id
+    }, (err, money) => {
+        if(err) console.log(err);
+
+        if(!money || money.money < tradevalue){
+            return message.channel.send("Sem saldo para cobrança.");
+        } else {
+            money.money = money.money - tradevalue;
+            money.save().catch(err => console.log(err));
+            //giveValue
+            Money.findOne({
+                userID: message.author.id
+            }, (err, money) => {
+                if(err) console.log(err);
+                    money.money = money.money + tradevalue;
+                    money.save().catch(err => console.log(err));
+                    message.channel.send(rcembed);
+            });
+            //imposto
+            Money.findOne({
+                userID: "247043627501486084"
+            }, (err, money) => {
+                if(err) console.log(err);
+                
+                money.money = money.money + imposto;
+                money.save().catch(err => console.log(err));
+                console.log(`Recebidos ${imposto} RazzorCoins.`)
+            });
+
+        }
+    });
+
+    
 }
 
 module.exports.help = {
