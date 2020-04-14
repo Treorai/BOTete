@@ -8,30 +8,31 @@ mongoose.connect(process.env.MONGODB_URI);
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
-    if(message.author.id == userids.razzor) return message.channel.send(new Discord.RicheEmbed().setTitle("Recibo").setColor(color.LightGreen).setFooter("BOTete Bank(razzorcoins)", url.BOTetePP).addField("Saldo:", "RZ$: ∞", true));
+    if(message.author.id == userids.razzor) return message.react('😑').then(message.channel.send("Não fode, André!"));
     let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     
-    //if(!target) return message.reply("Couldn't find user.");
-
-
-    Money.findOne({
-        userID: message.author.id,
-        serverID: message.guild.id
-    }, (err, money) => {
-        if(err) console.log(err);
+    //if(!target){
+        Money.findOne({
+            userID: message.author.id,
+            serverID: message.guild.id
+        }, (err, money) => {
+            if(err) console.log(err);
         
-        let embed = new Discord.RichEmbed()
-        .setTitle("Recibo")
-        .setColor(color.LightGreen)
-        .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
-        if(!money){
-            embed.addField("Saldo:", "RZ$: 0", true);
-            return message.channel.send(embed);
-        } else {
-            embed.addField("Saldo:", `RZ$: ${money.money}`, true);
-            return message.channel.send(embed);
-        }
-    });
+            let embed = new Discord.RichEmbed()
+            .setTitle(":moneybag: Recibo")
+            .setColor(color.LightGreen)
+            .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
+            if(!money){
+                embed.addField("Saldo:", "RZ$: 0", true);
+                return message.channel.send(embed);
+            } else {
+                embed.addField("Saldo:", `RZ$: ${money.money}`, true);
+                return message.channel.send(embed);
+            }
+        });
+    //} else {
+
+    //}
 }
 
 module.exports.help = {
