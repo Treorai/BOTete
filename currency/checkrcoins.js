@@ -9,7 +9,6 @@ const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
     let rcembed = new Discord.RichEmbed()
-        .setTitle("Recibo")
         .setColor(color.LightGreen)
         .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
 
@@ -31,6 +30,7 @@ module.exports.run = async (bot, message, args) => {
             }
         });
     } else {
+        console.log(target);
         rcembed.setAuthor('Recibo', target.displayAvatarURL);
         Money.findOne({
             userID: target.id,
