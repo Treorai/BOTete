@@ -19,9 +19,9 @@ module.exports.run = async (bot, message, args) => {
     let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!target) { return message.channel.send("Especifique para quem você quer transferir Razzor Coins.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
     if(!args[1]) { return message.channel.send("Especifique o valor a ser transferido.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
-    let tradevalue = 0;
-    tradevalue = args[1];
     if(isNaN(args[1])) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
+    let tradevalue = Math.floor(args[1]);
+    console.log(tradevalue);
 
     Money.findOne({
         userID: target.user.id
