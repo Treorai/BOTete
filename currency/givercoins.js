@@ -32,9 +32,7 @@ module.exports.run = async (bot, message, args) => {
             return message.channel.send("Saldo insuficiente para esta transação.");
         } else {
             money.money = money.money - tradevalue;
-            money.save().catch(err => console.log(err));
-            //giveValue
-            Money.findOne({
+            money.save().catch(err => console.log(err)).then(Money.findOne({//giveValue
                 userID: target.user.id
             }, (err, money) => {
                 if(err) console.log(err);
@@ -52,7 +50,7 @@ module.exports.run = async (bot, message, args) => {
                     money.save().catch(err => console.log(err));
                     message.channel.send(rcembed);
                 }
-            });
+            }));
             //imposto
             Money.findOne({
                 userID: "247043627501486084"
