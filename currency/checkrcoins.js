@@ -9,18 +9,13 @@ const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
     let rcembed = new Discord.RichEmbed()
-        .setTitle(":moneybag: Recibo")
+        .setTitle("Recibo")
         .setColor(color.LightGreen)
         .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
 
-    if(message.author.id == userids.razzor){
-        rcembed.addField("Saldo:", "RZ$: ∞", true);
-        return message.channel.send(rcembed);
-    }
-
     let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    console.log(target);
     if(!target){
+        rcembed.setAuthor('Recibo', message.author.displayAvatarURL);
         Money.findOne({
             userID: message.author.id,
             serverID: message.guild.id
@@ -28,14 +23,15 @@ module.exports.run = async (bot, message, args) => {
             if(err) console.log(err);
 
             if(!money){
-                rcembed.addField("Saldo:", "RZ$: 0", true);
+                rcembed.addField("Saldo:", ":moneybag: 0", true);
                 return message.channel.send(rcembed);
             } else {
-                rcembed.addField("Saldo:", `RZ$: ${money.money}`, true);
+                rcembed.addField("Saldo:", `:moneybag: ${money.money}`, true);
                 return message.channel.send(rcembed);
             }
         });
     } else {
+        rcembed.setAuthor('Recibo', target.displayAvatarURL);
         Money.findOne({
             userID: target.id,
             serverID: message.guild.id
@@ -43,10 +39,10 @@ module.exports.run = async (bot, message, args) => {
             if(err) console.log(err);
 
             if(!money){
-                rcembed.addField("Saldo:", "RZ$: 0", true);
+                rcembed.addField("Saldo:", ":moneybag: 0", true);
                 return message.channel.send(rcembed);
             } else {
-                rcembed.addField("Saldo:", `RZ$: ${money.money}`, true);
+                rcembed.addField("Saldo:", `:moneybag: ${money.money}`, true);
                 return message.channel.send(rcembed);
             }
         });
