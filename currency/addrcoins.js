@@ -12,7 +12,6 @@ module.exports.run = async (bot, message, args) => {
 
     let rcembed = new Discord.RichEmbed()
         .setDescription("Depósito efetuado.")
-        .addField("Confira seu saldo digitando `.checkrcoins`.", "")
         .setColor(color.LightGreen)
         .setAuthor('Recibo', message.author.displayAvatarURL)
         .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);

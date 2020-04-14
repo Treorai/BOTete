@@ -10,9 +10,7 @@ const Money = require("../models/money.js");
 module.exports.run = async (bot, message, args) => {
 
     let rcembed = new Discord.RichEmbed()
-        .setTitle("Recibo")
         .setDescription("Transferência efetuada.")
-        .addField("Confira seu saldo digitando `.checkrcoins`.")
         .setColor(color.LightGreen)
         .setAuthor('Recibo', message.author.displayAvatarURL)
         .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
