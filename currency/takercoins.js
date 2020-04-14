@@ -3,7 +3,9 @@ const fs = require("fs");
 const color = require("../tables/colortable.json");
 const url = require("../tables/urltable.json");
 const userids = require("../tables/userids.json");
-const rcoins = require("./razzorcoinstable.json");
+const mongoose = require("mongoose");
+mongoose.connect(preocess.env.MONGODB_URI);
+const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
     console.log("reboottest");

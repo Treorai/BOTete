@@ -17,6 +17,10 @@ const fs = require("fs");
 //const YTDL = require("ytdl-core-discord");
 const superagent = require("superagent");
 const ms = require("ms");
+//moneySystem
+const mongoose = require("mongoose");
+mongoose.connect(preocess.env.MONGODB_URI);
+const Money = require("./models/money.js");
 //vnc
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
