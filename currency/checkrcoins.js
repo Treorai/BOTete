@@ -31,7 +31,7 @@ module.exports.run = async (bot, message, args) => {
         });
     } else {
         console.log(target);
-        rcembed.setAuthor('Recibo', target.displayAvatarURL);
+        rcembed.setAuthor('Recibo', target.user.displayAvatarURL);
         Money.findOne({
             userID: target.id,
             serverID: message.guild.id
