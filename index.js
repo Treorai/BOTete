@@ -203,17 +203,19 @@ bot.on("guildDelete", guild => {
 bot.on("guildMemberAdd", (member) => {
   console.info(`${member.user.username} joined ${member.guild.name}.`);
 
-      if(member.guild.id == guildtable.lenhadores){
-        //Welcome message to ${Lenhadores Guild}
-        let welcomeLenhadoresEmb = new Discord.RichEmbed()
-        .setTitle('Saudações, '+member.user.username+'!')
-        .setDescription('Como vocês chegou até aqui, imagino que já saiba quem somos, mas nós ainda não te conhecemos, e estamos anciosos para saber quem você é. Por favor, apresente-se enquanto espera nossa Staff.\n Ja chamei alguém para providenciar uma recepção mais humana pra você.\nAgradeço sua paciência e enquanto espera, por favor leia as '+` ${bot.channels.get('520432740273750036')}`+`\nSe quiser falar diretamente com alguém da liderança, basta mencionar ${member.guild.roles.get('271357413288837120')}.`)
-        .setTimestamp()
-        .setFooter("BOTete service(receptionist)", "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png");
+    if(member.guild.id == guildtable.lenhadores){
+      //Welcome message to ${Lenhadores Guild}
+       let welcomeLenhadoresEmb = new Discord.RichEmbed()
+       .setTitle('Saudações, '+member.user.username+'!')
+       .setDescription('Como vocês chegou até aqui, imagino que já saiba quem somos, mas nós ainda não te conhecemos, e estamos anciosos para saber quem você é. Por favor, apresente-se enquanto espera nossa Staff.\n Ja chamei alguém para providenciar uma recepção mais humana pra você.\nAgradeço sua paciência e enquanto espera, por favor leia as '+` ${bot.channels.get('520432740273750036')}`+`\nSe quiser falar diretamente com alguém da liderança, basta mencionar ${member.guild.roles.get('271357413288837120')}.`)
+       .setTimestamp()
+       .setFooter("BOTete service(receptionist)", "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png");
       bot.channels.get("520433945322455060").send(welcomeLenhadoresEmb);
 
       console.info(`A welcome message was sent to ${member.guild.name}.`);
-    } else if(member.guild.id == guildtable.wipink){ 
+    }
+    
+    if(member.guild.id == guildtable.wipink){ 
       //Welcome message to ${Wipink}
         let welcomeWipinkEmb = new Discord.RichEmbed()
         .setTitle('Oii '+member.user.username+'! Seja bem vindo ao discord da Wipink!')
@@ -223,7 +225,8 @@ bot.on("guildMemberAdd", (member) => {
     bot.channels.get("511103583245172758").send(welcomeWipinkEmb);
 
     console.info(`A welcome message was sent to ${member.guild.name}`);
-    } else{ return; }
+    }
+    
 });
 
 bot.on("message", async message => {
@@ -304,6 +307,7 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
     };
 
   };
+
   if(oldMember.guild.id == guildtable.lenhadores){ //LdB
     if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
       // User Joins a voice channel
@@ -319,7 +323,6 @@ bot.on('voiceStateUpdate', (oldMember, newMember) => {
 
   };
   //notThose
-
 });
 
 //Event Logger
