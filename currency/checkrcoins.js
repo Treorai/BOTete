@@ -16,8 +16,7 @@ module.exports.run = async (bot, message, args) => {
     if(!target){
         rcembed.setAuthor('Recibo', message.author.displayAvatarURL);
         Money.findOne({
-            userID: message.author.id,
-            serverID: message.guild.id
+            userID: message.author.id
         }, (err, money) => {
             if(err) console.log(err);
 
@@ -32,8 +31,7 @@ module.exports.run = async (bot, message, args) => {
     } else {
         rcembed.setAuthor('Recibo', target.user.displayAvatarURL);
         Money.findOne({
-            userID: target.id,
-            serverID: message.guild.id
+            userID: target.id
         }, (err, money) => {
             if(err) console.log(err);
 

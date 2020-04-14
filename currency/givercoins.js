@@ -25,8 +25,7 @@ module.exports.run = async (bot, message, args) => {
 
     //checkSaldo
     Money.findOne({
-        userID: message.author.id,
-        serverID: message.guild.id
+        userID: message.author.id
     }, (err, money) => {
         if(err) console.log(err);
 
@@ -37,15 +36,13 @@ module.exports.run = async (bot, message, args) => {
             money.save().catch(err => console.log(err));
             //giveValue
             Money.findOne({
-                userID: target.user.id,
-                serverID: message.guild.id
+                userID: target.user.id
             }, (err, money) => {
                 if(err) console.log(err);
 
                 if(!money){
                     const newMoney = new Money({
                         userID: target.user.id,
-                        serverID: message.guild.id,
                         money: tradevalue
                     });
                     newMoney.save().catch(err => console.log(err));

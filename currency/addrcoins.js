@@ -25,15 +25,13 @@ module.exports.run = async (bot, message, args) => {
     if(isNaN(tradevalue)) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
 
     Money.findOne({
-        userID: target.user.id,
-        serverID: message.guild.id
+        userID: target.user.id
     }, (err, money) => {
         if(err) console.log(err);
 
         if(!money){
             const newMoney = new Money({
                 userID: target.user.id,
-                serverID: message.guild.id,
                 money: tradevalue
             });
             newMoney.save().catch(err => console.log(err));
