@@ -8,6 +8,7 @@ mongoose.connect(process.env.MONGODB_URI);
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
+    console.log("1");
     //if(message.author.id !== userids.treorai || message.author.id !== userids.razzor) { return };
 
     let rcembed = new Discord.RichEmbed()
@@ -20,29 +21,37 @@ module.exports.run = async (bot, message, args) => {
 
     let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!target) { return message.channel.send("Especifique para quem você quer transferir Razzor Coins.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
+    console.log("2");
     if(!args[1]) { return message.channel.send("Especifique o valor a ser transferido.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
+    console.log("3");
     tradevalue = args[1];
     if(isNaN(tradevalue)) { return message.channel.send(`Não posso manipular ${tradevalue} na sua conta bancária.`+"\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
+    console.log("4");
 
     Money.findOne({
         userID: target.user.id,
         serverID: message.guild.id
     }, (err, money) => {
         if(err) console.log(err);
+        console.log("5");
 
         if(!money){
+            console.log("6");
             const newMoney = new Money({
                 userID: target.user.id,
                 serverID: message.guild.id,
                 money: tradevalue
             });
+            console.log("7");
             newMoney.save().catch(err => console.log(err));
 
         } else {
+            console.log("8");
             money.money = money.money + tradevalue;
             money.save().catch(err => console.log(err));
         }
     });
+    console.log("9");
 }
 
 module.exports.help = {
