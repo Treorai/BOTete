@@ -8,33 +8,49 @@ mongoose.connect(process.env.MONGODB_URI);
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
-    if(message.author.id == userids.razzor) return message.react('😑').then(message.channel.send("Não fode, André!"));
-    let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    
-
-    let embed = new Discord.RichEmbed()
+    let rcembed = new Discord.RichEmbed()
         .setTitle(":moneybag: Recibo")
         .setColor(color.LightGreen)
         .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
 
-    //if(!target){
+    if(message.author.id == userids.razzor){
+        rcembed.addField("Saldo:", "RZ$: ∞", true);
+        return message.channel.send(rcembed);
+    }
+
+    let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    console.log(target);
+    if(!target){
         Money.findOne({
             userID: message.author.id,
             serverID: message.guild.id
         }, (err, money) => {
             if(err) console.log(err);
-            
+
             if(!money){
-                embed.addField("Saldo:", "RZ$: 0", true);
-                return message.channel.send(embed);
+                rcembed.addField("Saldo:", "RZ$: 0", true);
+                return message.channel.send(rcembed);
             } else {
-                embed.addField("Saldo:", `RZ$: ${money.money}`, true);
-                return message.channel.send(embed);
+                rcembed.addField("Saldo:", `RZ$: ${money.money}`, true);
+                return message.channel.send(rcembed);
             }
         });
-    //} else {
+    } else {
+        Money.findOne({
+            userID: target.id,
+            serverID: message.guild.id
+        }, (err, money) => {
+            if(err) console.log(err);
 
-    //}
+            if(!money){
+                rcembed.addField("Saldo:", "RZ$: 0", true);
+                return message.channel.send(rcembed);
+            } else {
+                rcembed.addField("Saldo:", `RZ$: ${money.money}`, true);
+                return message.channel.send(rcembed);
+            }
+        });
+    }
 }
 
 module.exports.help = {
