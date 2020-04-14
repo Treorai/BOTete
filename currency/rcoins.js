@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
             .setTitle("Razzor Bank:")
             .setColor(color.LightGreen)
             .addField("Comandos:", "`.checkrcoins` Confere o saldo de Razzor Coins.\n`.givercoins <@> <#>` Dá ao <@ mensionado> <# valor> que será descontados do seu saldo.")
-            .addField("Admin:", "`.takercoins <@> <#>` Tira do <@ mensionado> <# valor>.\n`.addrcoins <@> <#>` Deposita para <@ mensionado> <# valor>.\n")
+            .addField("Reservado à Gerência:", "`.takercoins <@> <#>` Tira do <@ mensionado> <# valor>.\n`.addrcoins <@> <#>` Deposita para <@ mensionado> <# valor>.\n")
             .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
         message.channel.send(rchelp);
 }
