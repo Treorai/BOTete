@@ -260,59 +260,61 @@ bot.on("message", async message => {
 );
 //Voice Channel Logger
 bot.on('voiceStateUpdate', (oldMember, newMember) => {
-  if(oldMember.guild.id == guildtable.weeweecrew){ //weeweecrew
-      if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
-        // User Joins a voice channel
-        bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
- 
-      } else if(newMember.voiceChannel === undefined){
-        // User leaves a voice channel
-        bot.channels.get(chtable.weeweemusic).send(`${oldMember.user.username} left ${oldMember.voiceChannel}.`);
-      } else if(oldMember.voiceChannel !== newMember.voiceChannel){
-        // User changes voice channel
-        bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
-      };
-
-  };
   if(oldMember.guild.id == guildtable.wipink){ //wipink
     if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
       // User Joins a voice channel
-      bot.channels.get(chtable.wipinklogs).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
+      bot.channels.get(chtable.wipinklogs).send(`${newMember.user.username} connected to ${newMember.voiceChannel}.`);
 
     } else if(newMember.voiceChannel === undefined){
       // User leaves a voice channel
-      bot.channels.get(chtable.wipinklogs).send(`${oldMember.user.username} left ${oldMember.voiceChannel}.`);
+      bot.channels.get(chtable.wipinklogs).send(`${oldMember.user.username} disconnected.`);
     } else if(oldMember.voiceChannel !== newMember.voiceChannel){
       // User changes voice channel
       bot.channels.get(chtable.wipinklogs).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
     };
 
   };
+
+  if(oldMember.guild.id == guildtable.weeweecrew){ //weeweecrew
+      if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+        // User Joins a voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
+ 
+      } else if(newMember.voiceChannel === undefined){
+        // User leaves a voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${oldMember.user.username} desconectou-se.`);
+      } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+        // User changes voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} moveu-se para ${newMember.voiceChannel}.`);
+      };
+
+  };
+  
   if(oldMember.guild.id == guildtable.camsguild){ //camsguild
     if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
       // User Joins a voice channel
-      bot.channels.get(chtable.camsgbotch).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
+      bot.channels.get(chtable.camsgbotch).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
 
     } else if(newMember.voiceChannel === undefined){
       // User leaves a voice channel
-      bot.channels.get(chtable.camsgbotch).send(`${oldMember.user.username} left ${oldMember.voiceChannel}.`);
+      bot.channels.get(chtable.camsgbotch).send(`${oldMember.user.username} desconectou-se.`);
     } else if(oldMember.voiceChannel !== newMember.voiceChannel){
       // User changes voice channel
-      bot.channels.get(chtable.camsgbotch).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
+      bot.channels.get(chtable.camsgbotch).send(`${newMember.user.username} moveu-se para ${newMember.voiceChannel}.`);
     };
 
   };
   if(oldMember.guild.id == guildtable.lenhadores){ //LdB
     if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
       // User Joins a voice channel
-      bot.channels.get(chtable.ldbbotch).send(`${newMember.user.username} joined ${newMember.voiceChannel}.`);
+      bot.channels.get(chtable.ldbbotch).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
 
     } else if(newMember.voiceChannel === undefined){
       // User leaves a voice channel
-      bot.channels.get(chtable.ldbbotch).send(`${oldMember.user.username} left ${oldMember.voiceChannel}.`);
+      bot.channels.get(chtable.ldbbotch).send(`${oldMember.user.username} desconectou-se.`);
     } else if(oldMember.voiceChannel !== newMember.voiceChannel){
       // User changes voice channel
-      bot.channels.get(chtable.ldbbotch).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
+      bot.channels.get(chtable.ldbbotch).send(`${newMember.user.username} moveu-se para ${newMember.voiceChannel}.`);
     };
 
   };
