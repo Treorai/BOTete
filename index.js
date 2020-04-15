@@ -28,6 +28,17 @@ global.servers = {};
 
 
 //event loader
+fs.readdir("./events/", (err, files) => {
+	if (err) return console.error;
+	files.forEach(file =>{
+		if(file.endsWith(".js")) return;
+		const evt = require(`./events/${file}`);
+		let evtName = file.split('.')[0];
+		console.log(`Loaded '${evtName}'.`);
+		bot.on(evtName, evt.bind(null, bot));
+	});
+});
+/*
 fs.readdir("./events/",(err, files) =>{
   console.info("Loading event listener.");
   if(err) console.error(err);
@@ -42,6 +53,7 @@ fs.readdir("./events/",(err, files) =>{
     bot.on(jsfile, props.bind(null, bot));
   });
 });
+*/
 
 //command loader
 fs.readdir("./commands/", (err, files) => {
