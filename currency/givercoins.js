@@ -4,7 +4,7 @@ const color = require("../tables/colortable.json");
 const url = require("../tables/urltable.json");
 const userids = require("../tables/userids.json");
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI);
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 const Money = require("../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
