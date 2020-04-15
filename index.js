@@ -26,6 +26,23 @@ bot.commands = new Discord.Collection();
 //musicVars
 global.servers = {};
 
+
+//event loader
+fs.readdir("./events/",(err, files) =>{
+  console.info("Loading event listener.");
+  if(err) console.error(err);
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.warn("Couldn't find events.");
+    return;
+  }
+  jsfile.forEach((f, i) =>{
+    let props = require(`./events/${f}`);
+    console.info(`${f} loaded.`);
+    bot.on(jsfile, props.bind(null, bot));
+  });
+});
+
 //command loader
 fs.readdir("./commands/", (err, files) => {
   console.info("Loading general commands.");
@@ -151,22 +168,6 @@ fs.readdir("./currency/", (err, files) => {
     let props = require(`./currency/${f}`);
     console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
-  });
-});
-
-//event loader
-fs.readdir("./events/",(err, files) =>{
-  console.info("Loading event listener.");
-  if(err) console.error(err);
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.warn("Couldn't find events.");
-    return;
-  }
-  jsfile.forEach((f, i) =>{
-    let props = require(`./events/${f}`);
-    console.info(`${f} loaded.`);
-    bot.on(jsfile, props.bind(null, bot));
   });
 });
 
