@@ -18,42 +18,14 @@ const superagent = require("superagent");
 const ms = require("ms");
 //moneySystem
 const mongoose = require("mongoose");
-mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI);
 const Money = require("./models/money.js");
 //vnc
 const bot = new Discord.Client({disableEveryone: true});
 bot.commands = new Discord.Collection();
+const subnick = botconfig.activity;
 //musicVars
 global.servers = {};
-
-
-//event loader
-fs.readdir("./events/", (err, files) => {
-	if (err) return console.error;
-	files.forEach(file =>{
-		if(file.endsWith(".js")) return;
-		const evt = require(`./events/${file}`);
-		let evtName = file.split('.')[0];
-		console.log(`Loaded '${evtName}'.`);
-		bot.on(evtName, evt.bind(null, bot));
-	});
-});
-/*
-fs.readdir("./events/",(err, files) =>{
-  console.info("Loading event listener.");
-  if(err) console.error(err);
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.warn("Couldn't find events.");
-    return;
-  }
-  jsfile.forEach((f, i) =>{
-    let props = require(`./events/${f}`);
-    console.info(`${f} loaded.`);
-    bot.on(jsfile, props.bind(null, bot));
-  });
-});
-*/
 
 //command loader
 fs.readdir("./commands/", (err, files) => {
@@ -181,6 +153,197 @@ fs.readdir("./currency/", (err, files) => {
     console.info(`${f} loaded.`);
     bot.commands.set(props.help.name, props);
   });
+});
+
+
+bot.on("ready", async () => {
+  //login
+    console.log(`Bot online, serving ${bot.users.size} users, in ${bot.guilds.size} guilds.`);
+    bot.user.setActivity(subnick, {type: "STREAMING"});
+
+  //guildDedicated
+    //UFSM Reminders
+    schedule.scheduleJob('0 11 * * 7', async function(){
+      bot.channels.get(chtable.wipinkreminders).send("Lembrete: Agende as refeições da semana!");
+    });
+
+    //autoposts 
+    let autoboobs = schedule.scheduleJob('10 * * * *', async function(){
+      bot.channels.get(nsfwchtable.wipinkaboobch).send(`.boobs`);
+    });
+
+    let autobutts = schedule.scheduleJob('30 * * * *', async function(){
+      bot.channels.get(nsfwchtable.wipinkabuttch).send(`.butts`);
+    });
+
+    let autohen = schedule.scheduleJob('50 * * * *', async function(){
+      bot.channels.get(nsfwchtable.wipinkhench).send(`.hentai`);
+    });
+
+    let autopupies = schedule.scheduleJob('00 * * * *', async function(){
+      bot.channels.get(chtable.weeweepupies).send(`.pupies`);
+      bot.channels.get(chtable.wipinkpupies).send(`.pupies`);
+    });
+
+    let autowaifu = schedule.scheduleJob('00 10 * * *', async function(){
+      bot.channels.get(chtable.wipinkwaifus).send(`.waifu`);
+    });
+  });
+
+bot.on("guildCreate", guild => {
+    console.info(`Joined ${guild.name} (id: ${guild.id}). This guild has ${guild.memberCount} members!`);
+    }
+);
+
+bot.on("guildDelete", guild => {
+    console.info(`Bot removed from ${guild.name} (id: ${guild.id})`);
+    }
+);
+
+bot.on("guildMemberAdd", (member) => {
+  console.info(`${member.user.username} joined ${member.guild.name}.`);
+
+    if(member.guild.id == guildtable.lenhadores){
+      //Welcome message to ${Lenhadores Guild}
+       let welcomeLenhadoresEmb = new Discord.RichEmbed()
+       .setTitle('Saudações, '+member.user.username+'!')
+       .setDescription('Como vocês chegou até aqui, imagino que já saiba quem somos, mas nós ainda não te conhecemos, e estamos anciosos para saber quem você é. Por favor, apresente-se enquanto espera nossa Staff.\n Ja chamei alguém para providenciar uma recepção mais humana pra você.\nAgradeço sua paciência e enquanto espera, por favor leia as '+` ${bot.channels.get('520432740273750036')}`+`\nSe quiser falar diretamente com alguém da liderança, basta mencionar ${member.guild.roles.get('271357413288837120')}.`)
+       .setTimestamp()
+       .setFooter("BOTete service(receptionist)", "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png");
+      bot.channels.get("520433945322455060").send(welcomeLenhadoresEmb);
+
+      console.info(`A welcome message was sent to ${member.guild.name}.`);
+    }
+    
+    if(member.guild.id == guildtable.wipink){ 
+      //Welcome message to ${Wipink}
+        let welcomeWipinkEmb = new Discord.RichEmbed()
+        .setTitle('Oii '+member.user.username+'! Seja bem vindo ao discord da Wipink!')
+        .setDescription('Se você chegou aqui para participar de um grupo no ragnarok, as salas já estão abertas, é só colar com nós!\nCaso tenha chegado por outro motivo, por favor, apresente-se enquanto esperamos alguém vir buscá-lo.')
+        .setTimestamp()
+        .setFooter("BOTete service(receptionist)", "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png");
+    bot.channels.get("511103583245172758").send(welcomeWipinkEmb);
+
+    console.info(`A welcome message was sent to ${member.guild.name}`);
+    }
+    
+});
+
+bot.on("message", async message => {
+
+    //replies
+    if(message.author.id == userids.treorai && message.content.toLowerCase().endsWith('to mentindo?')){
+          message.channel.send("Não está, senhor. É tudo verdade!").then(console.log(`Message answer sent to ${message.author.username} at channel ${message.channel.name} of ${message.guild.name}.`));
+    }
+    if(message.author.id == userids.razzor && message.content.toLowerCase().endsWith('ão')){
+      message.reply("MEU PAU NA SUA MÃO!!").then(console.log(`Message reply sent to ${message.author.username} at channel ${message.channel.name} of ${message.guild.name}.`));
+    }
+    if(message.author.id == userids.razzor && message.content.toLowerCase().endsWith('aco')){
+      message.reply("MEU PAU NO SEU BURACO!!").then(console.log(`Message reply sent to ${message.author.username} at channel ${message.channel.name} of ${message.guild.name}.`));
+    }
+    if(message.author.id == userids.razzor && message.content.toLowerCase().endsWith('ico')){
+      message.reply("MEU PAU NO SEU FURICO!!").then(console.log(`Message reply sent to ${message.author.username} at channel ${message.channel.name} of ${message.guild.name}.`));
+    }
+
+    //reacts
+    for (var i = 0; i < swearpd.word.length; i++) {
+      if (message.content.toLowerCase().includes(swearpd.word[i])) {message.react('😠').then(console.log(`Reacted to ${message.author.username}'s curse.`)).catch(console.error);}
+    }
+    if(message.content.toLowerCase().includes('kkkk')) {message.react('😂').then(console.log(`Reacted to ${message.author.username}'s laugh.`)).catch(console.error);}
+    
+
+    //command handler
+    if(message.author.bot && message.author.client.user.id!==userids.BOTete) return;
+    if(message.content.indexOf(botconfig.prefix) !== 0) return;
+    const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
+    const command = args.shift().toLowerCase();
+    let commandfile = bot.commands.get(command);
+    if(commandfile) commandfile.run(bot,message,args);
+  }
+);
+//Voice Channel Logger
+bot.on('voiceStateUpdate', (oldMember, newMember) => {
+  if(oldMember.guild.id == guildtable.wipink){ //wipink
+    if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+      // User Joins a voice channel
+      bot.channels.get(chtable.wipinklogs).send(`${newMember.user.username} connected to ${newMember.voiceChannel}.`);
+
+    } else if(newMember.voiceChannel === undefined){
+      // User leaves a voice channel
+      bot.channels.get(chtable.wipinklogs).send(`${oldMember.user.username} disconnected.`);
+    } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+      // User changes voice channel
+      bot.channels.get(chtable.wipinklogs).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
+    };
+
+  };
+
+  if(oldMember.guild.id == guildtable.weeweecrew){ //weeweecrew
+      if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+        // User Joins a voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
+ 
+      } else if(newMember.voiceChannel === undefined){
+        // User leaves a voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${oldMember.user.username} desconectou-se.`);
+      } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+        // User changes voice channel
+        bot.channels.get(chtable.weeweemusic).send(`${newMember.user.username} moveu-se para ${newMember.voiceChannel}.`);
+      };
+
+  };
+  
+  if(oldMember.guild.id == guildtable.camsguild){ //camsguild
+    if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+      // User Joins a voice channel
+      bot.channels.get(chtable.camsgbotch).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
+
+    } else if(newMember.voiceChannel === undefined){
+      // User leaves a voice channel
+      bot.channels.get(chtable.camsgbotch).send(`${oldMember.user.username} desconectou-se.`);
+    } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+      // User changes voice channel
+      bot.channels.get(chtable.camsgbotch).send(`${newMember.user.username} moveu-se para ${newMember.voiceChannel}.`);
+    };
+
+  };
+
+  if(oldMember.guild.id == guildtable.lenhadores){ //LdB
+    if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+      // User Joins a voice channel
+      bot.channels.get(chtable.ldbbotch).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
+
+    } else if(newMember.voiceChannel === undefined){
+      // User leaves a voice channel
+      bot.channels.get(chtable.ldbbotch).send(`${oldMember.user.username} desconectou-se.`);
+    } else if(oldMember.voiceChannel !== newMember.voiceChannel){
+      // User changes voice channel
+      bot.channels.get(chtable.ldbbotch).send(`${newMember.user.username} moveu-se para ${newMember.voiceChannel}.`);
+    };
+
+  };
+  //notThose
+});
+
+//Event Logger
+bot.on("channelCreate", (channel) => {
+  console.info(`Channel "${channel.name}" was created in ${channel.guild.name}.`);
+});
+
+bot.on("channelDelete", (channel) => {
+  console.info(`Channel "${channel.name}" was deleted from ${channel.guild.name}.`);
+});
+
+bot.on("guildBanAdd", (guild, user) => {
+  console.info(`${user.username} was banned from ${guild.name}.`);
+});
+
+bot.on("guildMemberRemove", (member) => {
+  console.info(`${member.user.username} left ${member.guild.name}.`);
+});
+
+bot.on("error", (error) => {
+    console.error("Unexpected error occurred.");
 });
 
 
