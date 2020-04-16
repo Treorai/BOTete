@@ -21,7 +21,7 @@ module.exports = {
             .addField("Coquetel Uivante: `+20 INT`", "- 1 Vasilha Melange\n- 3 Sangue de Lobo\n- 2 Gelo")
             .addField("Chá Gelado de Siroma: `+20 DES`","- 1 Vasilha Melange\n- 1 Fruta de Comodo\n- 3 Raspadinha\n- 2 Gelo Cristalino")
             .addField("Macarrão com Petite: `+20 SOR`","- 1 Vasilha Melange\n- 2 Rabo de Petite\n- 1 Macarrão Fino\n- 1 Molho Especial")
-            .setFooter("BOTete search(GN_MIX_COOKING) | Designed by Treorai", url.browikipic);
+            .setFooter("BOTete search(GN_MIX_COOKING) | by Treorai", url.browikipic);
         message.channel.send(cookemb);
 	}
 }

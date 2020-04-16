@@ -26,7 +26,7 @@ module.exports = {
             .addField("8.Slim Branca: `Dificuldade -10%`", "- 1 Tubo de Ensaio\n- 1 Poção Branca\n- 1 Areia Estelar de Bruxa")
             .addField("Criação Espiritual de Poções II:","```Grupo com Super Aprendiz\n- 200 Vasilha de Mistura\n- 200 Poção Branca\n- 200 Tubo de Ensaio\n- 200 Areia Estelar de Bruxa```")
             .addField("Criação Espiritual de Poções III:","```Grupo: Taekwon\n- 200 Vasilha de Mistura\n- 200 Garrafa Vazia\n- 100 Tubo de Ensaio\n- 500 Caule\n- 500 Esporo Venenoso\n- 50 Coração Imortal\n- 50 Tecido\n- 50 Álcool```")
-            .setFooter("BOTete search(AM_PHARMACY) | Designed by Treorai", url.browikipic);
+            .setFooter("BOTete search(AM_PHARMACY) | by Treorai", url.browikipic);
         message.channel.send(chimestryemb);
 	}
 }

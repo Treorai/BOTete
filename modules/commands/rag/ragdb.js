@@ -17,7 +17,7 @@ module.exports = {
             .addField("Quests", "`.verus` Quests diárias de Verus.\n`.mora` Quests diárias de Mora.\n")
             .addField("Guia de Pure Potter", "`.alchemist` Guia de Alquimia.\n`.mixedcooking` Guia de Culinária.\n`.pharmacy` Guia de Farmacologia.")
             .addField("Outros", "`.investimento` Lista de loots para investimento em malangdo.\n`.temporais` Lista de encantamentos das botas temporais.")
-            .setFooter("BOTete database(ragcommands) | Designed by Treorai", url.BOTetePP);
+            .setFooter("BOTete database(ragcommands) | by Treorai", url.BOTetePP);
         message.channel.send(commandEmb);
 	}
 }

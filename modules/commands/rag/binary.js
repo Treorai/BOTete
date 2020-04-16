@@ -19,7 +19,7 @@ module.exports = {
             .setTitle("Conversão Dec - Bin")
             .setDescription("Output:")
             .addField(binvar, "Memo: O número mais à DIREITA equivale à placa mais à DIREITA.")
-            .setFooter("BOTete calculator(dec-bin) | Designed by Treorai", url.BOTetePP);
+            .setFooter("BOTete calculator(dec-bin) | by Treorai", url.BOTetePP);
         message.channel.send(decbinemb);
 	}
 }

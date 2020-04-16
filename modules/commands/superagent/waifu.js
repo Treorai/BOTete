@@ -25,7 +25,7 @@ module.exports = {
                 .setColor(color.Verdiagua)
                 .setImage(body.link)
                 .setTimestamp()
-                .setFooter('BOTete service(superagent)');
+                .setFooter('BOTete service(superagent) | by Treorai');
             message.channel.send(waifuemb);
         
         } catch(error) { console.error(`${error}`); }

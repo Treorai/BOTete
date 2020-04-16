@@ -17,7 +17,7 @@ module.exports = {
             .addField("Wave 1", "Misstress\nBapho\nGTB\nDracula\nDoppel\nEddga\nMoonlight\nFreeoni\nTanee\nMaya\nOsiris\nOrc Hero\nOrcs Lord", true)
             .addField("Wave 2", "Boitata\nStormy Knight\nDrake\nPharaoh\nHatii\nWhite Lady\nLeak\nKtullanux\nThanatos\nDark Lord\nLoD", true)
             .addField("Wave 3", "Atroce\nBeelzebub\nDetale\nDaehyon\nGT\nKhades\nIfrit\nKiel\nGloom\nRSX\nScaraba\nSerpente\nRandgris", true)
-            .setFooter("BOTete search(Laboratório Central) | Designed by Treorai", url.browikipic);
+            .setFooter("BOTete search(Laboratório Central) | by Treorai", url.browikipic);
         message.channel.send(clabemb);
 	}
 }

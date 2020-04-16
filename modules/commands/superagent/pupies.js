@@ -31,7 +31,7 @@ module.exports = {
                 .setDescription(bodytxt)
                 .setImage(bodyimg)
                 .setTimestamp()
-                .setFooter('BOTete service(superagent)');
+                .setFooter('BOTete service(superagent) | by Treorai');
             message.channel.send(pupiemb);
 
         } catch(error) { console.error(`${error}`); }

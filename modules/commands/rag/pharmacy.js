@@ -21,7 +21,7 @@ module.exports = {
             .addField("Poção Grande de SP: Aumentar sua Energia", "- 10 Garrafa Vazia\n- 10 Geleia Real\n- 15 Erva Azul\n- 1 Molho Doce")
             .addField("Semente de Planta Selvagem: Genética Vegetal", "- 10 Fruta Espinhosa")
             .addField("Semente de Planta Sanguessuga: Genética Vegetal", "- 10 Raíz de Planta Carnívora")
-            .setFooter("BOTete search(GN_S_PHARMACY) | Designed by Treorai", url.browikipic);
+            .setFooter("BOTete search(GN_S_PHARMACY) | by Treorai", url.browikipic);
         message.channel.send(farmacyemb);
 	}
 }

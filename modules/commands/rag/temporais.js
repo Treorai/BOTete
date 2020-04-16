@@ -17,7 +17,7 @@ module.exports = {
             .addField("Coagulada:", "3\n10\n20\n40\n50", true)
             .addField("Sombria:", "1\n2\n4\n7\n10", true)
             .addField("Chace", "100%\n82.5%\n66%\n55%\n47%", true)
-            .setFooter("BOTete search(Botas Temporais) | Designed by Treorai", url.browikipic);
+            .setFooter("BOTete search(Botas Temporais) | by Treorai", url.browikipic);
         message.channel.send(moraDaily);
 	}
 }

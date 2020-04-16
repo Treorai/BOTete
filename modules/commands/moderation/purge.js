@@ -16,7 +16,7 @@ module.exports = {
             if(isNaN(args)) return;
 
             message.channel.bulkDelete(args[0]).then(() => {
-                console.log(`${message.author} deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
+                console.log(`${message.author.username} deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
             });
         } else return message.reply("Você não tem permissão para apagar mensagens.");
     }
