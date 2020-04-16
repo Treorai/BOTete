@@ -1,3 +1,4 @@
+const {bot} = require("../index");
 const Discord = require("discord.js");
 const schedule = require("node-schedule");
 const fs = require("fs");
@@ -13,7 +14,7 @@ const subnick = botconfig.activity;
 module.exports = (bot) => {
     //login
     console.log(`Bot online, serving ${bot.users.size} users, in ${bot.guilds.size} guilds.`);
-    bot.user.setActivity(subnick, {type: "STREAMING"});
+    bot.user.setActivity(subnick, {type: "STREAMING", url:"https://www.twitch.tv/2xttv"});
 
     //UFSM Reminder
     schedule.scheduleJob('0 11 * * 7', async function(){

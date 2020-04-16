@@ -1,9 +1,9 @@
-const Discord = require ("discord.js");
+const Discord = require ("../../commands/help/node_modules/discord.js.js");
 const superagent = require("superagent");
-const color = require("../tables/colortable.json");
-const url = require("../tables/urltable.json");
+const color = require("../../tables/colortable.json");
+const url = require("../../tables/urltable.json");
 const safead = require("./nsfwads.json");
-const userids = require("../tables/userids.json");
+const userids = require("../../tables/userids.json");
 
 module.exports.run = async (bot, message, args) => {
     if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}

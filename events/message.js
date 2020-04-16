@@ -1,10 +1,11 @@
+const {bot} = require("../index");
 const Discord = require("discord.js");
 const fs = require("fs");
 const botconfig = require("../botconfig.json");
 const color = require("../tables/colortable.json");
 const userids = require("../tables/userids.json");
 const url = require("../tables/urltable.json");
-const nsfwchtable = require("../nsfw/nsfwchannelidtable.json");
+const nsfwchtable = require("../modules/nsfw/nsfwchannelidtable.json");
 const chtable = require("../tables/channelidtable.json");
 const guildtable = require("../tables/guildidtable.json");
 
@@ -32,10 +33,11 @@ module.exports = (bot, message) => {
 
     //command handler
     if(message.author.bot && message.author.client.user.id!==userids.BOTete) return;
-    if(message.content.indexOf(botconfig.prefix) !== 0) return;
-    const args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
-    let commandfile = bot.commands.get(command);
-    if(commandfile) commandfile.run(bot,message,args);
+    if(message.channel.type === "dm") return;
+    let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
+    let cmd = args.shift().toLowerCase();
+    if(message.content.startsWith(botconfig.prefix)) return;
+    let commandfile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
+    if(commandfile) commandfile.run(bot, message, args);
     
 };

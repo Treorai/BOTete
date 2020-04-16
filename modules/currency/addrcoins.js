@@ -1,11 +1,11 @@
-const Discord = require ("discord.js");
+const Discord = require ("../../commands/help/node_modules/discord.js.js");
 const fs = require("fs");
-const color = require("../tables/colortable.json");
-const url = require("../tables/urltable.json");
-const userids = require("../tables/userids.json");
+const color = require("../../tables/colortable.json");
+const url = require("../../tables/urltable.json");
+const userids = require("../../tables/userids.json");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-const Money = require("../models/money.js");
+const Money = require("../../models/money.js");
 
 module.exports.run = async (bot, message, args) => {
     if(message.author.id !== userids.treorai) { return };

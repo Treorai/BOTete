@@ -1,7 +1,7 @@
-const Discord = require("discord.js");
-const userids = require("../tables/userids.json");
-const color = require("../tables/colortable.json");
-const url = require("../tables/urltable.json");
+const Discord = require("../../commands/help/node_modules/discord.js.js");
+const userids = require("../../tables/userids.json");
+const color = require("../../tables/colortable.json");
+const url = require("../../tables/urltable.json");
 
 
 module.exports.run = async (bot, message, args) => {
