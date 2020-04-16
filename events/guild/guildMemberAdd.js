@@ -32,4 +32,4 @@ module.exports = (bot, member) => {
     }
 
     //Welcome message to other channels:
-};
+}

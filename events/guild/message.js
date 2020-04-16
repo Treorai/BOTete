@@ -40,4 +40,4 @@ module.exports = (bot, message) => {
     let commandfile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
     if(commandfile) commandfile.run(bot, message, args);
     
-};
+}

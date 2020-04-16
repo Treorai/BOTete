@@ -11,4 +11,4 @@ module.exports = (bot, channel) => {
     if(chtable.hasOwnProperty(channel.id)){
         console.log(`[WARNING!] ID'ed channel "${channel.name}" was deleted from ${channel.guild.name}.`);
     }
-};
+}

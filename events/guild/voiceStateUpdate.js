@@ -65,4 +65,4 @@ module.exports = (bot, oldMember, newMember) => {
     };
     
     //notThose
-};
+}
