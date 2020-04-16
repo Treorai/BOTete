@@ -1,4 +1,4 @@
-const Discord = require ("../../commands/help/node_modules/discord.js.js");
+const Discord = require ("discord.js");
 const fs = require("fs");
 const color = require("../../tables/colortable.json");
 const url = require("../../tables/urltable.json");

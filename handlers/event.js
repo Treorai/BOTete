@@ -10,4 +10,4 @@ module.exports = (bot) =>{
         };
     };
     ["client", "guild"].forEach(x => load(x));
-};
+}
