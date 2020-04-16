@@ -16,7 +16,6 @@ module.exports = {
                 message.member.voiceChannel.join()
                     .then(connection => {
                         console.log(`Connected to ${message.member.voiceChannel.name} at ${message.guild.name}.`);
-                        var server = servers[message.guild.id];
                 });
             } else {
                 message.delete().catch(err=>{});
@@ -26,6 +25,5 @@ module.exports = {
         } else {
             message.reply("Você precisa estar em um canal antes de me invitar");
         }
-		
 	}
 }
