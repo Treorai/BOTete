@@ -11,12 +11,13 @@ module.exports = {
 		aliases: [""]
 	},
 	run: async (bot, message, args) => {
-        if(!message.author.hasPermission("MANAGE_MESSAGES")) return;
-        if(!args[0] || args[0]<='0') return;
-        if(isNaN(args)) return;
+        if(message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("ADMINISTRATOR")){
+            if(!args[0] || args[0]<='0') return;
+            if(isNaN(args)) return;
 
-        message.channel.bulkDelete(args[0]).then(() => {
-            console.log(`${message.author} deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
-        });
+            message.channel.bulkDelete(args[0]).then(() => {
+                console.log(`${message.author} deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
+            });
+        } else return message.reply("Você não tem permissão para apagar mensagens.");
     }
 }
