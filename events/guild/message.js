@@ -36,7 +36,7 @@ module.exports = async (bot, message) => {
     //if(message.channel.type === "dm") return;
     let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
-    if(message.content.startsWith(botconfig.prefix)) return;
+    if(!message.content.startsWith(botconfig.prefix)) return;
     let commandfile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
     if(commandfile) commandfile.run(bot, message, args);
     
