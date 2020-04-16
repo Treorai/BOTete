@@ -15,14 +15,15 @@ const schedule = require("node-schedule");
 const fs = require("fs");
 const superagent = require("superagent");
 //moneySystem
+/*
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-const Money = require("./models/money.js");
+const Money = require("./models/money.js");*/
 //vnc
 const bot = new Discord.Client();
 
 
 ["commands", "aliases"].forEach(x => bot[x] = new Discord.Collection());
-["command", "event"].forEach(x => require(`./handlers/${x}`)(bot))
+["command", "event"].forEach(x => require(`./handlers/${x}`)(bot));
 
 bot.login(process.env.BOT_TOKEN);
