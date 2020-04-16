@@ -6,7 +6,7 @@ const url = require("../../tables/urltable.json");
 const chtable = require("../../tables/channelidtable.json");
 const guildtable = require("../../tables/guildidtable.json");
 
-module.exports = (bot, member) => {
+module.exports = async (bot, member) => {
     console.log(`${member.user.username} joined ${member.guild.name}.`);
 
     //Welcome message to ${Wipink}

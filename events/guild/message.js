@@ -9,7 +9,7 @@ const chtable = require("../../tables/channelidtable.json");
 const guildtable = require("../../tables/guildidtable.json");
 const swearpd = require("../../tables/sweartable.json");
 
-module.exports = (bot, message) => {
+module.exports = async (bot, message) => {
     
     //replies
     if(message.author.id == userids.treorai && message.content.toLowerCase().endsWith('to mentindo?')){

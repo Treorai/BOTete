@@ -10,7 +10,7 @@ const chtable = require("../../tables/channelidtable.json");
 const guildtable = require("../../tables/guildidtable.json");
 const subnick = botconfig.activity;
 
-module.exports = (bot) => {
+module.exports = async (bot) => {
     //login
     console.log(`Bot online, serving ${bot.users.size} users, in ${bot.guilds.size} guilds.`);
     bot.user.setActivity(subnick, {type: "STREAMING", url:"https://www.twitch.tv/2xttv"});

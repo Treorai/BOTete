@@ -6,7 +6,7 @@ const url = require("../../tables/urltable.json");
 const chtable = require("../../tables/channelidtable.json");
 const guildtable = require("../../tables/guildidtable.json");
 
-module.exports = (bot, oldMember, newMember) => {
+module.exports = async (bot, oldMember, newMember) => {
 
     //wipink
     if(oldMember.guild.id == guildtable.wipink){

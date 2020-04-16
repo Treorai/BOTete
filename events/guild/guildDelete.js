@@ -6,6 +6,6 @@ const url = require("../../tables/urltable.json");
 const chtable = require("../../tables/channelidtable.json");
 const guildtable = require("../../tables/guildidtable.json");
 
-module.exports = (bot, guild) => {
+module.exports = async (bot, guild) => {
     console.log(`Bot removed from ${guild.name} (id: ${guild.id})`);
 }
