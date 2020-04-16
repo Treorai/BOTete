@@ -1,4 +1,3 @@
-const {bot} = require("../../index");
 const Discord = require("discord.js");
 const fs = require("fs");
 const botconfig = require("../../botconfig.json");
@@ -8,6 +7,7 @@ const url = require("../../tables/urltable.json");
 const nsfwchtable = require("../../modules/nsfw/nsfwchannelidtable.json");
 const chtable = require("../../tables/channelidtable.json");
 const guildtable = require("../../tables/guildidtable.json");
+const swearpd = require("../../tables/sweartable.json");
 
 module.exports = (bot, message) => {
     
