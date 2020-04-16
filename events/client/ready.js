@@ -1,14 +1,14 @@
-const {bot} = require("../index");
+const {bot} = require("../../index");
 const Discord = require("discord.js");
 const schedule = require("node-schedule");
 const fs = require("fs");
-const botconfig = require("../botconfig.json");
-const color = require("../tables/colortable.json");
-const userids = require("../tables/userids.json");
-const url = require("../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const color = require("../../tables/colortable.json");
+const userids = require("../../tables/userids.json");
+const url = require("../../tables/urltable.json");
 const nsfwchtable = require("../nsfw/nsfwchannelidtable.json");
-const chtable = require("../tables/channelidtable.json");
-const guildtable = require("../tables/guildidtable.json");
+const chtable = require("../../tables/channelidtable.json");
+const guildtable = require("../../tables/guildidtable.json");
 const subnick = botconfig.activity;
 
 module.exports = (bot) => {

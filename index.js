@@ -19,7 +19,7 @@ const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 const Money = require("./models/money.js");
 //vnc
-const bot = new Discord.Client({disableEveryone: true});
+const bot = new Discord.Client();
 
 
 ["commands", "aliases"].forEach(x => bot[x] = new Discord.Collection());

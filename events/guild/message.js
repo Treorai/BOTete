@@ -1,13 +1,13 @@
-const {bot} = require("../index");
+const {bot} = require("../../index");
 const Discord = require("discord.js");
 const fs = require("fs");
-const botconfig = require("../botconfig.json");
-const color = require("../tables/colortable.json");
-const userids = require("../tables/userids.json");
-const url = require("../tables/urltable.json");
-const nsfwchtable = require("../modules/nsfw/nsfwchannelidtable.json");
-const chtable = require("../tables/channelidtable.json");
-const guildtable = require("../tables/guildidtable.json");
+const botconfig = require("../../botconfig.json");
+const color = require("../../tables/colortable.json");
+const userids = require("../../tables/userids.json");
+const url = require("../../tables/urltable.json");
+const nsfwchtable = require("../../modules/nsfw/nsfwchannelidtable.json");
+const chtable = require("../../tables/channelidtable.json");
+const guildtable = require("../../tables/guildidtable.json");
 
 module.exports = (bot, message) => {
     
