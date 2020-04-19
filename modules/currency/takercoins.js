@@ -46,6 +46,7 @@ module.exports = {
             } else {
                 money.money = money.money - tradevalue;
                 money.save().catch(err => console.log(err));
+                message.channel.send(rcembed);
             }
         });
 	}
