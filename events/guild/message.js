@@ -33,7 +33,7 @@ module.exports = async (bot, message) => {
 
     //command handler
     if(message.author.bot && message.author.client.user.id!==userids.BOTete) return;
-    //if(message.channel.type === "dm") return;
+    if(message.channel.type === "dm") return;
     let args = message.content.slice(botconfig.prefix.length).trim().split(/ +/g);
     let cmd = args.shift().toLowerCase();
     if(!message.content.startsWith(botconfig.prefix)) return;
