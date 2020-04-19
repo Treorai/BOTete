@@ -6,19 +6,17 @@ module.exports = {
 	config: {
 		name: "saych",
 		description: "Dá voz ao bot para uma sala recebida em args[1]",
-		usage: ".saych <ID da sala> <texto>",
+		usage: ".saych <ID da sala>';;'<texto>",
 		aliases: [""]
 	},
 	run: async (bot, message, args) => {
-        console.log(args);
-        const sendchannel = bot.channels.get("554071939271098409");
         if(message.author.id != userids.treorai) return;
+
+        var splitarray = args.split(";;");
+        if(isNaN(splitarray[0])) { return message.channel.send("Invalid Channel ID."); }
+        const sendchannel = bot.channels.get(splitarray[0]);
+        if(!sendchannel) { return message.channel.send("Couldn't find Channel ID.") }
         
-        const sayMessage = args.join(" ");
-        sendchannel.startTyping();
-        setTimeout(function(){
-            sendchannel.send(sayMessage);
-            sendchannel.stopTyping(true);
-        }, sayMessage.length*150);
+        sendchannel.send(splitarray[1]);
 	}
 }
