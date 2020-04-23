@@ -31,7 +31,7 @@ module.exports = {
                 "nsfw"
             ].forEach(x => load(x));
 
-            console.log(load);
+            console.log(dirs);
 
 
             /*

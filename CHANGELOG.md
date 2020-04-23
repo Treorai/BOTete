@@ -7,7 +7,7 @@ Changes to BOTete Project will be documented in this file.
 - Music Module.
 - Music Scripts.
 
-## 5.0.0 | ___data
+## 5.0.0 | 2020-04-23
 #### Added
 - Help command.
 
