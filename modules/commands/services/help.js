@@ -13,7 +13,7 @@ module.exports = {
 		aliases: ["h", "commands", "ajuda"]
 	},
 	run: async (bot, message, args) => {
-        const embed = new RichEmbed()
+        const embed = new Discord.RichEmbed()
             .setColor(botconfig.colors.defaultcolor)
             .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL);
 
