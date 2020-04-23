@@ -13,7 +13,6 @@ module.exports = {
 		aliases: ["h", "commands", "ajuda"]
 	},
 	run: async (bot, message, args) => {
-        return message.reply("Ocorreu um erro. Contate o administrador.");
         
         const embed = new Discord.RichEmbed()
             .setColor(botconfig.colors.defaultcolor)
@@ -22,23 +21,12 @@ module.exports = {
         if(!args[0]) {
 
             const categories = readdirSync(`./modules/`);
-            const categoriesB = readdirSync(`./modules/commands/`);
 
             embed.setDescription("Estes são os comandos disponíveis:");
             embed.setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
             
             categories.forEach(category => {
-                const dir = bot.commands;
-                const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1)
-                try {
-                    embed.addField(`❯ ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
-                } catch(e) {
-                    console.log(e)
-                }
-            });
-
-            categoriesB.forEach(category => {
-                const dir = bot.commands;
+                const dir = bot.commands.filter(c => c.config.accessableby === "Bot Owner");
                 const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1)
                 try {
                     embed.addField(`❯ ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
