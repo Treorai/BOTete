@@ -20,15 +20,12 @@ module.exports = {
         if(!args[0]) {
             
             const categories = readdirSync(`./modules/`);
-console.log(`categories: \n${categories}`);
             embed.setDescription("Estes são os comandos disponíveis:");
             embed.setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
             
             categories.forEach(category => {
-                const dir = bot.commands;
-console.log(`dir: \n${dir}`);
+                const dir = bot.commands.filter(category);
                 const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1)
-console.log(`Capitalise: \n${capitalise}`);
                 try {
                     embed.addField(`❯ ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
                 } catch(e) {
@@ -37,7 +34,7 @@ console.log(`Capitalise: \n${capitalise}`);
             })
 
             return message.channel.send(embed)
-        } else { return //return
+        } else { return //
             let command = bot.commands.get(bot.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase())
             if(!command) return message.channel.send(embed.setTitle("Invalid Command.").setDescription(`Do \`${prefix}help\` for the list of the commands.`))
             command = command.config
