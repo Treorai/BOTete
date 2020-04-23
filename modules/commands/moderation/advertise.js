@@ -2,7 +2,6 @@ const Discord = require("discord.js");
 const botconfig = require("../../../botconfig.json");
 const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
-const adchannels = require("../../../tables/adchtable.json");
 
 module.exports = {
 	config: {
@@ -21,7 +20,7 @@ module.exports = {
             .setTimestamp()
             .setFooter("Notificação", url.advertiseicon);
 
-        adchannels.forEach((channelid, index) => {
+        botconfig.advertiselist.forEach((channelid, index) => {
             bot.channels.get(channelid).send(tosayademb);
             console.log(`Advertisement sent to ${channelid}.`);
         });
