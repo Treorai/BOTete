@@ -18,8 +18,22 @@ module.exports = {
             .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL);
 
         if(!args[0]) {
-            const categories = readdirSync("./modules/");
+            const load = dirs =>{
+                const categories = readdirSync(`./modules/${dirs}/`).filter(d => d.endsWith('.js'));
+            };
+            [
+                "commands/moderation",
+                "commands/rag",
+                "commands/services",
+                "commands/superagent",
+                "currency",
+                "music",
+                "nsfw"
+            ].forEach(x => load(x));
+
             console.log(categories);
+
+
             /*
             const groupMod = readdirSync("../../commands/moderation/");
             const groupRag = readdirSync("../../commands/rag/");
