@@ -21,12 +21,14 @@ module.exports = {
         if(!args[0]) {
 
             const categories = readdirSync(`./modules/`);
+            const cat2 = categories + readdirSync(`./modules/commands/`);
+            console.log(cat2);
 
             embed.setDescription("Estes são os comandos disponíveis:");
             embed.setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
             
             categories.forEach(category => {
-                const dir = bot.commands.filter(c => c.config.accessibleby !== "Bot Owner");
+                const commandlist = bot.commands.filter(c => c.config.accessibleby !== "Bot Owner");
                 const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1)
                 try {
                     embed.addField(`❯ ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
