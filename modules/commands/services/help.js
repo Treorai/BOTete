@@ -18,7 +18,7 @@ module.exports = {
             .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL);
 
         if(!args[0]) {
-            const categories = readdirSync("../../commands/rag/");
+            const categories = readdirSync("./commands/");
             console.log(categories);
             /*
             const groupMod = readdirSync("../../commands/moderation/");
