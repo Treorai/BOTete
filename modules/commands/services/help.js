@@ -13,12 +13,14 @@ module.exports = {
 		aliases: ["h", "commands", "ajuda"]
 	},
 	run: async (bot, message, args) => {
+        return message.reply("Ocorreu um erro. Contate o administrador.");
+        
         const embed = new Discord.RichEmbed()
             .setColor(botconfig.colors.defaultcolor)
             .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL);
 
         if(!args[0]) {
-            
+
             const categories = readdirSync(`./modules/`);
             const categoriesB = readdirSync(`./modules/commands/`);
 
