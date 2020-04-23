@@ -19,39 +19,16 @@ module.exports = {
 
         if(!args[0]) {
             
-            let load = dirs =>{
-                categories = readdirSync(`./modules/${dirs}/`).filter(d => d.endsWith('.js'));
-            };
-            [
-                "commands/moderation",
-                "commands/rag",
-                "commands/services",
-                "commands/superagent",
-                "currency",
-                "music",
-                "nsfw"
-            ].forEach(x => load(x));
-
-            console.log(categories);
-
-
-            /*
-            const groupMod = readdirSync("../../commands/moderation/");
-            const groupRag = readdirSync("../../commands/rag/");
-            const groupSvc = readdirSync("../../commands/services/");
-            const groupSag = readdirSync("../../commands/superagent/");
-            const groupBnk = readdirSync("../../currency/");
-            const groupMsc = readdirSync("../../music/");
-            const groupNsf = readdirSync("../../nsfw/");
-
-            const groups = [groupMod, groupRag, groupSvc, groupSag, groupBnk, groupMsc, groupNsf ];
-
-            embed.setDescription(`These are the avaliable commands for ${message.guild.me.displayName}`)
+            const categories = readdirSync(`./modules/`);
+console.log(`categories: \n${categories}`);
+            embed.setDescription("Estes são os comandos disponíveis:");
             embed.setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
-
+            
             categories.forEach(category => {
-                const dir = bot.commands.filter(c => c.config.category === category)
+                const dir = bot.commands;
+console.log(`dir: \n${dir}`);
                 const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1)
+console.log(`Capitalise: \n${capitalise}`);
                 try {
                     embed.addField(`❯ ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
                 } catch(e) {
@@ -60,7 +37,7 @@ module.exports = {
             })
 
             return message.channel.send(embed)
-        } else {
+        } else { return //return
             let command = bot.commands.get(bot.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase())
             if(!command) return message.channel.send(embed.setTitle("Invalid Command.").setDescription(`Do \`${prefix}help\` for the list of the commands.`))
             command = command.config
@@ -72,7 +49,7 @@ module.exports = {
             **Accessible by:** ${command.accessableby || "Members"}
             **Aliases:** ${command.aliases ? command.aliases.join(", ") : "None."}`)
 
-            return message.channel.send(embed)*/
+            return message.channel.send(embed)
         }
 		
 	}
