@@ -1,19 +1,18 @@
 const Discord = require ("discord.js");
 const superagent = require("superagent");
-const color = require("../../tables/colortable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 const safead = require("./nsfwads.json");
-const userids = require("../../tables/userids.json");
 
 module.exports = {
 	config: {
 		name: "boobs",
-		description: "Mostra uma teta.",
-		usage: ".boobs",
-		aliases: ["boob", "teta", "tetas"]
+        description: "Mostra uma teta.",
+		aliases: ["tits", "teta", "tetas"]
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
+        if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
 
         if(message.channel.nsfw === false){
             message.reply(safead.negated);
@@ -27,12 +26,12 @@ module.exports = {
 
                 if(!{body}) return message.channel.send("[Error] Source offline.");
 
-                let boobemb = new Discord.RichEmbed()
-                    .setColor(color.Red)
+                let boobembed = new Discord.RichEmbed()
+                    .setColor(botconfig.colors.nsfwred)
                     .setTitle(boobjson.model)
                     .setImage(boobimg);
 
-                message.channel.send(boobemb);
+                message.channel.send(boobembed);
 
             } catch(error) { console.log(`${error}`); }
         }

@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const userids = require("../../../tables/userids.json");
-const color = require("../../../tables/colortable.json");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 const adchannels = require("../../../tables/adchtable.json");
 
@@ -8,16 +8,16 @@ module.exports = {
 	config: {
 		name: "advertise",
 		description: "Manda um broadcast para uma lista de servidores.",
-		usage: ".advertise <texto>",
-		aliases: [""]
+        usage: "<texto>",
+        accessibleby: "Bot Owner"
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id != userids.treorai) return;
+        if(message.author.id != botconfig.ownerid) return;
         const sayAd = args.join(" ");
         message.delete().catch(O_o=>{});
         var tosayademb = new Discord.RichEmbed()
             .setDescription(sayAd)
-            .setColor(color.Red)
+            .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()
             .setFooter("Notificação", url.advertiseicon);
 

@@ -1,21 +1,19 @@
 const Discord = require("discord.js");
 const ms = require("ms");
-const userids = require("../../../tables/userids.json");
-const color = require("../../../tables/colortable.json");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
-const adchannels = require("../../../tables/adchtable.json");
 
 module.exports = {
 	config: {
 		name: "mute",
 		description: "Muta alguém conectado em uma sala.",
-		usage: ".mute <mention>",
-		aliases: [""]
+        usage: "<@user> <#tempo><unidade de tempo (s,m,h)>"
 	},
 	run: async (bot, message, args) => {
         let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!tomute) return message.reply("Couldn't find user.");
-        if(tomute.id == userids.treorai) return message.reply("Nem fodendo rs xD");
+        if(tomute.id == idtable.users.treorai) return message.reply("Nem fodendo rs xD");
         let muterole = message.guild.roles.find(`name`, "muted");
         if(!muterole){
             try{
@@ -34,7 +32,7 @@ module.exports = {
         };
 
         let mutetime = args[1];
-        if(!mutetime) return message.reply("Set up time for that");
+        if(!mutetime) return message.reply("Especifique um tempo em s, m, ou h.");
 
         await(tomute.addRole(muterole.id));
         message.channel.send(`<@${tomute.id}> fica xiu aí!`);

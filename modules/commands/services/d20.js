@@ -1,13 +1,13 @@
 const Discord = require("discord.js");
-const userids = require("../../../tables/userids.json");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "d20",
-		description: "Roda um dado. Digitar um argumento para mudar o número de dados.",
-		usage: ".d20 <(opicional) número>",
-		aliases: [""]
+		description: "Roda um dado. Digitar um argumento para mudar o número de faces do dado.",
+		usage: "|| .d20 <#número de faces>"
 	},
 	run: async (bot, message, args) => {
         if(isNaN(args)){message.channel.send(`Não é possível rodar um dado com "${args}" lados...`);

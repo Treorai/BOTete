@@ -1,121 +1,95 @@
-const Discord = require ("discord.js");
-const color = require("../../../tables/colortable.json");
+const Discord = require("discord.js");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "hazyforest",
 		description: "Guia do Labirinto da Neblina.",
-		usage: ".hazyforest",
 		aliases: ["labirintodaneblina"]
 	},
 	run: async (bot, message, args) => {
-        var hazyTitle = new Discord.RichEmbed()
-            .setTitle("Labirinto da Neblina")
+
+        let pages = [
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835444237991939/hazy0.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835452870000641/hazy1.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835459077570581/hazy2.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835464534491166/hazy3.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835472117530624/hazy4.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835476513423370/hazy5.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835483375304714/hazy6.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835489184153600/hazy7.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835494645399552/hazy8.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835501557350416/hazy9.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835505994924033/hazyA.png',
+            'https://cdn.discordapp.com/attachments/550835336750825474/550835513821757450/hazyB.png'
+        ];
+        let page = 1;
+        let tree = [
+            'Árvore de Tom',
+            'Árvore de Tomba',
+            'Árvore de Remi',
+            'Árvore de Rem',
+            'Árvore de Ron',
+            'Árvore de Rover',
+            'Árvore de Mona',
+            'Árvore de Namon',
+            'Árvore de Neo e Aracnídeo',
+            'Árvore de Tito',
+            'Árvore de Pumba',
+            'Árvore de Tete'
+        ]
+
+        const embed = new Discord.RichEmbed()
+            .setTitle("Guia: Labirinto da Neblina")
             .setURL("https://browiki.org/wiki/Labirinto_da_Neblina")
-            .setDescription("Loki aparece na ilha 56 após matar o Dragão Púrpura.\nO MVP pode estar nos andares 28, 38, 49, 50, 55, 59, 60 ou 68.")
-            .setColor(color.PoringPink)
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
+            .setImage(pages[0])
+            .setDescription(tree[0])
+            .setColor(botconfig.colors.poringpink)
+            .setFooter(`Page ${page} of ${pages.length}`)
+            
+        message.channel.send(embed).then(msg => {
+            msg.react('⏮️').then( r => {
+                msg.react('◀️').then( r => {
+                    msg.react('▶️');
+                    
+                    const beginingFilter = (reaction, user) => reaction.emoji.name === '⏮️' && user.id === message.author.id;
+                    const backwardsFilter = (reaction, user) => reaction.emoji.name === '◀️' && user.id === message.author.id;
+                    const forwardsFilter = (reaction, user) => reaction.emoji.name === '▶️' && user.id === message.author.id;
+                    
+                    const begining = msg.createReactionCollector(beginingFilter, { time: 720000 });
+                    const backwards = msg.createReactionCollector(backwardsFilter, { time: 720000 });
+                    const forwards = msg.createReactionCollector(forwardsFilter, { time: 720000 });
+                    
+                    begining.on('collect', r => {
+                        if(page === 1) return;
+                        page = 1;
+                        embed.setImage(pages[page-1]);
+                        embed.setDescription(tree[page-1]);
+                        embed.setFooter(`Page ${page} of ${pages.length}`);
+                        msg.edit(embed);
+                    });
 
-        var hazy0 = new Discord.RichEmbed()
-            .setTitle("Árvore de Tom")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835444237991939/hazy0.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy1 = new Discord.RichEmbed()
-            .setTitle("Árvore de Tomba")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835452870000641/hazy1.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy2 = new Discord.RichEmbed()
-            .setTitle("Árvore de Remi")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835459077570581/hazy2.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy3 = new Discord.RichEmbed()
-            .setTitle("Árvore de Rem")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835464534491166/hazy3.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy4 = new Discord.RichEmbed()
-            .setTitle("Árvore de Ron")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835472117530624/hazy4.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy5 = new Discord.RichEmbed()
-            .setTitle("Árvore de Rover")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835476513423370/hazy5.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy6 = new Discord.RichEmbed()
-            .setTitle("Árvore de Mona")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835483375304714/hazy6.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy7 = new Discord.RichEmbed()
-            .setTitle("Árvore de Namon")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835489184153600/hazy7.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy8 = new Discord.RichEmbed()
-            .setTitle("Árvore de Neo e Aracnídeo")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835494645399552/hazy8.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazy9 = new Discord.RichEmbed()
-            .setTitle("Árvore de Tito")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835501557350416/hazy9.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazyA = new Discord.RichEmbed()
-            .setTitle("Árvore de Pumba")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835505994924033/hazyA.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-        var hazyB = new Discord.RichEmbed()
-            .setTitle("Árvore de Tete")
-            .setColor(color.PoringPink)
-            .setImage('https://cdn.discordapp.com/attachments/550835336750825474/550835513821757450/hazyB.png')
-            .setFooter("BOTete search(Hazy Forest) | by Treorai", url.browikipic);
-
-
-            message.channel.send(hazyTitle).then(msg =>{
-                message.channel.send(hazy0).then(msg =>{
-                    message.channel.send(hazy1).then(msg =>{
-                        message.channel.send(hazy2).then(msg =>{
-                            message.channel.send(hazy3).then(msg =>{
-                                message.channel.send(hazy4).then(msg =>{
-                                    message.channel.send(hazy5).then(msg =>{
-                                        message.channel.send(hazy6).then(msg =>{
-                                            message.channel.send(hazy7).then(msg =>{
-                                                message.channel.send(hazy8).then(msg =>{
-                                                    message.channel.send(hazy9).then(msg =>{
-                                                        message.channel.send(hazyA).then(msg =>{
-                                                            message.channel.send(hazyB);
-                                                        })
-                                                    })
-
-                                                })
-                                            })
-                                        })
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            })
-            ;
+                    backwards.on('collect', r => {
+                        if(page === 1) return;
+                        page--;
+                        embed.setImage(pages[page-1]);
+                        embed.setDescription(tree[page-1]);
+                        embed.setFooter(`Page ${page} of ${pages.length}`);
+                        msg.edit(embed);
+                    });
+                    
+                    forwards.on('collect', r => {
+                        if(page === pages.length) return;
+                        page++;
+                        embed.setImage(pages[page-1]);
+                        embed.setDescription(tree[page-1]);
+                        embed.setFooter(`Page ${page} of ${pages.length}`);
+                        msg.edit(embed);
+                    });
+                });
+            });
+        });
 	}
 }

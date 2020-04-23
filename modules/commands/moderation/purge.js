@@ -1,14 +1,14 @@
 const Discord = require("discord.js");
-const userids = require("../../../tables/userids.json");
-const color = require("../../../tables/colortable.json");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "purge",
 		description: "Apaga mensagens enviadas.",
-		usage: ".purge <número de mensagens>",
-		aliases: [""]
+        usage: "<#número de mensagens>",
+        accessibleby: "Administradores e Moderadores"
 	},
 	run: async (bot, message, args) => {
         if(message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("ADMINISTRATOR")){

@@ -1,16 +1,17 @@
 const Discord = require("discord.js");
-const userids = require("../../../tables/userids.json");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "saych",
-		description: "Dá voz ao bot para uma sala recebida em args[0]",
-		usage: ".saych <ID da sala>';;'<texto>",
-		aliases: [""]
+		description: "Envia texto pelo bot para uma sala recebida em args[0]",
+		usage: "<ID da sala>;;<texto>",
+		accessibleby: "Bot Owner"
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id != userids.treorai) return;
+        if(message.author.id != botconfig.ownerid) return;
 
         let builtstring = args.join(" ");
         let splitarray = builtstring.split(";;");

@@ -1,20 +1,19 @@
-const Discord = require ("discord.js");
-const color = require("../../../tables/colortable.json");
+const Discord = require("discord.js");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
-		name: "investimento",
-		description: "Guia de investimento do feudo.",
-		usage: ".investimento",
-		aliases: [""]
+		name: "investimentorag",
+		description: "Guia de investimento do feudo."
 	},
 	run: async (bot, message, args) => {
-        var chimestryemb = new Discord.RichEmbed()
+        var investembed = new Discord.RichEmbed()
             .setTitle("Investimentos por loot de MVPs")
             .setDescription("É possível trocar itens derrubados por MVPs por 1 Certificado de Investimento dos Gatos, que equivale a 10 Bilhetes de Agradecimento, falando com Namis `/navi malangdo 218/123`")
             .setURL("https://browiki.org/wiki/Portal_do_Abismo#Investindo")
-            .setColor(color.PoringPink)
+            .setColor(botconfig.colors.poringpink)
             .addField("Asas da Rainha Inseto","- 2 Pedaço de Asa da Rainha")
             .addField("Coroa do Rei-mosca", "- 2 Coroa Quebrada")
             .addField("Disseram que Escams de Dragão são duras 01", "- 2 Escamas de Dragão de Fogo")
@@ -36,7 +35,8 @@ module.exports = {
             .addField("Disseram que Escamas de Dragão são duras 02", "- 1 Escama Vermelha-escura")
             .addField("A identidade do olho assustador", "- 2 Desejo das Trevas Escarlate")
             .addField("Se eu pudesse ver...", "- 2 Tolice do Cego")
-            .setFooter("BOTete search(Portal do Abismo) | by Treorai", url.browikipic);
-        message.channel.send(chimestryemb);
+            .setFooter("BOTete search(Portal do Abismo) | by Treorai", url.imgurls.browikipic);
+
+        message.channel.send(investembed);
 	}
 }

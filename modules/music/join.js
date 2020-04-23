@@ -1,13 +1,12 @@
 const Discord = require("discord.js");
-const userids = require("../../tables/userids.json");
-const color = require("../../tables/colortable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "join",
 		description: "Conecta o bot à um canal de voz.",
-		usage: ".join",
 		aliases: ["connect"]
 	},
 	run: async (bot, message, args) => {

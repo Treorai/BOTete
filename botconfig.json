@@ -1,4 +1,14 @@
 {
     "prefix": ".",
-    "activity": ".help"
+    "colors": {
+        "defaultcolor": "B1DA6D",
+        "poringpink": "FFABB8",
+        "nsfwred": "DA6D6D"
+    },
+    "advertiselist": [
+        "533687654890340352",
+        "528805531742371840",
+        "667345839961800705"
+    ],
+    "ownerid": "247043627501486084"
 }

@@ -1,20 +1,19 @@
 const Discord = require ("discord.js");
 const superagent = require("superagent");
-const color = require("../../tables/colortable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-const hensourse = require("./hensoursetable.json");
 const safead = require("./nsfwads.json");
-const userids = require("../../tables/userids.json");
+const hensourse = require("./hensoursetable.json");
 
 module.exports = {
 	config: {
 		name: "hentai",
-		description: "Posta uma otakisse 18+",
-		usage: ".hentai",
+        description: "Posta uma otakisse 18+",
 		aliases: ["ecchi"]
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
+        if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
 
         if(message.channel.nsfw === false){
             message.reply(safead.negated);
@@ -28,10 +27,11 @@ module.exports = {
 
                 const randomnumber = Math.floor(Math.random() * allowed.length)
                 const henembed = new Discord.RichEmbed()
-                    .setColor(color.Red)
+                    .setColor(botconfig.colors.nsfwred)
                     .setTitle(allowed[randomnumber].data.title)
                     .setDescription("Author: " + allowed[randomnumber].data.author)
                     .setImage(allowed[randomnumber].data.url)
+                    .setTimestamp()
                     .setFooter(allowed[randomnumber].data.subreddit, url.redditicon);
                 
                 message.channel.send(henembed);

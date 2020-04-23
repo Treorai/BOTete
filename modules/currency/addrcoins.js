@@ -1,8 +1,7 @@
 const Discord = require ("discord.js");
-const fs = require("fs");
-const color = require("../../tables/colortable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-const userids = require("../../tables/userids.json");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 const Money = require("../../models/money.js");
@@ -11,17 +10,20 @@ module.exports = {
 	config: {
 		name: "addrcoins",
 		description: "Deposita Razzor Coins.",
-		usage: ".addrcoins <@mensão> <#valor>",
-		aliases: [""]
+        usage: "<@user> <#valor>",
+        acessibleby: "Razzor"
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id !== userids.razzor) { return message.reply("Apenas o banco central pode depositar Razzor Coins."); };
+
+        const bankownerid = idtable.users.razzor;
+        if(message.author.id !==  bankownerid) { return message.reply("Apenas o banco central pode depositar Razzor Coins."); };
 
         let rcembed = new Discord.RichEmbed()
             .setDescription("Depósito efetuado.")
-            .setColor(color.LightGreen)
+            .setColor(botconfig.colors.defaultcolor)
+            .setTimestamp()
             .setAuthor('Recibo', message.author.displayAvatarURL)
-            .setFooter("BOTete Bank(razzorcoins) | by Treorai", url.BOTetePP);
+            .setFooter("BOTete Bank", bot.user.displayAvatarURL);
 
         let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!target) { return message.channel.send("Especifique para quem você quer transferir Razzor Coins.\nUso correto: `.addrcoins <@destinatário> <#valor>`"); }

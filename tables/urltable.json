@@ -1,17 +1,23 @@
 {
-    "BOTinviteKey": "https://discordapp.com/oauth2/authorize?client_id=547166810001113119&scope=bot&permissions=523328",
-    "browikipic": "https://cdn.discordapp.com/attachments/550835295143198722/550841922416279553/logo_brWiki2015.png",
-    "BOTetePP": "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png",
-    "Gioiapic": "https://cdn.discordapp.com/attachments/550835295143198722/550838308603953188/Gioia_Art.png",
-    "grfcubeicon": "https://cdn.discordapp.com/attachments/550839446237609995/550841637358534657/cube.png",
-    "TTGRF": "https://drive.google.com/open?id=1b39XKWU96psq8ny32ubGDXt-lsWiYsOP",
-    "graymap": "https://drive.google.com/open?id=1_4c8QndQ2i7t1DyDOGZ9gqD9oi8R8gWX",
-    "GRFEditor": "http://www.mediafire.com/file/aflylbhblrzpz0h/GRF+Editor+v1.8.2.4.zip",
-    "ttgrfnewcostume": "https://cdn.discordapp.com/attachments/550839446237609995/561256263682490387/Roupas_jRO_Full.grf",
-    "ttgrfchangelog": "https://cdn.discordapp.com/attachments/550839446237609995/561256306904662016/changelog.txt",
-    "ttgrfabout": "https://cdn.discordapp.com/attachments/550839446237609995/561256319701614613/readme.txt",
-    "redditicon": "https://cdn.discordapp.com/attachments/550835295143198722/552374945020248066/redditicon.png",
-    "clockicon": "https://cdn.discordapp.com/attachments/550835295143198722/552660080395550731/orangetimer.png",
-    "advertiseicon": "https://cdn.discordapp.com/attachments/550835295143198722/558484072590999578/icon-svg.png",
-    "githuburl": "https://github.com/Treorai/BOTete"
+    "botassets": {
+        "BOTinviteKey": "https://discordapp.com/oauth2/authorize?client_id=547166810001113119&scope=bot&permissions=523328",
+        "BOTetePP": "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png",
+        "githuburl": "https://github.com/Treorai/BOTete"
+    },
+    "imgurls": {
+        "browikipic": "https://cdn.discordapp.com/attachments/550835295143198722/550841922416279553/logo_brWiki2015.png",
+        "Gioiapic": "https://cdn.discordapp.com/attachments/550835295143198722/550838308603953188/Gioia_Art.png",
+        "clockicon": "https://cdn.discordapp.com/attachments/550835295143198722/552660080395550731/orangetimer.png",
+        "redditicon": "https://cdn.discordapp.com/attachments/550835295143198722/552374945020248066/redditicon.png",
+        "advertiseicon": "https://cdn.discordapp.com/attachments/550835295143198722/558484072590999578/icon-svg.png"
+    },
+    "grfassets": {
+        "TTGRF": "https://drive.google.com/open?id=1b39XKWU96psq8ny32ubGDXt-lsWiYsOP",
+        "graymap": "https://drive.google.com/open?id=1_4c8QndQ2i7t1DyDOGZ9gqD9oi8R8gWX",
+        "GRFEditor": "http://www.mediafire.com/file/aflylbhblrzpz0h/GRF+Editor+v1.8.2.4.zip",
+        "ttgrfnewcostume": "https://cdn.discordapp.com/attachments/550839446237609995/561256263682490387/Roupas_jRO_Full.grf",
+        "ttgrfchangelog": "https://cdn.discordapp.com/attachments/550839446237609995/561256306904662016/changelog.txt",
+        "ttgrfabout": "https://cdn.discordapp.com/attachments/550839446237609995/561256319701614613/readme.txt",
+        "grfcubeicon": "https://cdn.discordapp.com/attachments/550839446237609995/550841637358534657/cube.png"
+    }
 }

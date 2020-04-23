@@ -1,26 +1,27 @@
-const Discord = require ("discord.js");
-const color = require("../../../tables/colortable.json");
+const Discord = require("discord.js");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "grf",
-		description: "Página de downloads da TTGRF.",
-		usage: ".grf",
-		aliases: ["ttgrf"]
+		description: "Página de downloads das GRFs.",
+		aliases: ["grfs", "ttgrf"]
 	},
 	run: async (bot, message, args) => {
-        var grfProvider = new Discord.RichEmbed()
-            .setTitle("GRF Link Utility Page")
-            .setDescription("O projeto TTGRF foi descontinuado. Entretanto, aqui está a última versão funcional:\nO uso de GRFs é passível de punição pelas regras de conduta do jogo. Use por sua conta e risco.")
-            .setColor(color.DarkBlue)
-            .addField("TTGRF v6.0", url.TTGRF, false)
-            .addField("Chão cinza (graymap)", url.graymap, false)
-            .addField("Roupas jRO", url.ttgrfnewcostume, false)
-            .addField("GRF Editor", url.GRFEditor, false)
-            .addField("Changelog", url.ttgrfchangelog, false)
-            .addField("About", url.ttgrfabout, false)
-            .setFooter("GRFs by Treorai | Latest version: 6.0", url.grfcubeicon);
-        message.channel.send(grfProvider);
+        var grfembed = new Discord.RichEmbed()
+            .setTitle("Página de Downloads de GRFs")
+            .setDescription("O projeto TTGRF foi descontinuado em Julho de 2019. A última versão funcional (v6.0) ainda está disponível para download e uso, mas não receberá mais suporte. As futuras atualizações no bRO podem fazer a(s) GRF(s) não fucionarem.\nAlém disso, o uso de GRFs é passível de punição pelas regras de conduta do jogo. Use por sua conta e risco.")
+            .setColor(botconfig.colors.defaultcolor)
+            .addField("TTGRF v6.0", url.grfassets.TTGRF, false)
+            .addField("Chão cinza (graymap)", url.grfassets.graymap, false)
+            .addField("Roupas jRO", url.grfassets.ttgrfnewcostume, false)
+            .addField("GRF Editor", url.grfassets.GRFEditor, false)
+            .addField("Changelog", url.grfassets.ttgrfchangelog, false)
+            .addField("About", url.grfassets.ttgrfabout, false)
+            .setFooter("GRFs by Treorai | Latest TTGRF version: 6.0", url.grfassets.grfcubeicon);
+
+        message.channel.send(grfembed);
 	}
 }

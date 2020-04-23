@@ -1,19 +1,17 @@
 const Discord = require ("discord.js");
 const superagent = require("superagent");
-const color = require("../../../tables/colortable.json");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 const sourse = require("./waifutable.json");
-const userids = require("../../../tables/userids.json");
 
 module.exports = {
 	config: {
 		name: "waifu",
-		description: "Posta uma imagem otaka aleatória.",
-		usage: ".waifu",
-		aliases: ["yourwaifu"]
+		description: "Posta uma imagem otaka aleatória."
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
+        if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
 
         try{
             const randomnumber = Math.floor(Math.random() * sourse.length);
@@ -22,10 +20,10 @@ module.exports = {
                 .get(sourse[randomnumber]);
 
             let waifuemb = new Discord.RichEmbed()
-                .setColor(color.Verdiagua)
+                .setColor(botconfig.colors.defaultcolor)
                 .setImage(body.link)
                 .setTimestamp()
-                .setFooter('BOTete service(superagent) | by Treorai');
+                .setFooter('BOTete | Superagente');
             message.channel.send(waifuemb);
         
         } catch(error) { console.error(`${error}`); }

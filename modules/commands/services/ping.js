@@ -1,16 +1,15 @@
 const Discord = require("discord.js");
-const userids = require("../../../tables/userids.json");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
+const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "ping",
-		description: "Calcula a latência.",
-		usage: ".ping",
-		aliases: [""]
+		description: "Calcula a latência."
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
         const m = await message.channel.send("Pong!");
-        m.edit(`Latency is ${m.createdTimestamp - message.createdTimestamp}ms right now. API Latency is ${Math.round(bot.ping)}ms`);
+        m.edit(`Client Ping: ${m.createdTimestamp - message.createdTimestamp}ms. API ping: ${Math.round(bot.ping)}ms`);
 	}
 }

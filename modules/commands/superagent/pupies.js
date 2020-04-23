@@ -1,19 +1,17 @@
 const Discord = require ("discord.js");
 const superagent = require("superagent");
-const color = require("../../../tables/colortable.json");
+const botconfig = require("../../../botconfig.json");
+const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
 const sourse = require("./pupiestable.json");
-const userids = require("../../../tables/userids.json");
 
 module.exports = {
 	config: {
 		name: "pupies",
-		description: "Posta uma foto de bichinho aleatória.",
-		usage: ".pupies",
-		aliases: [""]
+		description: "Posta uma foto de bichinho aleatória com uma curiosidade."
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
+        if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
 
         try{
             const randomnumber = Math.floor(Math.random() * sourse.length);
@@ -27,11 +25,11 @@ module.exports = {
                 let bodytxt = body.fact;
 
             let pupiemb = new Discord.RichEmbed()
-                .setColor(color.Verdiagua)
+                .setColor(botconfig.colors.defaultcolor)
                 .setDescription(bodytxt)
                 .setImage(bodyimg)
                 .setTimestamp()
-                .setFooter('BOTete service(superagent) | by Treorai');
+                .setFooter('BOTete | Superagente');
             message.channel.send(pupiemb);
 
         } catch(error) { console.error(`${error}`); }

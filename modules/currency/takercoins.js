@@ -1,8 +1,7 @@
 const Discord = require ("discord.js");
-const fs = require("fs");
-const color = require("../../tables/colortable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-const userids = require("../../tables/userids.json");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
 const Money = require("../../models/money.js");
@@ -11,17 +10,16 @@ module.exports = {
 	config: {
 		name: "takercoins",
 		description: "Cobra Razzor Coins.",
-		usage: ".takercoins <@mensão>",
-		aliases: [""]
+		usage: "<@user> <#valor>"
 	},
 	run: async (bot, message, args) => {
         if(message.author.id !== userids.razzor) { return message.reply("Apenas o gerente pode cobrar Razzor Coins."); };
     
         let rcembed = new Discord.RichEmbed()
             .setDescription("Cobrança efetuada.")
-            .setColor(color.LightGreen)
+            .setColor(botconfig.colors.defaultcolor)
             .setAuthor('Recibo', message.author.displayAvatarURL)
-            .setFooter("BOTete Bank(razzorcoins)", url.BOTetePP);
+            .setFooter("BOTete Bank", bot.user.displayAvatarURL);
     
         let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!target) { return message.channel.send("Especifique de quem você quer cobrar Razzor Coins.\nUso correto: `.takercoins <@destinatário> <#valor>`"); }

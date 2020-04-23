@@ -1,19 +1,18 @@
 const Discord = require ("discord.js");
 const superagent = require("superagent");
-const color = require("../../tables/colortable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 const safead = require("./nsfwads.json");
-const userids = require("../../tables/userids.json");
 
 module.exports = {
 	config: {
 		name: "butts",
-		description: "Mostra uma raba.",
-		usage: "",
-		aliases: ["butt", "bunda", "bundas", "raba"]
+        description: "Mostra uma raba.",
+		aliases: ["bunda", "bundas", "raba"]
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id==userids.BOTete) {message.delete().catch(err=>{});}
+        if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
 
         if(message.channel.nsfw === false){
             message.reply(safead.negated);
@@ -27,12 +26,12 @@ module.exports = {
 
                 if(!{body}) return message.channel.send("[Error] Source offline.");
 
-                let buttemb = new Discord.RichEmbed()
-                    .setColor(color.Red)
+                let buttembed = new Discord.RichEmbed()
+                    .setColor(botconfig.colors.nsfwred)
                     .setTitle(buttjson.model)
                     .setImage(buttimg);
 
-                message.channel.send(buttemb);
+                message.channel.send(buttembed);
 
             } catch(error) { console.error(`${error}`); }
         }
