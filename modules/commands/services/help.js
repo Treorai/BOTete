@@ -18,8 +18,9 @@ module.exports = {
             .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL);
 
         if(!args[0]) {
+            const categories;
             let load = dirs =>{
-                const categories = readdirSync(`./modules/${dirs}/`).filter(d => d.endsWith('.js'));
+                categories = readdirSync(`./modules/${dirs}/`).filter(d => d.endsWith('.js'));
             };
             [
                 "commands/moderation",
@@ -31,7 +32,7 @@ module.exports = {
                 "nsfw"
             ].forEach(x => load(x));
 
-            console.log(dirs);
+            console.log(categories);
 
 
             /*
