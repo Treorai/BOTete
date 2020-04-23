@@ -19,7 +19,7 @@ module.exports = {
 
         if(!args[0]) {
             let load = dirs =>{
-                categories = readdirSync(`./modules/${dirs}/`).filter(d => d.endsWith('.js'));
+                const categories = readdirSync(`./modules/${dirs}/`).filter(d => d.endsWith('.js'));
             };
             [
                 "commands/moderation",
@@ -31,7 +31,7 @@ module.exports = {
                 "nsfw"
             ].forEach(x => load(x));
 
-            console.log(categories);
+            console.log(load);
 
 
             /*
