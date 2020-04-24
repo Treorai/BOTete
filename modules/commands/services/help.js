@@ -23,12 +23,10 @@ module.exports = {
         if(!args[0]) {
             embed.setDescription("Estes são os comandos disponíveis:");
             embed.setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
-            console.log(bot.commands);
 
             const cmdlist = bot.commands.filter(c => c.config.accessibleby !== "Bot Owner");
-            console.log(cmdlist);
 
-            categories.forEach(classes => {
+            classes.forEach(classes => {
                 const dir = cmdlist.filter(c => c.config.class === classes);
                 const capitalise = classes.slice(0, 1).toUpperCase() + classes.slice(1);
                 try {
