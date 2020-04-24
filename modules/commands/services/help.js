@@ -37,17 +37,20 @@ module.exports = {
             });
 
             return message.channel.send(embed)
-        } else { return //
-            let command = bot.commands.get(bot.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase())
-            if(!command) return message.channel.send(embed.setTitle("Invalid Command.").setDescription(`Do \`${prefix}help\` for the list of the commands.`))
-            command = command.config
+        } else {
+            let command = bot.commands.get(bot.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase());
+            if(!command) return message.channel.send(embed.setTitle("Comando não encontrado.").setDescription(`Do \`${prefix}help\` for the list of the commands.`));
+            command = command.config;
 
             embed.setDescription(stripIndents`The bot's prefix is: \`${prefix}\`\n
-            **Command:** ${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
-            **Description:** ${command.description || "No Description provided."}
-            **Usage:** ${command.usage ? `\`${prefix}${command.name} ${command.usage}\`` : "No Usage"}
-            **Accessible by:** ${command.accessableby || "Members"}
-            **Aliases:** ${command.aliases ? command.aliases.join(", ") : "None."}`)
+            **Comando:** ${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
+            **Descrição:** ${command.description || "No Description provided."}
+            **Uso correto:** ${command.usage ? `\`${prefix}${command.name} ${command.usage}\`` : `\`${prefix}${command.name} ${command.usage}\``}
+            **Permissão:** ${command.accessableby || "Todos"}`)
+
+            if(command.aliases){
+                embed.addField("Outras formas do comando:", command.aliases.join(", "))
+            }
 
             return message.channel.send(embed)
         }
