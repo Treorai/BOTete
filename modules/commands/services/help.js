@@ -39,21 +39,20 @@ module.exports = {
             return message.channel.send(embed)
         } else {
             let command = bot.commands.get(bot.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase());
-            if(!command) return message.channel.send(embed.setTitle("Comando não encontrado.").setDescription(`Do \`${prefix}help\` for the list of the commands.`));
+            if(!command) return message.channel.send(embed.setTitle("Comando não encontrado.").setDescription(`Do \`${botconfig.prefix}help\` for the list of the commands.`));
             command = command.config;
 
-            embed.setDescription(stripIndents`The bot's prefix is: \`${prefix}\`\n
+            embed.setDescription(stripIndents`The bot's prefix is: \`${botconfig.prefix}\`\n
             **Comando:** ${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
             **Descrição:** ${command.description || "No Description provided."}
-            **Uso correto:** ${command.usage ? `\`${prefix}${command.name} ${command.usage}\`` : `\`${prefix}${command.name} ${command.usage}\``}
+            **Uso correto:** ${command.usage ? `\`${botconfig.prefix}${command.name} ${command.usage}\`` : `\`${botconfig.prefix}${command.name} ${command.usage}\``}
             **Permissão:** ${command.accessableby || "Todos"}`)
 
             if(command.aliases){
                 embed.addField("Outras formas do comando:", command.aliases.join(", "))
             }
 
-            return message.channel.send(embed)
+            return message.channel.send(embed);
         }
-		
 	}
 }
