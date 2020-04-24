@@ -31,7 +31,7 @@ module.exports = {
                     .setTitle(allowed[randomnumber].data.title)
                     .setDescription("Author: " + allowed[randomnumber].data.author)
                     .setImage(allowed[randomnumber].data.url)
-                    .setFooter(allowed[randomnumber].data.subreddit, url.imgurls.redditicon);
+                    .setFooter(`© ${message.guild.me.displayName} | ${allowed[randomnumber].data.subreddit}`, url.imgurls.redditicon);
                 
                 message.channel.send(emb34);
                 

@@ -30,7 +30,8 @@ module.exports = {
                 let buttembed = new Discord.RichEmbed()
                     .setColor(botconfig.colors.nsfwred)
                     .setTitle(buttjson.model)
-                    .setImage(buttimg);
+                    .setImage(buttimg)
+                    .setFooter(`© ${message.guild.me.displayName}`);
 
                 message.channel.send(buttembed);
 

@@ -20,8 +20,8 @@ module.exports = {
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()
             .setAuthor('Recibo', message.author.displayAvatarURL)
-            .setFooter(`© ${message.guild.me.displayName} | run:bank(rcoins)`, bot.user.displayAvatarURL);
-    
+            .setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
+            
         let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!target) { return message.channel.send("Especifique para quem você quer transferir Razzor Coins.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }
         if(!args[1]) { return message.channel.send("Especifique o valor a ser transferido.\nUso correto: `.givercoins <@destinatário> <#valor>`"); }

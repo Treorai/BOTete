@@ -11,14 +11,14 @@ module.exports = {
 		name: "checkrcoins",
         class: "Banco",
 		description: "Verifica o saldo de Razzor Coins.",
-        usage: "|| .checkrcoins <@user>",
+        usage: "[@user]",
 		aliases: ["myrcoins"]
 	},
 	run: async (bot, message, args) => {
         let rcembed = new Discord.RichEmbed()
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()
-            .setFooter(`© ${message.guild.me.displayName} | run:bank(rcoins)`, bot.user.displayAvatarURL);
+            .setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
     
         let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!target){

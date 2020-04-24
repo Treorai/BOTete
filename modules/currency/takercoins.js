@@ -20,7 +20,7 @@ module.exports = {
             .setDescription("Cobrança efetuada.")
             .setColor(botconfig.colors.defaultcolor)
             .setAuthor('Recibo', message.author.displayAvatarURL)
-            .setFooter(`© ${message.guild.me.displayName} | run:bank(rcoins)`, bot.user.displayAvatarURL);
+            .setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
     
         let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!target) { return message.channel.send("Especifique de quem você quer cobrar Razzor Coins.\nUso correto: `.takercoins <@destinatário> <#valor>`"); }

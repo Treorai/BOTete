@@ -8,7 +8,7 @@ module.exports = {
 		name: "sort",
         class: "Serviço",
 		description: "Sorteia um dos argumentos.",
-		usage: "<arg1> <arg2> <arg 3> ... <arg n>",
+		usage: "<arg1> <arg2> [arg 3] ... [arg n]",
 		aliases: ["sortear", "sorteio"]
 	},
 	run: async (bot, message, args) => {

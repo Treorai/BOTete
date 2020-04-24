@@ -17,7 +17,7 @@ module.exports = {
             .addField("Comandos:", "`.checkrcoins` Confere o saldo de Razzor Coins.\n`.givercoins <@> <#>` Dá ao <@ mensionado> <# valor> que será descontados do seu saldo.")
 			.addField("Reservado à Gerência:", "`.takercoins <@> <#>` Tira do <@ mensionado> <# valor>.\n`.addrcoins <@> <#>` Deposita para <@ mensionado> <# valor>.\n")
 			.addField("Loja:", "`.rstore` Abre a loja de rcoins.")
-			.setFooter(`© ${message.guild.me.displayName} | run:bank(rcoins)`, bot.users.displayAvatarURL);
+			.setFooter(`© ${message.guild.me.displayName} Bank`, bot.users.displayAvatarURL);
         message.channel.send(rchelp);
 	}
 }

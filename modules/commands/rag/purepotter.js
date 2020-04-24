@@ -8,7 +8,7 @@ module.exports = {
 		name: "purepotter",
         class: "Ragnarok Online",
 		description: "Guia de Alquimia, Culinária e Farmácia",
-		usage: "|| .purepotter <opção>"
+		usage: "[comando]"
 	},
 	run: async (bot, message, args) => {
         //embedbuilds:
@@ -19,7 +19,7 @@ module.exports = {
             .addField("Guia de Alquimia:", "`.purepotter alquimia`")
             .addField("Guia de Culinária:", "`.purepotter culinária`")
             .addField("Guia de Farmácia", "`.purepotter farmácia`")
-            .setFooter(`© ${message.guild.me.displayName} | run:search(Guia de Pure Potter)`, bot.user.displayAvatarURL);
+            .setFooter(`© ${message.guild.me.displayName} | Guia de Pure Potter`, bot.user.displayAvatarURL);
 
         var chimestryembed = new Discord.RichEmbed()
             .setTitle("Alquimia")
@@ -37,7 +37,7 @@ module.exports = {
             .addField("8.Slim Branca: `Dificuldade -10%`", "- 1 Tubo de Ensaio\n- 1 Poção Branca\n- 1 Areia Estelar de Bruxa")
             .addField("Criação Espiritual de Poções II:","```Grupo com Super Aprendiz\n- 200 Vasilha de Mistura\n- 200 Poção Branca\n- 200 Tubo de Ensaio\n- 200 Areia Estelar de Bruxa```")
             .addField("Criação Espiritual de Poções III:","```Grupo: Taekwon\n- 200 Vasilha de Mistura\n- 200 Garrafa Vazia\n- 100 Tubo de Ensaio\n- 500 Caule\n- 500 Esporo Venenoso\n- 50 Coração Imortal\n- 50 Tecido\n- 50 Álcool```")
-            .setFooter(`© ${message.guild.me.displayName} | run:search(AM_PHARMACY)`, url.imgurls.browikipic);
+            .setFooter(`© ${message.guild.me.displayName} | AM_PHARMACY`, url.imgurls.browikipic);
 
         var cookembed = new Discord.RichEmbed()
             .setTitle("Farmácia")
@@ -50,7 +50,7 @@ module.exports = {
             .addField("Coquetel Uivante: `+20 INT`", "- 1 Vasilha Melange\n- 3 Sangue de Lobo\n- 2 Gelo")
             .addField("Chá Gelado de Siroma: `+20 DES`","- 1 Vasilha Melange\n- 1 Fruta de Comodo\n- 3 Raspadinha\n- 2 Gelo Cristalino")
             .addField("Macarrão com Petite: `+20 SOR`","- 1 Vasilha Melange\n- 2 Rabo de Petite\n- 1 Macarrão Fino\n- 1 Molho Especial")
-            .setFooter(`© ${message.guild.me.displayName} | run:search(GN_MIX_COOKING)`, url.imgurls.browikipic);
+            .setFooter(`© ${message.guild.me.displayName} | GN_MIX_COOKING`, url.imgurls.browikipic);
 
         var pharmacyembed = new Discord.RichEmbed()
             .setTitle("Farmácia")
@@ -63,7 +63,7 @@ module.exports = {
             .addField("Poção Grande de SP: Aumentar sua Energia", "- 10 Garrafa Vazia\n- 10 Geleia Real\n- 15 Erva Azul\n- 1 Molho Doce")
             .addField("Semente de Planta Selvagem: Genética Vegetal", "- 10 Fruta Espinhosa")
             .addField("Semente de Planta Sanguessuga: Genética Vegetal", "- 10 Raíz de Planta Carnívora")
-            .setFooter(`© ${message.guild.me.displayName} | run:search(GN_S_PHARMACY)`, url.imgurls.browikipic);
+            .setFooter(`© ${message.guild.me.displayName} | GN_S_PHARMACY`, url.imgurls.browikipic);
         
         //code:
         if(args == "alquimia"){

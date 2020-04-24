@@ -19,7 +19,7 @@ module.exports = {
             .addField("Chow-chow", "Antenas de Inseto (4)\nCoração Imortal (5)\nBandagem Estragada (1)\nAmuleto de Orc (3)\nOsso (3)", true)
             .addField("Labrador", "Espólio (2)\nCasca (3)\nCasca Escamada (3)\nCanino Venenoso (2)\nMuco Pegajoso (5)", true)
             .addField("Elephantine", "Pom Spider (3)\nAngra Mantis (4)\nChapin (5)\nLittle Fatum (6)\nMiming (7)", true)
-            .setFooter(`© ${message.guild.me.displayName} | run:search(Mora)`, url.imgurls.browikipic);
+            .setFooter(`© ${message.guild.me.displayName} | Mora`, url.imgurls.browikipic);
         
         message.channel.send(moraDaily);
 	}

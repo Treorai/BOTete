@@ -42,15 +42,11 @@ module.exports = {
             if(!command) return message.channel.send(embed.setTitle("Comando não encontrado.").setDescription(`Do \`${botconfig.prefix}help\` for the list of the commands.`));
             command = command.config;
 
-            embed.setDescription(stripIndents`The bot's prefix is: \`${botconfig.prefix}\`\n
+            embed.setDescription(stripIndents` \`<argumento obrigatório>\` \`[argumento opicional]\`\n\`#\`= número \`@\`= marcação \n
             **Comando:** ${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
             **Descrição:** ${command.description || "No Description provided."}
             **Uso correto:** ${command.usage ? `\`${botconfig.prefix}${command.name} ${command.usage}\`` : `\`${botconfig.prefix}${command.name} ${command.usage}\``}
-            **Permissão:** ${command.accessableby || "Todos"}`)
-
-            if(command.aliases){
-                embed.addField("Outras formas do comando:", command.aliases.join(", "))
-            }
+            **Permissão:** ${command.accessableby || "Todos"}`);
 
             return message.channel.send(embed);
         }

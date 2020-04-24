@@ -30,7 +30,8 @@ module.exports = {
                 let boobembed = new Discord.RichEmbed()
                     .setColor(botconfig.colors.nsfwred)
                     .setTitle(boobjson.model)
-                    .setImage(boobimg);
+                    .setImage(boobimg)
+                    .setFooter(`© ${message.guild.me.displayName}`);
 
                 message.channel.send(boobembed);
 

@@ -24,7 +24,7 @@ module.exports = {
                 .setColor(botconfig.colors.defaultcolor)
                 .setImage(body.link)
                 .setTimestamp()
-                .setFooter(`© ${message.guild.me.displayName} | run:fetch(superagent)`);
+                .setFooter(`© ${message.guild.me.displayName}`);
             message.channel.send(waifuemb);
         
         } catch(error) { console.error(`${error}`); }

@@ -19,7 +19,7 @@ module.exports = {
             .setDescription(sayAd)
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()
-            .setFooter(`© ${message.guild.me.displayName} | run:notify()`, url.advertiseicon);
+            .setFooter(`© ${message.guild.me.displayName} | Notificação`, url.advertiseicon);
 
         botconfig.advertiselist.forEach((channelid, index) => {
             bot.channels.get(channelid).send(tosayademb);

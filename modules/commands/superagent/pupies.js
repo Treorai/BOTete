@@ -30,7 +30,7 @@ module.exports = {
                 .setDescription(bodytxt)
                 .setImage(bodyimg)
                 .setTimestamp()
-                .setFooter(`© ${message.guild.me.displayName} | run:fetch(superagent)`);
+                .setFooter(`© ${message.guild.me.displayName}`);
             message.channel.send(pupiemb);
 
         } catch(error) { console.error(`${error}`); }
