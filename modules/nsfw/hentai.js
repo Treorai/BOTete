@@ -33,7 +33,7 @@ module.exports = {
                     .setDescription("Author: " + allowed[randomnumber].data.author)
                     .setImage(allowed[randomnumber].data.url)
                     .setTimestamp()
-                    .setFooter(allowed[randomnumber].data.subreddit, url.redditicon);
+                    .setFooter(allowed[randomnumber].data.subreddit, url.imgurls.redditicon);
                 
                 message.channel.send(henembed);
 

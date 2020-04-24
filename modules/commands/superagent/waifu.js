@@ -24,7 +24,7 @@ module.exports = {
                 .setColor(botconfig.colors.defaultcolor)
                 .setImage(body.link)
                 .setTimestamp()
-                .setFooter('BOTete | Superagente');
+                .setFooter(`© ${message.guild.me.displayName} | run:fetch(superagent)`);
             message.channel.send(waifuemb);
         
         } catch(error) { console.error(`${error}`); }

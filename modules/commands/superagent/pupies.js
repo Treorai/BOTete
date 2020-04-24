@@ -30,7 +30,7 @@ module.exports = {
                 .setDescription(bodytxt)
                 .setImage(bodyimg)
                 .setTimestamp()
-                .setFooter('BOTete | Superagente');
+                .setFooter(`© ${message.guild.me.displayName} | run:fetch(superagent)`);
             message.channel.send(pupiemb);
 
         } catch(error) { console.error(`${error}`); }

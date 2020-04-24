@@ -18,7 +18,7 @@ module.exports = {
         let rcembed = new Discord.RichEmbed()
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()
-            .setFooter("BOTete Bank", bot.user.displayAvatarURL);
+            .setFooter(`© ${message.guild.me.displayName} | run:bank(rcoins)`, bot.user.displayAvatarURL);
     
         let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!target){

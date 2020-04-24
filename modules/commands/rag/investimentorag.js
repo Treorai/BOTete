@@ -36,7 +36,7 @@ module.exports = {
             .addField("Disseram que Escamas de Dragão são duras 02", "- 1 Escama Vermelha-escura")
             .addField("A identidade do olho assustador", "- 2 Desejo das Trevas Escarlate")
             .addField("Se eu pudesse ver...", "- 2 Tolice do Cego")
-            .setFooter("BOTete search(Portal do Abismo) | by Treorai", url.imgurls.browikipic);
+            .setFooter(`© ${message.guild.me.displayName} | run:search(Portal do Abismo)`, url.imgurls.browikipic);
 
         message.channel.send(investembed);
 	}

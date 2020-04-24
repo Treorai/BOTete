@@ -18,7 +18,7 @@ module.exports = {
             .addField("Wave 1", "Misstress\nBapho\nGTB\nDracula\nDoppel\nEddga\nMoonlight\nFreeoni\nTanee\nMaya\nOsiris\nOrc Hero\nOrcs Lord", true)
             .addField("Wave 2", "Boitata\nStormy Knight\nDrake\nPharaoh\nHatii\nWhite Lady\nLeak\nKtullanux\nThanatos\nDark Lord\nLoD", true)
             .addField("Wave 3", "Atroce\nBeelzebub\nDetale\nDaehyon\nGT\nKhades\nIfrit\nKiel\nGloom\nRSX\nScaraba\nSerpente\nRandgris", true)
-            .setFooter("BOTete search(Laboratório Central) | by Treorai", url.imgurls.browikipic);
+            .setFooter(`© ${message.guild.me.displayName} | run:search(Laboratório Central)`, url.imgurls.browikipic);
 
         if(args.length == 0) {
             return message.channel.send(clabembed);
@@ -32,7 +32,7 @@ module.exports = {
                 .setTitle("Conversão Dec - Bin")
                 .setDescription(binvar)
                 .addField("Interpretação:", "1=Ligado, 0=Desligado.\nO número mais à direita equivale à placa mais à direita.\nAs placas da esquerda que não aparecem na resposta são zeros.")
-                .setFooter("BOTete calculator(dec-bin) | by Treorai", bot.user.displayAvatarURL);
+                .setFooter(`© ${message.guild.me.displayName} | run:calc(dec-bin)`, bot.user.displayAvatarURL);
 
             message.channel.send(decbinembed);
         }

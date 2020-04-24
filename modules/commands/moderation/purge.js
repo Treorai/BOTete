@@ -6,7 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "purge",
-        class: "Moderação",
+        class: "Serviço",
 		description: "Apaga mensagens enviadas.",
         usage: "<#número de mensagens>",
         accessibleby: "Administradores e Moderadores"

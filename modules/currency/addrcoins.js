@@ -24,7 +24,7 @@ module.exports = {
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()
             .setAuthor('Recibo', message.author.displayAvatarURL)
-            .setFooter("BOTete Bank", bot.user.displayAvatarURL);
+            .setFooter(`© ${message.guild.me.displayName} | run:bank(rcoins)`, bot.user.displayAvatarURL);
 
         let target = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
         if(!target) { return message.channel.send("Especifique para quem você quer transferir Razzor Coins.\nUso correto: `.addrcoins <@destinatário> <#valor>`"); }

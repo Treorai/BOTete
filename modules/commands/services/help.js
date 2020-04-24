@@ -32,7 +32,7 @@ module.exports = {
                 try {
                     embed.addField(`❯ ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
                 } catch(e) {
-                    console.log(e)
+                    console.log(e);
                 }
             });
 

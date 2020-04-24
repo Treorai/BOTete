@@ -15,7 +15,7 @@ module.exports = {
             .setTitle("Guia do Sussurro Sombrio")
             .setColor(botconfig.colors.poringpink)
             .setImage('https://cdn.discordapp.com/attachments/555512485583650831/693882819558113401/JW.png')
-            .setFooter("BOTete search(Sussurro Sombrio) | by Treorai", url.imgurls.browikipic);
+            .setFooter(`© ${message.guild.me.displayName} | run:search(Sussurro Sombrio)`, url.imgurls.browikipic);
 		
 		message.channel.send(jwembed);
 	}

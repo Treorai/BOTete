@@ -18,7 +18,7 @@ module.exports = {
             .addField("Encantamento:", "S1\nS2\nS3\nS4\nF", true)
             .addField("Manas: (C / S)", "3 / 1\n10 / 2\n20 / 4\n40 / 7\n50 / 10", true)
             .addField("Chace", "100%\n82.5%\n66%\n55%\n47%", true)
-            .setFooter("BOTete search(Botas Temporais) | by Treorai", url.imgurls.browikipic);
+            .setFooter(`© ${message.guild.me.displayName} | run:build(temporalboots)`, url.imgurls.browikipic);
         
         message.channel.send(tbootsembed);
 	}
