@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "ping",
+        class: "Serviço",
 		description: "Calcula a latência."
 	},
 	run: async (bot, message, args) => {

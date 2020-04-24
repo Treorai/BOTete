@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "d20",
+        class: "Serviço",
 		description: "Roda um dado. Digitar um argumento para mudar o número de faces do dado.",
 		usage: "|| .d20 <#número de faces>"
 	},

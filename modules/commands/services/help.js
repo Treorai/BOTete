@@ -4,10 +4,12 @@ const { stripIndents } = require("common-tags");
 const botconfig = require("../../../botconfig.json");
 const idtable = require("../../../tables/idtable.json");
 const url = require("../../../tables/urltable.json");
+const classes = require("../../../tables/classes.json");
 
 module.exports = {
 	config: {
 		name: "help",
+        class: "Serviço",
 		description: "Lista os comandos do bot.",
 		usage: "<comando>",
 		aliases: ["h", "commands", "ajuda"]
@@ -19,17 +21,16 @@ module.exports = {
             .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL);
 
         if(!args[0]) {
-
-            const categories = readdirSync(`./modules/`);
-            const cat2 = categories + readdirSync(`./modules/commands/`);
-            console.log(cat2);
-
             embed.setDescription("Estes são os comandos disponíveis:");
             embed.setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
-            
-            categories.forEach(category => {
-                const dir = bot.commands.filter(c => c.config.accessibleby !== "Bot Owner");
-                const capitalise = category.slice(0, 1).toUpperCase() + category.slice(1)
+            console.log(bot.commands);
+
+            const cmdlist = bot.commands.filter(c => c.config.accessibleby !== "Bot Owner");
+            console.log(cmdlist);
+
+            categories.forEach(classes => {
+                const dir = cmdlist.filter(c => c.config.class === classes);
+                const capitalise = classes.slice(0, 1).toUpperCase() + classes.slice(1);
                 try {
                     embed.addField(`❯ ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
                 } catch(e) {

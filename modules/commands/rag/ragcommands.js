@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "ragcommands",
+        class: "Ragnarok Online",
 		description: "Lista de comandos relacionados ao Ragnarok.",
 		aliases: ["ragdb"]
 	},

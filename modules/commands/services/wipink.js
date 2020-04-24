@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "wipink",
+        class: "Serviço",
 		description: "Convite para o discord da Wipink.",
 		aliases: ["convitewipink"]
 	},

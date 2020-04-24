@@ -9,6 +9,7 @@ const Money = require("../../models/money.js");
 module.exports = {
 	config: {
 		name: "addrcoins",
+        class: "Banco",
 		description: "Deposita Razzor Coins.",
         usage: "<@user> <#valor>",
         acessibleby: "Razzor"

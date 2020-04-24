@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "investimentorag",
+        class: "Ragnarok Online",
 		description: "Guia de investimento do feudo."
 	},
 	run: async (bot, message, args) => {

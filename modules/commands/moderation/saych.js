@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "saych",
+        class: "Controle",
 		description: "Envia texto pelo bot para uma sala recebida em args[0]",
 		usage: "<ID da sala>;;<texto>",
 		accessibleby: "Bot Owner"

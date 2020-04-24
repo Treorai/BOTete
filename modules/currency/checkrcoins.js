@@ -9,6 +9,7 @@ const Money = require("../../models/money.js");
 module.exports = {
 	config: {
 		name: "checkrcoins",
+        class: "Banco",
 		description: "Verifica o saldo de Razzor Coins.",
         usage: "|| .checkrcoins <@user>",
 		aliases: ["myrcoins"]

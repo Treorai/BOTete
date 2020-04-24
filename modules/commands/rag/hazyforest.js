@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "hazyforest",
+        class: "Ragnarok Online",
 		description: "Guia do Labirinto da Neblina.",
 		aliases: ["labirintodaneblina"]
 	},

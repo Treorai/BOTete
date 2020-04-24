@@ -5,7 +5,8 @@ const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
-		name: "advertise",
+        name: "advertise",
+        class: "Controle",
 		description: "Manda um broadcast para uma lista de servidores.",
         usage: "<texto>",
         accessibleby: "Bot Owner"

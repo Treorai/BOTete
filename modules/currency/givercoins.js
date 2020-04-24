@@ -9,6 +9,7 @@ const Money = require("../../models/money.js");
 module.exports = {
 	config: {
 		name: "givercoins",
+        class: "Banco",
 		description: "Transfere rcoins.",
 		usage: "<@user> <#valor>",
 		aliases: ["tradercoins"]

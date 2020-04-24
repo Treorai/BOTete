@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "temporais",
+        class: "Ragnarok Online",
 		description: "Guia de Encantamento das botas temporais.",
 		aliases: ["temporalboots", "tboots"]
 	},

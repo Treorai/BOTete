@@ -6,6 +6,7 @@ const url = require("../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "join",
+        class: "Música",
 		description: "Conecta o bot à um canal de voz.",
 		aliases: ["connect"]
 	},

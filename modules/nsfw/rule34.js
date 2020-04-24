@@ -8,6 +8,7 @@ const safead = require("./nsfwads.json");
 module.exports = {
 	config: {
 		name: "rule34",
+        class: "Superagente",
 		description: `"If it exists, there is porn of it."`,
 		aliases: ["r34"]
 	},

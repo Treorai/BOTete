@@ -6,6 +6,7 @@ const url = require("../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "leave",
+        class: "Música",
 		description: "Desconecta o bot de um canal de voz.",
 		aliases: ["disconnect"]
 	},

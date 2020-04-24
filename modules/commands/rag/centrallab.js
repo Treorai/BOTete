@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "centrallab",
+        class: "Ragnarok Online",
         description: "Mostra a lista de MVPs do Laboratório Central, e Calcula a conversão binária da instância.",
         usage: "|| .centrallab <#número>"
 	},

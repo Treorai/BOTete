@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "purepotter",
+        class: "Ragnarok Online",
 		description: "Guia de Alquimia, Culinária e Farmácia",
 		usage: "|| .purepotter <opção>"
 	},

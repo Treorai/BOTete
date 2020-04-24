@@ -5,7 +5,8 @@ const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
-		name: "grf",
+        name: "grf",
+        class: "Ragnarok Online",
 		description: "Página de downloads das GRFs.",
 		aliases: ["grfs", "ttgrf"]
 	},

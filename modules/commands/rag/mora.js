@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "mora",
+        class: "Ragnarok Online",
 		description: "Guia de quests repetíveis de mora.",
 		aliases: ["moradaily"]
 	},

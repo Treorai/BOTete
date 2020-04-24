@@ -6,7 +6,8 @@ const url = require("../../../tables/urltable.json");
 
 module.exports = {
 	config: {
-		name: "mute",
+        name: "mute",
+        class: "Loja",
 		description: "Muta alguém conectado em uma sala.",
         usage: "<@user> <#tempo><unidade de tempo (s,m,h)>"
 	},

@@ -6,6 +6,7 @@ const url = require("../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "rcoins",
+        class: "Banco",
 		description: "Tabela de comandos do BOTete Bank.",
 		aliases: ["razzorcoins"]
 	},

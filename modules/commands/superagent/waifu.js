@@ -8,6 +8,7 @@ const sourse = require("./waifutable.json");
 module.exports = {
 	config: {
 		name: "waifu",
+        class: "Superagente",
 		description: "Posta uma imagem otaka aleatória."
 	},
 	run: async (bot, message, args) => {

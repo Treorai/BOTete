@@ -6,6 +6,7 @@ const url = require("../../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "cls",
+        class: "Serviço",
 		description: "Cria um espaço em branco em um canal."
 	},
 	run: async (bot, message, args) => {

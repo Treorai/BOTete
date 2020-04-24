@@ -7,7 +7,8 @@ const sourse = require("./pupiestable.json");
 
 module.exports = {
 	config: {
-		name: "pupies",
+        name: "pupies",
+        class: "Superagente",
 		description: "Posta uma foto de bichinho aleatória com uma curiosidade."
 	},
 	run: async (bot, message, args) => {
