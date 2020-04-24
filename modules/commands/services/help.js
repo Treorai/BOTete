@@ -18,11 +18,11 @@ module.exports = {
         
         const embed = new Discord.RichEmbed()
             .setColor(botconfig.colors.defaultcolor)
-            .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL);
+            .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL)
+            .setFooter(`© ${message.guild.me.displayName}`);
 
         if(!args[0]) {
             embed.setDescription("Estes são os comandos disponíveis:");
-            embed.setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
 
             const cmdlist = bot.commands.filter(c => c.config.accessibleby !== "Bot Owner");
 
@@ -42,8 +42,8 @@ module.exports = {
             if(!command) return message.channel.send(embed.setTitle("Comando não encontrado.").setDescription(`Do \`${botconfig.prefix}help\` for the list of the commands.`));
             command = command.config;
 
-            embed.setDescription(stripIndents` \`<argumento obrigatório>\` \`[argumento opicional]\`\n\`#\`= número \`@\`= marcação \n
-            **Comando:** ${command.name.slice(0, 1).toUpperCase() + command.name.slice(1)}
+            embed.setDescription(stripIndents` \`<argumento obrigatório>\` \`[argumento opicional]\`\n\`#\`= Número inteiro \`@\`= Marcação \n
+            **Comando:** ${command.name}
             **Descrição:** ${command.description || "No Description provided."}
             **Uso correto:** ${command.usage ? `\`${botconfig.prefix}${command.name} ${command.usage}\`` : `\`${botconfig.prefix}${command.name} ${command.usage}\``}
             **Permissão:** ${command.accessableby || "Todos"}`);
