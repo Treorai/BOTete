@@ -36,7 +36,7 @@ module.exports = {
                 }
             });
 
-            return message.channel.send(embed)
+            return message.channel.send(embed);
         } else {
             let command = bot.commands.get(bot.aliases.get(args[0].toLowerCase()) || args[0].toLowerCase());
             if(!command) return message.channel.send(embed.setTitle("Comando não encontrado.").setDescription(`Do \`${botconfig.prefix}help\` for the list of the commands.`));
