@@ -1,4 +1,5 @@
 const Discord = require("discord.js");
+const ytdl = require("ytdl-core");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
