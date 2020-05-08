@@ -7,9 +7,9 @@ Changes to BOTete Project will be documented in this file.
 - Music Module.
 - Music Scripts.
 
-### 5.1.0 | **BETA** (working on)
+### 5.1.0 | **BETA** (not yet finished)
 #### Added
-- Music Module.
+- Music Module Phase 1
 
 #### Changed
 - Wipink Welcome Message.
