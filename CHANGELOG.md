@@ -7,9 +7,17 @@ Changes to BOTete Project will be documented in this file.
 - Music Module.
 - Music Scripts.
 
+### 5.1.0 | **BETA** (working on)
+#### Added
+- Music Module.
+
+#### Changed
+- Wipink Welcome Message.
+
 ## 5.0.0 | 2020-04-23
 #### Added
 - Help command.
+- Music Environment Setup.
 
 #### Changed
 - Tables setup.
