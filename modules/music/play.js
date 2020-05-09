@@ -1,51 +1,42 @@
 const Discord = require("discord.js");
 const ytdl = require("ytdl-core");
+const search = require("yt-search");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-var servers = {};
 
 module.exports = {
 	config: {
 		name: "play",
-		description: "Reproduz música a partir de um link do youtube.",
-		usage: "<link>"
+		description: "Faz uma busca no youtube e passa o link gerado para o comando playlink",
+		usage: "<args>"
 	},
 	run: async (bot, message, args) => {
 		
-		function play(connection, message){
-			var server = servers[message.guild.id];
+		search(args.join(' '), function(err, res){
+			if(err) return message.channel.send('Pesquisa inválida ou ocorreu um erro. Contate Teteh pra arrumar saporra.');
 			
-			server.dispatcher = connection.playStream(ytdl(server.queue[0]), {filter: "audioonly"});
-			server.queue.shift();
+			let videos = res.videos.slice(0, 10);
 			
-			server.dispatcher.on("end", function(){
-				if(server.queue[0]){
-					play(connection, message);
-				} else {
-					connection.disconnect();
-				}
+			let resp = `Escolha uma das opções \`1-${videos.length}\`:\n`;
+			for(var i in videos){
+				resp += `**[${parseInt(i)+1}]:** \`${videos[i].title}\`\n`;
+			}
+			
+			message.channel.send(resp);
+			
+			const filter = m => !isNaN(m.content) && m.content < videos.length+1 && m.content > 0;
+			const collector = message.channel.createMessageCollector(filter);
+			
+			collector.videos = videos;
+			collector.once('collect', function(m){
+				let commandfile = require('./playlink.js');
+				commandfile.run(bot, message, [this.videos[parseInt(m.content)-1].url]);
 			});
-		}
 		
-		if(!args[0]){
-			return message.channel.send("Você precisa especificar um link.");
-		}
+		});
+	
+		
 
-		if(!message.member.voiceChannel){
-			return message.channel.send("Você precisa estar conectado a um canal de voz.");
-		}
-		
-		if(!servers[message.guild.id]) servers[message.guild.id] = {queue: []}
-		
-		var server = servers[message.guild.id];
-		server.queue.push(args[0]);
-		
-		if(!message.guild.voiceConnection){
-			message.member.voiceChannel.join().then(function(connection){
-				play(connection, message);
-			});
-		}
-		
 	}
 }

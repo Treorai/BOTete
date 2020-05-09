@@ -1,6 +1,6 @@
 {
   "name": "botete",
-  "version": "5.0.14",
+  "version": "5.1.2",
   "description": "BOTete Discord Bot",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
     "parse-server": "^4.1.0",
     "parse-time": "^0.1.4",
     "superagent": "^5.2.2",
+    "yt-search": "^1.1.2",
     "ytdl-core": "^2.1.2"
   }
 }
