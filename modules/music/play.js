@@ -8,6 +8,7 @@ const url = require("../../tables/urltable.json");
 module.exports = {
 	config: {
 		name: "play",
+        class: "Música",
 		description: "Faz uma busca no youtube e passa o link gerado para o comando playlink",
 		usage: "<args>"
 	},

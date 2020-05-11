@@ -3,11 +3,11 @@ const ytdl = require("ytdl-core");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-var servers = {};
 
 module.exports = {
 	config: {
 		name: "playlink",
+        class: "Música",
 		description: "Reproduz música a partir de um link do youtube.",
 		usage: "<link>"
 	},
