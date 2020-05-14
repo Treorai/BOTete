@@ -4,7 +4,7 @@ const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 const mongoose = require("mongoose");
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true });
-const Money = require("../../models/money.js");
+const Money = require("./models/money.js");
 
 module.exports = {
 	config: {
