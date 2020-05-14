@@ -4,7 +4,6 @@ const search = require("yt-search");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-const commandfile = require('./playlink.js');
 
 module.exports = {
 	config: {
@@ -32,6 +31,7 @@ module.exports = {
 			
 			collector.videos = videos;
 			collector.once('collect', function(m){
+				let commandfile = require('./playlink.js');
 				commandfile.run(bot, message, [this.videos[parseInt(m.content)-1].url]);
 			});
 		
