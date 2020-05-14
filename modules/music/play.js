@@ -4,12 +4,13 @@ const search = require("yt-search");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
+const commandfile = require('./playlink.js');
 
 module.exports = {
 	config: {
 		name: "play",
         class: "Música",
-		description: "Faz uma busca no youtube e passa o link gerado para o comando playlink",
+		description: "Faz uma busca no youtube e mostra uma lista de músicas para reprodução. Digite o número da música a ser reproduzida.",
 		usage: "<args>"
 	},
 	run: async (bot, message, args) => {
@@ -31,7 +32,6 @@ module.exports = {
 			
 			collector.videos = videos;
 			collector.once('collect', function(m){
-				let commandfile = require('./playlink.js');
 				commandfile.run(bot, message, [this.videos[parseInt(m.content)-1].url]);
 			});
 		
