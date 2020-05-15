@@ -14,7 +14,9 @@ module.exports = {
 		usage: "<@user> <#valor>"
 	},
 	run: async (bot, message, args) => {
-        if(message.author.id !== userids.razzor) { return message.reply("Apenas o gerente pode cobrar Razzor Coins."); };
+
+        const bankownerid = idtable.users.razzor;
+        if(message.author.id !==  bankownerid) { return message.reply("Apenas o gerente pode cobrar Razzor Coins."); };
     
         let rcembed = new Discord.RichEmbed()
             .setDescription("Cobrança efetuada.")
