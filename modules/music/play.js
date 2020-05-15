@@ -46,7 +46,7 @@ module.exports = {
 				.setTimestamp();
 				message.channel.send(selectedEmbed);
 
-				commandfile.run(bot, message, selectedSong.url);
+				commandfile.run(bot, message, [selectedSong.url]);
 				console.log(selectedSong.url);
 			});
 		
