@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const {RichEmbed} = require("discord.js");
 const ytdl = require("ytdl-core");
 const search = require("yt-search");
 const botconfig = require("../../botconfig.json");
@@ -9,9 +9,9 @@ let commandfile = require('./playlink.js');
 module.exports = {
 	config: {
 		name: "play",
-        class: "Música",
+		class: "Música",
 		description: "Faz uma busca no youtube e mostra uma lista de músicas para reprodução. Digite o número da música a ser reproduzida.",
-		usage: "<args>"
+		usage: "<nome de música>"
 	},
 	run: async (bot, message, args) => {
 		
@@ -20,10 +20,12 @@ module.exports = {
 			
 			let videos = res.videos.slice(0, 10);
 			
-			let resp = `Escolha uma das opções \`1-${videos.length}\`:\n`;
+			//constuctor
+			let resp = `\`\`\`md\n##  Escolha uma das opções entre 1 e ${videos.length}:\n\n`;
 			for(var i in videos){
-				resp += `**[${parseInt(i)+1}]:** \`${videos[i].title}\`\n`;
+				resp += `${parseInt(i)+1}. ${videos[i].title}\n`;
 			}
+			resp += "```";
 			
 			message.channel.send(resp);
 			
@@ -32,7 +34,19 @@ module.exports = {
 			
 			collector.videos = videos;
 			collector.once('collect', function(m){
-				commandfile.run(bot, message, [this.videos[parseInt(m.content)-1].url]);
+
+				let selectedSong = this.videos[parseInt(m.content)-1];
+
+				let selectedEmbed = new RichEmbed()
+				.addField("Música:", selectedSong.title, true)
+				.addField('\u200b', '\u200b', true)
+				.addField("Duração:", selectedSong.timestamp, true)
+				.setAuthor(`${message.author.username} adicionou à fila:`, `${message.author.displayAvatarURL}`)
+				.setFooter(`© ${message.guild.me.displayName}`, url.imgurls.musicIcon)
+				.setTimestamp();
+				message.channel.send(selectedEmbed);
+
+				commandfile.run(bot, message, selectedSong.url);
 			});
 		
 		});
