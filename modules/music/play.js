@@ -47,7 +47,7 @@ module.exports = {
 				message.channel.send(selectedEmbed);
 
 				commandfile.run(bot, message, selectedSong.url);
-				console.log(selectedsong.url);
+				console.log(selectedSong.url);
 			});
 		
 		});
