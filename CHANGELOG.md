@@ -1,10 +1,8 @@
 # Change Log
 Changes to BOTete Project will be documented in this file.
-Versions follows default {x.y.z} = { (major code updates).(new functionalities or commands).(minor fixes) }.
-Every major updates get a new version section, while minor fixes will be updated in the section of the previous version.
 
 ### Unreleased
-- V.6.0.0 shall meet discord.js v12 syntax changes.
+- Future versions might meet discord.js v12 syntax changes.
 - Adding bank store.
 - Music Module Next Phases.
 - Music Scripts.
@@ -12,12 +10,13 @@ Every major updates get a new version section, while minor fixes will be updated
 - `queue.js` command.
 - `repeat.js` command.
 - `nowplaying.js` command.
+- `playlink.js` merged with `play.js`
 
-## 5.2.0 | 2020-05-14
+## 5.2.0 | 2020-05-15
 #### Added
 - Music Module Phase 2:
 - Implemented player model.
-- Implemented clearqueue model.
+- Implemented purgequeue model.
 - `stop.js` command.
 
 #### Changed
@@ -31,7 +30,7 @@ Every major updates get a new version section, while minor fixes will be updated
 - `takercoins.js` bug on accessing tables.
 
 #### Deprecated
-- `playlink.js` will soon be combined with `play.js`
+- `playlink.js` will soon be merged with `play.js`
 
 ## 5.1.3 | 2020-05-08
 #### Added
