@@ -38,10 +38,10 @@ module.exports = {
 				let selectedSong = this.videos[parseInt(m.content)-1];
 
 				let selectedEmbed = new RichEmbed()
-				.addField("Música:", selectedSong.title, true)
+				.addField("Título", selectedSong.title, true)
 				.addField('\u200b', '\u200b', true)
-				.addField("Duração:", selectedSong.timestamp, true)
-				.setAuthor(`${message.author.username} adicionou à fila:`, `${message.author.displayAvatarURL}`)
+				.addField("Duração", selectedSong.timestamp, true)
+				.setAuthor(`${message.author.username} adicionou uma música à fila:`, `${message.author.displayAvatarURL}`)
 				.setFooter(`© ${message.guild.me.displayName}`, url.imgurls.musicIcon)
 				.setTimestamp();
 				message.channel.send(selectedEmbed);
