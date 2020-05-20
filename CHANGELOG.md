@@ -1,22 +1,22 @@
 # Change Log
 Changes to BOTete Project will be documented in this file.
 
+
 ### Unreleased
-- Future versions might meet discord.js v12 syntax changes.
+> BOTete v6.0 will be rewrited in discord.js v12, as Gateway Intents will be mandatory and not avaliable in v11. This update will drop before Oct 7, 2020.
 - Adding bank store.
-- Music Module Next Phases.
+- Music Module Phase 2.
 - Music Scripts.
 - `clearqueue.js` command.
 - `queue.js` command.
 - `repeat.js` command.
 - `nowplaying.js` command.
 - `playlink.js` merged with `play.js`
+- Implementation of purgequeue model.
 
 ## 5.2.0 | 2020-05-15
 #### Added
-- Music Module Phase 2:
 - Implemented player model.
-- Implemented purgequeue model.
 - `stop.js` command.
 
 #### Changed
