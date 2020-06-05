@@ -7,12 +7,17 @@ Changes to BOTete Project will be documented in this file.
 - Adding bank store.
 - Music Module Phase 2.
 - Music Scripts.
-- `clearqueue.js` command.
 - `queue.js` command.
 - `repeat.js` command.
 - `nowplaying.js` command.
 - `playlink.js` merged with `play.js`
 - Implementation of purgequeue model.
+
+## 5.3.0 | 2020-06-05
+#### Added
+- `message` event reply.
+- `guildCreate` event greeting.
+- `clearqueue.js` command.
 
 ## 5.2.0 | 2020-05-15
 #### Added

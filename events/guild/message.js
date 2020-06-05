@@ -19,6 +19,9 @@ module.exports = async (bot, message) => {
     if(message.author.id == idtable.users.razzor && message.content.toLowerCase().endsWith('ico')){
         message.reply("MEU PAU NO SEU FURICO!!");
     }
+    if(message.content.toLowerCase().includes('i believe your intentions to be hostile')){
+        message.channel.send("shhhhhh! I'm here to help!");
+    }
 
     //reacts
     for (var i = 0; i < sweartb.word.length; i++) {
