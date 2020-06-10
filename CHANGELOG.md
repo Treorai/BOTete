@@ -13,6 +13,7 @@ Changes to BOTete Project will be documented in this file.
 - `playlink.js` merged with `play.js`
 - Implementation of purgequeue model.
 - try-catch method to purge error that happens when you try to wipe 2 weeks old messages.
+- music returning before checking chat room
 
 ## 5.3.0 | 2020-06-05
 #### Added
