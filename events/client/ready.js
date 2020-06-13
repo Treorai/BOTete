@@ -33,6 +33,7 @@ module.exports = async (bot) => {
     let autopupies = schedule.scheduleJob('00 * * * *', async function(){
         bot.channels.get(idtable.channels.weeweepupies).send(`.pupies`);
         bot.channels.get(idtable.channels.wipinkpupies).send(`.pupies`);
+        bot.channels.get(idtable.channels.mdbpupies).send(`.pupies`);
     });
     
     let autowaifu = schedule.scheduleJob('00 10 * * *', async function(){
