@@ -12,14 +12,18 @@ Changes to BOTete Project will be documented in this file.
 - `nowplaying.js` command.
 - `playlink.js` merged with `play.js`
 - Implementation of purgequeue model.
+- pupies typo.
 - try-catch method to purge error that happens when you try to wipe 2 weeks old messages.
-- music returning before checking chat room
+- music returning before checking chat room.
 
-## 5.3.0 | 2020-06-05
+## 5.3.1 | 2020-06-05
 #### Added
 - `message` event reply.
 - `guildCreate` event greeting.
 - `clearqueue.js` command.
+
+#### Changed
+- Puppies timeout for some servers.
 
 ## 5.2.0 | 2020-05-15
 #### Added

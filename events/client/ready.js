@@ -30,12 +30,15 @@ module.exports = async (bot) => {
         bot.channels.get(idtable.channels.wipinkhen).send(`.hentai`);
     });
     
-    let autopupies = schedule.scheduleJob('00 * * * *', async function(){
+    let autopupieshour = schedule.scheduleJob('00 * * * *', async function(){
         bot.channels.get(idtable.channels.weeweepupies).send(`.pupies`);
+    });
+    
+    let autopupiesday = schedule.scheduleJob('00 11 * * *', async function(){
         bot.channels.get(idtable.channels.wipinkpupies).send(`.pupies`);
         bot.channels.get(idtable.channels.mdbpupies).send(`.pupies`);
     });
-    
+
     let autowaifu = schedule.scheduleJob('00 10 * * *', async function(){
         bot.channels.get(idtable.channels.wipinkwaifus).send(`.waifu`);
     });
