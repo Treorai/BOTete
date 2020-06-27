@@ -36,7 +36,7 @@ module.exports = async (bot) => {
     
     let autopupiesday = schedule.scheduleJob('00 11 * * *', async function(){
         bot.channels.get(idtable.channels.wipinkpupies).send(`.pupies`);
-        bot.channels.get(idtable.channels.mdbpupies).send(`.pupies`);
+        //bot.channels.get(idtable.channels.mdbpupies).send(`.pupies`);
     });
 
     let autowaifu = schedule.scheduleJob('00 10 * * *', async function(){
