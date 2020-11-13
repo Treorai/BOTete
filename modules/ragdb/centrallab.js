@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {

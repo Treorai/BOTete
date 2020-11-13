@@ -1,13 +1,14 @@
 const Discord = require("discord.js");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "temporais",
         class: "Ragnarok Online",
-		description: "Guia de Encantamento das botas temporais.",
+        description: "Guia de Encantamento das botas temporais.",
+        usage: "",
 		aliases: ["temporalboots", "tboots"]
 	},
 	run: async (bot, message, args) => {

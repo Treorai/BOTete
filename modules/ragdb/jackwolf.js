@@ -1,13 +1,14 @@
 const Discord = require("discord.js");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "jackwolf",
         class: "Ragnarok Online",
 		description: "Guia da instância Sussurro Sombrio",
+		usage: "",
 		aliases: ["sussurrosombrio"]
 	},
 	run: async (bot, message, args) => {

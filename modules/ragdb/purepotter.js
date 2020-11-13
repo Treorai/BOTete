@@ -1,14 +1,15 @@
 const Discord = require("discord.js");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "purepotter",
         class: "Ragnarok Online",
 		description: "Guia de Alquimia, Culinária e Farmácia",
-		usage: "[comando]"
+        usage: "[comando]",
+        aliases: ["pp"]
 	},
 	run: async (bot, message, args) => {
         //embedbuilds:

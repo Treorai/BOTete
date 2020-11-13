@@ -1,15 +1,21 @@
 const Discord = require ("discord.js");
 const superagent = require("superagent");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
-const sourse = require("./waifutable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
+
+const sourse = [
+    "https://some-random-api.ml/animu/wink",
+    "https://some-random-api.ml/animu/pat",
+    "https://some-random-api.ml/animu/hug"
+];
 
 module.exports = {
 	config: {
 		name: "waifu",
-        class: "Superagente",
-		description: "Posta uma imagem otaka aleatória."
+        class: "Serviço",
+        description: "Posta uma imagem otaka aleatória.",
+        usage: ""
 	},
 	run: async (bot, message, args) => {
         if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
@@ -27,7 +33,7 @@ module.exports = {
                 .setFooter(`© ${message.guild.me.displayName}`);
             message.channel.send(waifuemb);
         
-        } catch(error) { console.error(`${error}`); }
+        } catch(error) { console.error(`${error}`); };
 
 	}
 }

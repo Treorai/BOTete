@@ -1,10 +1,10 @@
-const Discord = require("discord.js");
+const Discord = require("../services/node_modules/discord.js.js");
 const { readdirSync } = require("fs");
 const { stripIndents } = require("common-tags");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
-const classes = require("../../../tables/classes.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
+const classes = require("./classes.json");
 
 module.exports = {
 	config: {

@@ -1,13 +1,14 @@
 const Discord = require("discord.js");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "investimentorag",
         class: "Ragnarok Online",
-		description: "Guia de investimento do feudo."
+        description: "Guia de investimento do feudo.",
+        usage: ""
 	},
 	run: async (bot, message, args) => {
         var investembed = new Discord.RichEmbed()

@@ -1,13 +1,14 @@
 const Discord = require("discord.js");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "verus",
         class: "Ragnarok Online",
-		description: "Resumo das missões diárias de verus."
+        description: "Resumo das missões diárias de verus.",
+        usage: ""
 	},
 	run: async (bot, message, args) => {
 

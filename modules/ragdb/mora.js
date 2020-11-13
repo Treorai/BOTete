@@ -1,13 +1,14 @@
 const Discord = require("discord.js");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "mora",
         class: "Ragnarok Online",
-		description: "Guia de quests repetíveis de mora.",
+        description: "Guia de quests repetíveis de mora.",
+        usage: "",
 		aliases: ["moradaily"]
 	},
 	run: async (bot, message, args) => {

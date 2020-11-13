@@ -9,8 +9,9 @@ const hensourse = require("./hensoursetable.json");
 module.exports = {
 	config: {
 		name: "hentai",
-        class: "Superagente",
+        class: "Putaria",
         description: "Posta uma otakisse 18+",
+        usage: "",
 		aliases: ["ecchi"]
 	},
 	run: async (bot, message, args) => {

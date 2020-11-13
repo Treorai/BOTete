@@ -1,13 +1,14 @@
 const Discord = require("discord.js");
-const botconfig = require("../../../botconfig.json");
-const idtable = require("../../../tables/idtable.json");
-const url = require("../../../tables/urltable.json");
+const botconfig = require("../../botconfig.json");
+const idtable = require("../../tables/idtable.json");
+const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
 		name: "hazyforest",
         class: "Ragnarok Online",
-		description: "Guia do Labirinto da Neblina.",
+        description: "Guia do Labirinto da Neblina.",
+        usage: "",
 		aliases: ["labirintodaneblina"]
 	},
 	run: async (bot, message, args) => {
