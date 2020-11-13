@@ -42,6 +42,7 @@ module.exports = {
         if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
 
         try{
+            /*
             switch (args[1]){
                 case "bird":
                     let imgid = 0;
@@ -61,9 +62,9 @@ module.exports = {
                 case "koala":
                     let imgid = 5;
                     break;
-                default:
+                default:*/
                     let imgid = Math.floor(Math.random() * sourse.length);
-            }
+            //}
 
             var { body } = await superagent
                 .get(sourse[imgid].img);
