@@ -15,7 +15,7 @@ module.exports = {
         var jwembed = new Discord.RichEmbed()
             .setTitle("Guia do Sussurro Sombrio")
             .setColor(botconfig.colors.poringpink)
-            .setImage('https://cdn.discordapp.com/attachments/555512485583650831/693882819558113401/JW.png')
+            .setImage('https://cdn.discordapp.com/attachments/743628745369190501/776928360181530666/JW.png')
             .setFooter(`© ${message.guild.me.displayName} | Sussurro Sombrio`, url.imgurls.browikipic);
 		
 		message.channel.send(jwembed);

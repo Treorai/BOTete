@@ -14,18 +14,18 @@ module.exports = {
 	run: async (bot, message, args) => {
 
         let pages = [
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835444237991939/hazy0.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835452870000641/hazy1.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835459077570581/hazy2.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835464534491166/hazy3.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835472117530624/hazy4.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835476513423370/hazy5.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835483375304714/hazy6.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835489184153600/hazy7.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835494645399552/hazy8.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835501557350416/hazy9.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835505994924033/hazyA.png',
-            'https://cdn.discordapp.com/attachments/550835336750825474/550835513821757450/hazyB.png'
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928259454664744/hazy0.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928266626924564/hazy1.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928273308712970/hazy2.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928278207660072/hazy3.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928284293332992/hazy4.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928290929377310/hazy5.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928298135584799/hazy6.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928305076240434/hazy7.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928311984390155/hazy8.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928318335352872/hazy9.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928325394104320/hazyA.png',
+            'https://cdn.discordapp.com/attachments/743628745369190501/776928332926418954/hazyB.png'
         ];
         let page = 1;
         let tree = [

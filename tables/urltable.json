@@ -1,24 +1,24 @@
 {
     "botassets": {
         "BOTinviteKey": "https://discordapp.com/oauth2/authorize?client_id=547166810001113119&scope=bot&permissions=523328",
-        "BOTetePP": "https://cdn.discordapp.com/attachments/550835295143198722/550838466624225282/BOTETE_PROFILE.png",
+        "BOTetePP": "https://cdn.discordapp.com/attachments/743629089344061493/776927110563364874/botete_original_profile.png",
         "githuburl": "https://github.com/Treorai/BOTete"
     },
     "imgurls": {
-        "browikipic": "https://cdn.discordapp.com/attachments/550835295143198722/550841922416279553/logo_brWiki2015.png",
-        "Gioiapic": "https://cdn.discordapp.com/attachments/550835295143198722/550838308603953188/Gioia_Art.png",
-        "clockicon": "https://cdn.discordapp.com/attachments/550835295143198722/552660080395550731/orangetimer.png",
-        "redditicon": "https://cdn.discordapp.com/attachments/550835295143198722/552374945020248066/redditicon.png",
-        "musicIcon": "https://cdn.discordapp.com/attachments/550835295143198722/579473844176420905/musicicon.png",
-        "advertiseicon": "https://cdn.discordapp.com/attachments/550835295143198722/558484072590999578/icon-svg.png"
+        "browikipic": "https://cdn.discordapp.com/attachments/743628745369190501/776927309491339274/browiki-logo.png",
+        "gioiapic": "https://cdn.discordapp.com/attachments/743629089344061493/776926743524147200/gioia_art.png",
+        "clockicon": "https://cdn.discordapp.com/attachments/743629089344061493/776926795446485002/timer.png",
+        "redditicon": "https://cdn.discordapp.com/attachments/743629089344061493/776926845504847882/redditicon.png",
+        "musicIcon": "https://cdn.discordapp.com/attachments/743629089344061493/776926892887900180/musicicon.png",
+        "advertiseicon": "https://cdn.discordapp.com/attachments/743629089344061493/776926940141191178/icon-svg.png"
     },
     "grfassets": {
         "TTGRF": "https://drive.google.com/open?id=1b39XKWU96psq8ny32ubGDXt-lsWiYsOP",
         "graymap": "https://drive.google.com/open?id=1_4c8QndQ2i7t1DyDOGZ9gqD9oi8R8gWX",
         "GRFEditor": "http://www.mediafire.com/file/aflylbhblrzpz0h/GRF+Editor+v1.8.2.4.zip",
-        "ttgrfnewcostume": "https://cdn.discordapp.com/attachments/550839446237609995/561256263682490387/Roupas_jRO_Full.grf",
-        "ttgrfchangelog": "https://cdn.discordapp.com/attachments/550839446237609995/561256306904662016/changelog.txt",
-        "ttgrfabout": "https://cdn.discordapp.com/attachments/550839446237609995/561256319701614613/readme.txt",
-        "grfcubeicon": "https://cdn.discordapp.com/attachments/550839446237609995/550841637358534657/cube.png"
+        "ttgrfnewcostume": "https://cdn.discordapp.com/attachments/743628827028226159/776925703421165608/Roupas_jRO_Full.grf",
+        "ttgrfchangelog": "https://cdn.discordapp.com/attachments/743628827028226159/776925716751056896/changelog.txt",
+        "ttgrfabout": "https://cdn.discordapp.com/attachments/743628827028226159/776925739160567838/readme.txt",
+        "grfcubeicon": "https://cdn.discordapp.com/attachments/743628827028226159/776925664950485002/cube.png"
     }
 }
