@@ -1,4 +1,4 @@
-const Discord = require("../services/node_modules/discord.js.js");
+const Discord = require("discord.js");
 const { readdirSync } = require("fs");
 const { stripIndents } = require("common-tags");
 const botconfig = require("../../botconfig.json");
