@@ -9,6 +9,7 @@ const advertiselist = [
     "528805531742371840", // All @Karuna
     "534141992930770955", // Falem @TRC
     "270745177671335938", // Geral @Lenhadores
+    "667344276560281600", // Geral @CamsGuild
 ];
 
 module.exports = {
