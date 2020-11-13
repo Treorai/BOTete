@@ -12,7 +12,7 @@ module.exports = {
 		aliases: ["ragdb"]
 	},
 	run: async (bot, message, args) => {
-        var commandEmb = new Discord.RichEmbed()
+        var commandEmb = new Discord.MessageEmbed()
             .setTitle("RO: Guias e Databases")
             .setColor(botconfig.colors.defaultcolor)
             .addField("Instâncias", "`.centrallab` Lista do Laboratório Central e conversor do minigame.\n`.hazyforest` Guia do Labirinto da Neblina.\n`.jackwolf` Guia do Sussurro Sombrio.")

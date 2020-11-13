@@ -24,7 +24,7 @@ module.exports = {
         if(message.author.id != botconfig.ownerid) return;
         const sayAd = args.join(" ");
         message.delete().catch(O_o=>{});
-        var tosayademb = new Discord.RichEmbed()
+        var tosayademb = new Discord.MessageEmbed()
             .setDescription(sayAd)
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()

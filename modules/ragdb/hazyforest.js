@@ -43,7 +43,7 @@ module.exports = {
             'Árvore de Tete'
         ]
 
-        const embed = new Discord.RichEmbed()
+        const embed = new Discord.MessageEmbed()
             .setTitle("Guia: Labirinto da Neblina")
             .setURL("https://browiki.org/wiki/Labirinto_da_Neblina")
             .setImage(pages[0])

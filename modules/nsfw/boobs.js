@@ -28,7 +28,7 @@ module.exports = {
 
                 if(!{body}) return message.channel.send("[Error] Source offline.");
 
-                let boobembed = new Discord.RichEmbed()
+                let boobembed = new Discord.MessageEmbed()
                     .setColor(botconfig.colors.nsfwred)
                     .setTitle(boobjson.model)
                     .setImage(boobimg)

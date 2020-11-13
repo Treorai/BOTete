@@ -12,7 +12,7 @@ module.exports = {
 		aliases: ["moradaily"]
 	},
 	run: async (bot, message, args) => {
-        var moraDaily = new Discord.RichEmbed()
+        var moraDaily = new Discord.MessageEmbed()
             .setTitle("Quests Diárias de Mora")
             .setURL("https://browiki.org/wiki/Aventuras_na_Vila")
             .setColor(botconfig.colors.poringpink)

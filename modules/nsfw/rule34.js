@@ -27,7 +27,7 @@ module.exports = {
                 const allowed = body.data.children;
 
                 const randomnumber = Math.floor(Math.random() * allowed.length)
-                const emb34 = new Discord.RichEmbed()
+                const emb34 = new Discord.MessageEmbed()
                     .setColor(botconfig.colors.nsfwred)
                     .setTitle(allowed[randomnumber].data.title)
                     .setDescription("Author: " + allowed[randomnumber].data.author)

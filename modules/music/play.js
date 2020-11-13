@@ -1,4 +1,4 @@
-const {RichEmbed} = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const ytdl = require("ytdl-core");
 const search = require("yt-search");
 const botconfig = require("../../botconfig.json");
@@ -37,7 +37,7 @@ module.exports = {
 
 				let selectedSong = this.videos[parseInt(m.content)-1];
 
-				let selectedEmbed = new RichEmbed()
+				let selectedEmbed = new MessageEmbed()
 				.addField("Título", selectedSong.title, true)
 				.addField('\u200b', '\u200b', true)
 				.addField("Duração", selectedSong.timestamp, true)

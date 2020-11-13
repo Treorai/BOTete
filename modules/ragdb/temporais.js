@@ -12,7 +12,7 @@ module.exports = {
 		aliases: ["temporalboots", "tboots"]
 	},
 	run: async (bot, message, args) => {
-        var tbootsembed = new Discord.RichEmbed()
+        var tbootsembed = new Discord.MessageEmbed()
             .setTitle("Encantameto das Botas Temporais com Slot")
             .setURL("https://browiki.org/wiki/Glast_Heim#Itens_Temporais")
             .setColor(botconfig.colors.poringpink)

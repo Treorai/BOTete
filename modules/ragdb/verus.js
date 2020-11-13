@@ -12,7 +12,7 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
 
-        var verusembed = new Discord.RichEmbed()
+        var verusembed = new Discord.MessageEmbed()
             .setTitle("Aventuras em Verus")
             .setURL("https://browiki.org/wiki/Aventuras_em_Verus")
             .setColor(botconfig.colors.poringpink)

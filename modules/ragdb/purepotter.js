@@ -13,7 +13,7 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
         //embedbuilds:
-        var potterembed = new Discord.RichEmbed()
+        var potterembed = new Discord.MessageEmbed()
             .setTitle("Comandos para Pure Potters:")
             .setDescription("Digite o comando mais adequado ao que você procura:")
             .setColor(botconfig.colors.defaultcolor)
@@ -22,7 +22,7 @@ module.exports = {
             .addField("Guia de Farmácia", "`.purepotter farmácia`")
             .setFooter(`© ${message.guild.me.displayName} | Guia de Pure Potter`, bot.user.displayAvatarURL);
 
-        var chimestryembed = new Discord.RichEmbed()
+        var chimestryembed = new Discord.MessageEmbed()
             .setTitle("Alquimia")
             .setDescription("Chance = `[(Nv. de Pesquisa de Poções) + (Nv. de Preparar Poção × 3) + (Nv. de Mudança de Planos) + (Nv. de classe × 0,2) + (DES × 0,1) + (SOR × 0,1) + (INT × 0,05) + (Dificuldade)]%`")
             .setURL("https://browiki.org/wiki/Alquimia")
@@ -40,7 +40,7 @@ module.exports = {
             .addField("Criação Espiritual de Poções III:","```Grupo: Taekwon\n- 200 Vasilha de Mistura\n- 200 Garrafa Vazia\n- 100 Tubo de Ensaio\n- 500 Caule\n- 500 Esporo Venenoso\n- 50 Coração Imortal\n- 50 Tecido\n- 50 Álcool```")
             .setFooter(`© ${message.guild.me.displayName} | AM_PHARMACY`, url.imgurls.browikipic);
 
-        var cookembed = new Discord.RichEmbed()
+        var cookembed = new Discord.MessageEmbed()
             .setTitle("Farmácia")
             .setDescription("Criação = `(Job_Lv ÷ 4) + (DEX ÷ 3) + (LUK ÷ 2) - α(30~150)`")
             .setURL("https://browiki.org/wiki/Culin%C3%A1ria_Avan%C3%A7ada")
@@ -53,7 +53,7 @@ module.exports = {
             .addField("Macarrão com Petite: `+20 SOR`","- 1 Vasilha Melange\n- 2 Rabo de Petite\n- 1 Macarrão Fino\n- 1 Molho Especial")
             .setFooter(`© ${message.guild.me.displayName} | GN_MIX_COOKING`, url.imgurls.browikipic);
 
-        var pharmacyembed = new Discord.RichEmbed()
+        var pharmacyembed = new Discord.MessageEmbed()
             .setTitle("Farmácia")
             .setDescription("Criação = `INT + (DES ÷ 2) + SOR + Nv. de classe + Δ + (Nv. de base − 100) + (Nv. de Pesquisa de Poções × 5) + (Nv. de Proteção Química Total × α(30~150)`")
             .setURL("https://browiki.org/wiki/Farmacologia_Avan%C3%A7ada")

@@ -15,7 +15,7 @@ module.exports = {
 		aliases: ["tradercoins"]
 	},
 	run: async (bot, message, args) => {
-        let rcembed = new Discord.RichEmbed()
+        let rcembed = new Discord.MessageEmbed()
             .setDescription("Transferência efetuada.")
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()

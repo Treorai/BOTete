@@ -74,7 +74,7 @@ module.exports = {
                 .get(sourse[imgid].txt);
                 let bodytxt = body.fact;
 
-            let pupiemb = new Discord.RichEmbed()
+            let pupiemb = new Discord.MessageEmbed()
                 .setColor(botconfig.colors.defaultcolor)
                 .setDescription(bodytxt)
                 .setImage(bodyimg)

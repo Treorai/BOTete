@@ -28,7 +28,7 @@ module.exports = {
 
                 if(!{body}) return message.channel.send("[Error] Source offline.");
 
-                let buttembed = new Discord.RichEmbed()
+                let buttembed = new Discord.MessageEmbed()
                     .setColor(botconfig.colors.nsfwred)
                     .setTitle(buttjson.model)
                     .setImage(buttimg)

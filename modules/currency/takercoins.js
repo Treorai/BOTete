@@ -18,7 +18,7 @@ module.exports = {
         const bankownerid = idtable.users.razzor;
         if(message.author.id !==  bankownerid) { return message.reply("Apenas o gerente pode cobrar Razzor Coins."); };
     
-        let rcembed = new Discord.RichEmbed()
+        let rcembed = new Discord.MessageEmbed()
             .setDescription("Cobrança efetuada.")
             .setColor(botconfig.colors.defaultcolor)
             .setAuthor('Recibo', message.author.displayAvatarURL)

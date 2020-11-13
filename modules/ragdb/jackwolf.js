@@ -12,7 +12,7 @@ module.exports = {
 		aliases: ["sussurrosombrio"]
 	},
 	run: async (bot, message, args) => {
-        var jwembed = new Discord.RichEmbed()
+        var jwembed = new Discord.MessageEmbed()
             .setTitle("Guia do Sussurro Sombrio")
             .setColor(botconfig.colors.poringpink)
             .setImage('https://cdn.discordapp.com/attachments/743628745369190501/776928360181530666/JW.png')

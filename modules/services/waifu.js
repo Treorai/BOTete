@@ -26,7 +26,7 @@ module.exports = {
             var { body } = await superagent
                 .get(sourse[randomnumber]);
 
-            let waifuemb = new Discord.RichEmbed()
+            let waifuemb = new Discord.MessageEmbed()
                 .setColor(botconfig.colors.defaultcolor)
                 .setImage(body.link)
                 .setTimestamp()

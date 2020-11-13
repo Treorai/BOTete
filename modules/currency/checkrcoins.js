@@ -15,7 +15,7 @@ module.exports = {
 		aliases: ["myrcoins"]
 	},
 	run: async (bot, message, args) => {
-        let rcembed = new Discord.RichEmbed()
+        let rcembed = new Discord.MessageEmbed()
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()
             .setFooter(`© ${message.guild.me.displayName}`, bot.user.displayAvatarURL);
