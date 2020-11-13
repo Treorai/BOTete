@@ -19,9 +19,9 @@ boobs / butts / hentai / puppies / waifu
 
 module.exports = async (bot) => {
     //login
-    console.log(`Bot online, serving ${bot.users.size} users, in ${bot.guilds.size} guilds.`);
+    console.log(`Bot online, serving ${bot.users.cache.size} users, in ${bot.guilds.cache.size} guilds.`);
 
-    let activities = [ `version ${version}`, `${botconfig.prefix}help`, `to ${bot.guilds.size} Servers` ], i=0;
+    let activities = [ `version ${version}`, `${botconfig.prefix}help`, `to ${bot.guilds.cache.size} Servers` ], i=0;
     setInterval(() => bot.user.setActivity(`${activities[i++ % activities.length]}`, {type: "STREAMING", url:"https://www.twitch.tv/c9teteh"}), 15000);
 
     //UFSM Reminder
