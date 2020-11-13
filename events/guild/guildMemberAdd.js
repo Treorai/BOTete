@@ -18,7 +18,7 @@ module.exports = async (bot, member) => {
             .setColor(botconfig.colors.defaultcolor)
             .setFooter("BOTete | Recepcionista", bot.user.displayAvatarURL);
         
-        bot.channels.get(idtable.channels.wipinkwelcome).send(welcomeWipinkEmb);
+        bot.channels.cache.get(idtable.channels.wipinkwelcome).send(welcomeWipinkEmb);
     }
 
     //Welcome message to ${Lenhadores Guild}
@@ -30,7 +30,7 @@ module.exports = async (bot, member) => {
             .setColor(botconfig.colors.defaultcolor)
             .setFooter("BOTete | Recepcionista", bot.user.displayAvatarURL);
        
-        bot.channels.get(idtable.channels.ldbwelcome).send(welcomeLenhadoresEmbed);
+        bot.channels.cache.get(idtable.channels.ldbwelcome).send(welcomeLenhadoresEmbed);
     }
 
     //Welcome message to other channels:
