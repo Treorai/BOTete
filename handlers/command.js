@@ -11,9 +11,9 @@ module.exports = (bot) =>{
     };
 
     [
-        "commands/moderation",
+        "moderation",
         "ragdb",
-        "commands/services",
+        "services",
         "helper",
         //"currency",
         //"music",
