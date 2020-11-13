@@ -1,4 +1,4 @@
-const Discord = require("../services/node_modules/discord.js.js");
+const Discord = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
