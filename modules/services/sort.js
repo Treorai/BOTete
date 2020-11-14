@@ -13,7 +13,7 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
 
-		if(args === undefined){
+		if(args[0] === undefined){
 			message.channel.send(`.help sort`);
 		} else {
 			randomnumber = Math.floor(Math.random() * args.length);
