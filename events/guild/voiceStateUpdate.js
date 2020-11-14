@@ -10,17 +10,14 @@ module.exports = async (bot, oldMember, newMember) => {
         if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
 
           // User Joins a voice channel
-          bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.user.username} connected to ${newMember.voiceChannel}.`);
-        console.log(newMember);
-        console.log(oldMember);
+          bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.member.user.username} connected to ${newMember.voiceChannel}.`);
         } else if(newMember.voiceChannel === undefined){
           // User leaves a voice channel
-          bot.channels.cache.get(idtable.channels.wipinklogs).send(`${oldMember.user.username} disconnected.`);
+          bot.channels.cache.get(idtable.channels.wipinklogs).send(`${oldMember.member.user.username} disconnected.`);
         } else if(oldMember.voiceChannel !== newMember.voiceChannel){
           // User changes voice channel
-          bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
+          bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.member.user.username} switched to ${newMember.voiceChannel}.`);
         };
-        
     };
   
     //weeweecrew
