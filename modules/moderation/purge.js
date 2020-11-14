@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
+const commandfile = require("../helper/help.js");
 
 module.exports = {
 	config: {
@@ -13,8 +14,8 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
         if(message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("ADMINISTRATOR")){
-            if(!args[0] || args[0]<='0') return;
-            if(isNaN(args)) return;
+            if(!args[0] || args[0]<='0') return commandfile.run(bot, message, this.config.name);
+            if(isNaN(args)) return commandfile.run(bot, message, this.config.name);
 
             message.channel.bulkDelete(args[0], true).then(() => {
                 console.log(`${message.author.username} deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
