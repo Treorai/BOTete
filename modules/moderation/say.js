@@ -17,7 +17,7 @@ module.exports = {
         let builtstring = args.join(" ");
         let splitarray = builtstring.split(";;");
         if(isNaN(splitarray[0])) { return message.channel.send("Invalid Channel ID."); }
-        const sendchannel = bot.channels.get(splitarray[0]);
+        const sendchannel = bot.channels.cache.get(splitarray[0]);
         if(!sendchannel) { return message.channel.send("Couldn't find Channel ID.") }
         
         sendchannel.send(splitarray[1]);
