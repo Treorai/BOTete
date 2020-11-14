@@ -3,7 +3,7 @@ const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 
-module.exports = async (bot, member) => {
+module.exports = async (bot, member) => { console.log(member);
     console.log(`${member.user.username} joined ${member.guild.name}.`);
 
     //Welcome message to ${Wipink}

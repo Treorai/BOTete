@@ -15,9 +15,10 @@ Changes to BOTete Project will be documented in this file.
 - The bot don't need to wait for Discord API to load and send timed posts; (unpatched)
 
 
-## 6.0.0 | 2020-11-13
+## 6.0.5 | 2020-11-13
 #### Added
 - Full implementation of discord.js v12;
+- Common command user errors now call helper automatically;
 
 #### Changed
 - Module's version up-to-date;

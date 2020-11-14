@@ -3,6 +3,7 @@ const ms = require("ms");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
+const helpercmd = require("../helper/help.js");
 
 module.exports = {
 	config: {
@@ -13,7 +14,7 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
         let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-        if(!tomute) return message.reply("Couldn't find user.");
+        if(!tomute) return helpercmd.run(bot, message, ["mute"]);
         if(tomute.id == idtable.users.treorai) return message.reply("Nem fodendo rs xD");
         let muterole = message.guild.roles.find(`name`, "muted");
         if(!muterole){

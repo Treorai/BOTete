@@ -31,7 +31,7 @@ module.exports = {
             .setFooter(`© ${message.guild.me.displayName} | Notificação`, url.advertiseicon);
 
         advertiselist.forEach((channelid, index) => {
-            bot.channels.get(channelid).send(tosayademb);
+            bot.channels.cache.get(channelid).send(tosayademb);
             console.log(`Advertisement sent to ${channelid}.`);
         });
 	}
