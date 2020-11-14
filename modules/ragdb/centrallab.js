@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -11,7 +11,7 @@ module.exports = {
         usage: "[#número]"
 	},
 	run: async (bot, message, args) => {
-        var clabembed = new Discord.MessageEmbed()
+        var clabembed = new MessageEmbed()
             .setTitle("Lista de MVPs no Laboratório Central")
             .setURL("https://browiki.org/wiki/Laborat%C3%B3rio_Central")
             .setColor(botconfig.colors.poringpink)
@@ -28,7 +28,7 @@ module.exports = {
 
             binvar = parseInt(args, 10).toString(2);
 
-            var decbinembed = new Discord.MessageEmbed()
+            var decbinembed = new MessageEmbed()
                 .setTitle("Conversão Dec - Bin")
                 .setDescription(binvar)
                 .addField("Interpretação:", "1=Ligado, 0=Desligado.\nO número mais à direita equivale à placa mais à direita.\nAs placas da esquerda que não aparecem na resposta são zeros.")

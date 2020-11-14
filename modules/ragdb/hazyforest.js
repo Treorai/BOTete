@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -43,7 +43,7 @@ module.exports = {
             'Árvore de Tete'
         ]
 
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
             .setTitle("Guia: Labirinto da Neblina")
             .setURL("https://browiki.org/wiki/Labirinto_da_Neblina")
             .setImage(pages[0])

@@ -1,4 +1,4 @@
-const Discord = require ("discord.js");
+const { MessageEmbed } = require ("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -18,7 +18,7 @@ module.exports = {
         const bankownerid = idtable.users.razzor;
         if(message.author.id !==  bankownerid) { return message.reply("Apenas o gerente pode cobrar Razzor Coins."); };
     
-        let rcembed = new Discord.MessageEmbed()
+        let rcembed = new MessageEmbed()
             .setDescription("Cobrança efetuada.")
             .setColor(botconfig.colors.defaultcolor)
             .setAuthor('Recibo', message.author.displayAvatarURL)

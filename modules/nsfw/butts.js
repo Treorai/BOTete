@@ -1,4 +1,4 @@
-const Discord = require ("discord.js");
+const { MessageEmbed } = require ("discord.js");
 const superagent = require("superagent");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
@@ -28,7 +28,7 @@ module.exports = {
 
                 if(!{body}) return message.channel.send("[Error] Source offline.");
 
-                let buttembed = new Discord.MessageEmbed()
+                let buttembed = new MessageEmbed()
                     .setColor(botconfig.colors.nsfwred)
                     .setTitle(buttjson.model)
                     .setImage(buttimg)

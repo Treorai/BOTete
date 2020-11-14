@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const { readdirSync } = require("fs");
 const { stripIndents } = require("common-tags");
 const botconfig = require("../../botconfig.json");
@@ -16,7 +16,7 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
         
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
             .setColor(botconfig.colors.defaultcolor)
             .setAuthor(`${message.guild.me.displayName} Help`, bot.user.displayAvatarURL)
             .setFooter(`© ${message.guild.me.displayName}`);

@@ -1,4 +1,4 @@
-const Discord = require ("discord.js");
+const { MessageEmbed } = require ("discord.js");
 const superagent = require("superagent");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
@@ -28,7 +28,7 @@ module.exports = {
                 const allowed = body.data.children;
 
                 const randomnumber = Math.floor(Math.random() * allowed.length)
-                const henembed = new Discord.MessageEmbed()
+                const henembed = new MessageEmbed()
                     .setColor(botconfig.colors.nsfwred)
                     .setTitle(allowed[randomnumber].data.title)
                     .setDescription("Author: " + allowed[randomnumber].data.author)

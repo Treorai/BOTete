@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -12,7 +12,7 @@ module.exports = {
 		aliases: ["moradaily"]
 	},
 	run: async (bot, message, args) => {
-        var moraDaily = new Discord.MessageEmbed()
+        var moraDaily = new MessageEmbed()
             .setTitle("Quests Diárias de Mora")
             .setURL("https://browiki.org/wiki/Aventuras_na_Vila")
             .setColor(botconfig.colors.poringpink)

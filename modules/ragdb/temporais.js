@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -12,7 +12,7 @@ module.exports = {
 		aliases: ["temporalboots", "tboots"]
 	},
 	run: async (bot, message, args) => {
-        var tbootsembed = new Discord.MessageEmbed()
+        var tbootsembed = new MessageEmbed()
             .setTitle("Encantameto das Botas Temporais com Slot")
             .setURL("https://browiki.org/wiki/Glast_Heim#Itens_Temporais")
             .setColor(botconfig.colors.poringpink)

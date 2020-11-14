@@ -1,4 +1,4 @@
-const Discord = require ("discord.js");
+const { MessageEmbed } = require ("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -11,7 +11,7 @@ module.exports = {
 		aliases: ["razzorcoins"]
 	},
 	run: async (bot, message, args) => {
-        var rchelp = new Discord.MessageEmbed()
+        var rchelp = new MessageEmbed()
             .setTitle("Razzor Bank:")
             .setColor(botconfig.colors.defaultcolor)
             .addField("Comandos:", "`.checkrcoins` Confere o saldo de Razzor Coins.\n`.givercoins <@> <#>` Dá ao <@ mensionado> <# valor> que será descontados do seu saldo.")

@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -12,7 +12,7 @@ module.exports = {
 		aliases: ["grfs", "ttgrf"]
 	},
 	run: async (bot, message, args) => {
-        var grfembed = new Discord.MessageEmbed()
+        var grfembed = new MessageEmbed()
             .setTitle("Página de Downloads de GRFs")
             .setDescription("O projeto TTGRF foi descontinuado em Julho de 2019. A última versão (v6.0) ainda está disponível para download e uso, mas não receberá mais suporte. As futuras atualizações no bRO podem fazer a(s) GRF(s) não fucionarem.\nAlém disso, o uso de GRFs é passível de punição pelas regras de conduta do jogo. Use por sua conta e risco.")
             .setColor(botconfig.colors.defaultcolor)

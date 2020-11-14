@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -11,7 +11,7 @@ module.exports = {
         usage: ""
 	},
 	run: async (bot, message, args) => {
-        var investembed = new Discord.MessageEmbed()
+        var investembed = new MessageEmbed()
             .setTitle("Investimentos por loot de MVPs")
             .setDescription("É possível trocar itens derrubados por MVPs por 1 Certificado de Investimento dos Gatos, que equivale a 10 Bilhetes de Agradecimento, falando com Namis `/navi malangdo 218/123`")
             .setURL("https://browiki.org/wiki/Portal_do_Abismo#Investindo")

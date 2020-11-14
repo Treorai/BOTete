@@ -1,4 +1,4 @@
-const Discord = require ("discord.js");
+const { MessageEmbed } = require ("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -15,7 +15,7 @@ module.exports = {
 		aliases: ["tradercoins"]
 	},
 	run: async (bot, message, args) => {
-        let rcembed = new Discord.MessageEmbed()
+        let rcembed = new MessageEmbed()
             .setDescription("Transferência efetuada.")
             .setColor(botconfig.colors.defaultcolor)
             .setTimestamp()

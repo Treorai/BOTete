@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -12,7 +12,7 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
 
-        var verusembed = new Discord.MessageEmbed()
+        var verusembed = new MessageEmbed()
             .setTitle("Aventuras em Verus")
             .setURL("https://browiki.org/wiki/Aventuras_em_Verus")
             .setColor(botconfig.colors.poringpink)

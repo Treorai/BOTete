@@ -1,4 +1,4 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
@@ -12,7 +12,7 @@ module.exports = {
 		aliases: ["ragdb"]
 	},
 	run: async (bot, message, args) => {
-        var commandEmb = new Discord.MessageEmbed()
+        var commandEmb = new MessageEmbed()
             .setTitle("RO: Guias e Databases")
             .setColor(botconfig.colors.defaultcolor)
             .addField("Instâncias", "`.centrallab` Lista do Laboratório Central e conversor do minigame.\n`.hazyforest` Guia do Labirinto da Neblina.\n`.jackwolf` Guia do Sussurro Sombrio.")
