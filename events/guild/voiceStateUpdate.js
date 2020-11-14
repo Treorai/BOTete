@@ -22,7 +22,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n");
         };
         */
     };
-
+  }
     //weeweecrew
     if(oldMember.guild.id == idtable.guilds.weeweecrew){
         if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
