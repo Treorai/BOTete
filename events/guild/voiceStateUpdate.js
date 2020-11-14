@@ -22,7 +22,7 @@ module.exports = async (bot, oldMember, newMember) => {
         };
         
     };
-  }
+  
     //weeweecrew
     if(oldMember.guild.id == idtable.guilds.weeweecrew){
         if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
