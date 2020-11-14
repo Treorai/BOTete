@@ -7,10 +7,10 @@ module.exports = async (bot, oldMember, newMember) => {
 
     //wipink
     if(oldMember.guild.id == idtable.guilds.wipink){
-        if(oldMember.channelID === undefined && newMember.channelID !== undefined) {
+        if(oldMember.channelID === null && newMember.channelID !== null) {
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.member.user.username} connected to ${newMember.channel}.`);
-        } else if(newMember.channelID === undefined){
+        } else if(newMember.channelID === null){
           // User leaves a voice channel
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${oldMember.member.user.username} disconnected.`);
         } else if(oldMember.channelID !== newMember.channelID){
@@ -21,10 +21,10 @@ module.exports = async (bot, oldMember, newMember) => {
   
     //weeweecrew
     if(oldMember.guild.id == idtable.guilds.weeweecrew){
-        if(oldMember.channel === undefined && newMember.channel !== undefined) {
+        if(oldMember.channel === null && newMember.channel !== null) {
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.weeweemusic).send(`${newMember.user.username} conectou-se em ${newMember.channel}.`);
-        } else if(newMember.channel === undefined){
+        } else if(newMember.channel === null){
           // User leaves a voice channel
           bot.channels.cache.get(idtable.channels.weeweemusic).send(`${oldMember.user.username} desconectou-se.`);
         } else if(oldMember.channel !== newMember.channel){
@@ -35,10 +35,10 @@ module.exports = async (bot, oldMember, newMember) => {
 
     //camsguild
     if(oldMember.guild.id == idtable.guilds.camsguild){
-        if(oldMember.channel === undefined && newMember.channel !== undefined) {
+        if(oldMember.channel === null && newMember.channel !== null) {
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.camsgbotch).send(`${newMember.user.username} conectou-se em ${newMember.channel}.`);
-        } else if(newMember.channel === undefined){
+        } else if(newMember.channel === null){
           // User leaves a voice channel
           bot.channels.cache.get(idtable.channels.camsgbotch).send(`${oldMember.user.username} desconectou-se.`);
         } else if(oldMember.channel !== newMember.channel){
@@ -49,10 +49,10 @@ module.exports = async (bot, oldMember, newMember) => {
 
     //Lenhadores
     if(oldMember.guild.id == idtable.guilds.lenhadores){
-        if(oldMember.channel === undefined && newMember.channel !== undefined) {
+        if(oldMember.channel === null && newMember.channel !== null) {
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.ldbbotch).send(`${newMember.user.username} conectou-se em ${newMember.channel}.`);
-        } else if(newMember.channel === undefined){
+        } else if(newMember.channel === null){
           // User leaves a voice channel
           bot.channels.cache.get(idtable.channels.ldbbotch).send(`${oldMember.user.username} desconectou-se.`);
         } else if(oldMember.channel !== newMember.channel){
