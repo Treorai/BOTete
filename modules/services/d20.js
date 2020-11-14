@@ -11,7 +11,7 @@ module.exports = {
 		usage: "[#número de faces]"
 	},
 	run: async (bot, message, args) => {
-        if(isNaN(args)){message.channel.send(`Não é possível rodar um dado com "${args}" lados...`);
+        if(isNaN(args)){message.channel.send(`.help d20`);
         } else if(args.length == 0) {
             let randomnumber = 1 + Math.floor(Math.random() * 20);
             message.channel.send(`Deu ${randomnumber}.`);
