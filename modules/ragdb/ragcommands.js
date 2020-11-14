@@ -9,7 +9,7 @@ module.exports = {
         class: "Ragnarok Online",
         description: "Lista de comandos relacionados ao Ragnarok.",
         usage: "",
-		aliases: ["ragdb"]
+		aliases: ["ragdb", "ragcmd"]
 	},
 	run: async (bot, message, args) => {
         var commandEmb = new MessageEmbed()

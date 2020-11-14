@@ -12,7 +12,12 @@ module.exports = {
 		aliases: ["sortear", "sorteio"]
 	},
 	run: async (bot, message, args) => {
-        randomnumber = Math.floor(Math.random() * args.length);
-        message.channel.send(`O sorteado foi ${args[randomnumber]}`);
+
+		if(!args){
+			message.channel.send(`.help sort`);
+		} else {
+			randomnumber = Math.floor(Math.random() * args.length);
+			message.channel.send(`O sorteado foi ${args[randomnumber]}`);
+		};
 	}
 }

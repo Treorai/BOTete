@@ -12,6 +12,6 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
         const m = await message.channel.send("Pong!");
-        m.edit(`Bot ping: ${m.createdTimestamp - message.createdTimestamp}ms. API ping: ${Math.round(bot.ping)}ms`);
+        m.edit(`Bot ping: ${m.createdTimestamp - message.createdTimestamp}ms.`);
 	}
 }
