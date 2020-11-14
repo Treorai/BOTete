@@ -14,7 +14,7 @@ module.exports = {
 		usage: "<comando>",
 		aliases: ["h", "commands", "ajuda"]
 	},
-	run: async (bot, message, args) => {
+	run: async (bot, message, args) => { console.log(args);
         
         const embed = new MessageEmbed()
             .setColor(botconfig.colors.defaultcolor)
