@@ -16,9 +16,14 @@ module.exports = {
             if(!args[0] || args[0]<='0') return;
             if(isNaN(args)) return;
 
-            message.channel.bulkDelete(args[0]).then(() => {
-                console.log(`${message.author.username} deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
-            });
+            try {
+                message.channel.bulkDelete(args[0]).then(() => {
+                    console.log(`${message.author.username} deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
+                });
+            } catch(err){
+                return message.channel.send("Você não pode apagar mensagens muito antigas.");
+            }
+            
         } else return message.reply("Você não tem permissão para apagar mensagens.");
     }
 }
