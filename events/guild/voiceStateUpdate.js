@@ -3,13 +3,14 @@ const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 
-module.exports = async (bot, guild, data) => {
+module.exports = async (bot, oldMember, newMember) => {
 
     //wipink
-    if(guild.id == idtable.guilds.wipink){
-      console.log(data);
-      /*
+    if(oldMember.guild.id == idtable.guilds.wipink){
         if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
+console.log(oldMember);
+console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n");
+/*
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.user.username} connected to ${newMember.voiceChannel}.`);
         } else if(newMember.voiceChannel === undefined){
@@ -18,11 +19,12 @@ module.exports = async (bot, guild, data) => {
         } else if(oldMember.voiceChannel !== newMember.voiceChannel){
           // User changes voice channel
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
-        };*/
+        };
+        */
     };
-/*
+
     //weeweecrew
-    if(guild.id == idtable.guilds.weeweecrew){
+    if(oldMember.guild.id == idtable.guilds.weeweecrew){
         if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.weeweemusic).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
@@ -36,7 +38,7 @@ module.exports = async (bot, guild, data) => {
     };
 
     //camsguild
-    if(guild.id == idtable.guilds.camsguild){
+    if(oldMember.guild.id == idtable.guilds.camsguild){
         if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.camsgbotch).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
@@ -50,7 +52,7 @@ module.exports = async (bot, guild, data) => {
     };
 
     //Lenhadores
-    if(guild.id == idtable.guilds.lenhadores){
+    if(oldMember.guild.id == idtable.guilds.lenhadores){
         if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.ldbbotch).send(`${newMember.user.username} conectou-se em ${newMember.voiceChannel}.`);
@@ -63,5 +65,5 @@ module.exports = async (bot, guild, data) => {
         };
     };
     
-    //notThose*/
+    //notThose
 }
