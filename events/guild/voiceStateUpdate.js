@@ -15,6 +15,8 @@ module.exports = async (bot, oldMember, newMember) => {
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${oldMember.member.user.username} disconnected.`);
         } else if(oldMember.channel !== newMember.channel){
           // User changes voice channel
+          console.log(oldMember);
+          console.log(newMember);
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.member.user.username} switched to ${newMember.channel}.`);
         };
     };
