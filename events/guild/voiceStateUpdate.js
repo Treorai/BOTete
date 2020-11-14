@@ -8,11 +8,11 @@ module.exports = async (bot, oldMember, newMember) => {
     //wipink
     if(oldMember.guild.id == idtable.guilds.wipink){
         if(oldMember.voiceChannel === undefined && newMember.voiceChannel !== undefined) {
-console.log(oldMember);
-console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n");
-/*
+
           // User Joins a voice channel
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.user.username} connected to ${newMember.voiceChannel}.`);
+        console.log(newMember);
+        console.log(oldMember);
         } else if(newMember.voiceChannel === undefined){
           // User leaves a voice channel
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${oldMember.user.username} disconnected.`);
@@ -20,7 +20,7 @@ console.log("\n\n\n\n\n\n\n\n\n\n\n\n\n");
           // User changes voice channel
           bot.channels.cache.get(idtable.channels.wipinklogs).send(`${newMember.user.username} switched to ${newMember.voiceChannel}.`);
         };
-        */
+        
     };
   }
     //weeweecrew
