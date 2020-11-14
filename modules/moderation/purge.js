@@ -16,7 +16,7 @@ module.exports = {
             if(!args[0] || args[0]<='0') return;
             if(isNaN(args)) return;
 
-            message.channel.bulkDelete(1 + args[0], true).then(() => {
+            message.channel.bulkDelete(args[0], true).then(() => {
                 console.log(`${message.author.username} deleted ${args} messages from ${message.channel.name} at ${message.guild.name}.`);
             }).catch(console.error);
             
