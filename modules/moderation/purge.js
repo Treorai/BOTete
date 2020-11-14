@@ -12,9 +12,9 @@ module.exports = {
         usage: "<#número de mensagens>",
         accessibleby: "Administradores e Moderadores"
 	},
-	run: async (bot, message, args) => { console.log(config);
+	run: async (bot, message, args) => {
         if(message.member.hasPermission("MANAGE_MESSAGES") || message.member.hasPermission("ADMINISTRATOR")){
-            if(!args[0] || args[0]<='0') return commandfile.run(bot, message, [config.name]);
+            if(!args[0] || args[0]<='0') return console.log(this.config);
             if(isNaN(args)) return commandfile.run(bot, message, ["purge"]);
 
             message.channel.bulkDelete(args[0], true).then(() => {
