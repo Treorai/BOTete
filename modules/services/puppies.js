@@ -40,30 +40,30 @@ module.exports = {
 	},
 	run: async (bot, message, args) => {
         if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
-
+        let imgid;
         try{
             
             switch (args[0]){
                 case "bird":
-                    let imgid = 0;
+                    imgid = 0;
                     break;
                 case "cat":
-                    let imgid = 1;
+                    imgid = 1;
                     break;
                 case "dog":
-                    let imgid = 2;
+                    imgid = 2;
                     break;
                 case "panda":
-                    let imgid = 3;
+                    imgid = 3;
                     break;
                 case "fox":
-                    let imgid = 4;
+                    imgid = 4;
                     break;
                 case "koala":
-                    let imgid = 5;
+                    imgid = 5;
                     break;
                 default:
-                    let imgid = Math.floor(Math.random() * sourse.length);
+                    imgid = Math.floor(Math.random() * sourse.length);
             }
 
             var { body } = await superagent
