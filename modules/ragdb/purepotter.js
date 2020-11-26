@@ -76,13 +76,13 @@ module.exports = {
 
         //code:
         if(args == "alquimia"){
-            message.channel.send(chimestryembed);
+            message.channel.send(chimestryembed(bot, message));
         } else if(args == "culinária"){
-            message.channel.send(cookembed);
+            message.channel.send(cookembed(bot, message));
         } else if(args == "farmácia"){
-            message.channel.send(pharmacyembed);
+            message.channel.send(pharmacyembed(bot, message));
         } else {
-            message.channel.send(potterembed);
+            message.channel.send(potterembed(bot, message));
         }
 	}
 }
