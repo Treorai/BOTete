@@ -77,13 +77,13 @@ module.exports = {
         //code:
 
         switch (args){
-            case 'alquimia':
+            case alquimia:
                 message.channel.send(chimestryembed(bot, message));
                 break;
-            case 'culinária':
+            case culinária:
                 message.channel.send(cookembed(bot, message));
                 break;
-            case 'farmácia':
+            case farmácia:
                 message.channel.send(pharmacyembed(bot, message));
                 break;
             default:
