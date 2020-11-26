@@ -41,8 +41,8 @@ module.exports = {
 	run: async (bot, message, args) => {
         if(message.author.id==bot.user.id) {message.delete().catch(err=>{});}
         let imgid;
+
         try{
-            
             switch (args[0]){
                 case "bird":
                     imgid = 0;
