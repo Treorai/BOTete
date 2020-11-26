@@ -87,8 +87,9 @@ module.exports = {
                 message.channel.send(pharmacyembed(bot, message));
                 break;
             default:
+                console.log(args);
                 message.channel.send(potterembed(bot, message));
         }
-        
+
 	}
 }
