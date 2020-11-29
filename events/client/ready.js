@@ -24,8 +24,8 @@ module.exports = async (bot) => {
     let activities = [ `version ${version}`, `${botconfig.prefix}help`, `to ${bot.guilds.cache.size} Servers` ], i=0;
     setInterval(() => bot.user.setActivity(`${activities[i++ % activities.length]}`, {type: "STREAMING", url:"https://www.twitch.tv/c9teteh"}), 15000);
 
-    //UFSM Reminder
-    schedule.scheduleJob('0 11 * * 7', async function(){
+    //UFSM Reminder 
+    /*schedule.scheduleJob('0 11 * * 7', async function(){
         bot.channels.cache.get(idtable.channels.wipinkreminders).send("Lembrete: Agende as refeições da semana!");
     });
 
