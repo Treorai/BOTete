@@ -7,9 +7,9 @@ const advertiselist = [
     "743593036801507432", // Geral @CMD
     "533348958127259685", // Papo Reto @Wipink
     "528805531742371840", // All @Karuna
-    //"534141992930770955", // Falem @TRC
-    //"270745177671335938", // Geral @Lenhadores
-    //"667344276560281600", // Geral @CamsGuild
+    "534141992930770955", // Falem @TRC
+    "270745177671335938", // Geral @Lenhadores
+    "667344276560281600", // Geral @CamsGuild
 ];
 
 module.exports = {
