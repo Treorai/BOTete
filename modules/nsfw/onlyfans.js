@@ -24,7 +24,7 @@ module.exports = {
                     .query({ limit: 800 });
             
                 const obj = body.data.children;
-console.log(obj[randomnumber].data.content);
+
                 const randomnumber = Math.floor(Math.random() * obj.length)
                 const emb34 = new MessageEmbed()
                     .setColor(botconfig.colors.nsfwred)
