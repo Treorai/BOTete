@@ -26,14 +26,8 @@ module.exports = {
                 const obj = body.data.children;
 
                 const randomnumber = Math.floor(Math.random() * obj.length)
-                const emb34 = new MessageEmbed()
-                    .setColor(botconfig.colors.nsfwred)
-                    .setTitle(obj[randomnumber].data.title)
-                    .setDescription("Author: " + obj[randomnumber].data.author)
-                    .setImage(obj[randomnumber].data.url)
-                    .setFooter(`© ${message.guild.me.displayName} | ${obj[randomnumber].data.subreddit}`, url.imgurls.redditicon);
                 
-                message.channel.send(emb34);
+                message.channel.send(obj[randomnumber].data.url);
                 
             } catch(error) { console.log(`${error}`); }
         }
