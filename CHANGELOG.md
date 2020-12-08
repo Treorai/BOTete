@@ -19,7 +19,7 @@ Changes to BOTete Project will be documented in this file.
 
 ## 6.1.0 | 2020-12-07
 #### Added
-- `belleonlyfans` command and scheduler;
+- <removed> command and scheduler;
 
 #### Changed
 - Some variables have been changed;
