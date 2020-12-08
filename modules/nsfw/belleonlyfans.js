@@ -20,7 +20,7 @@ module.exports = {
         } else {
             try{
                 const { body } = await superagent
-                    .get('https://www.reddit.com/r/BelleDelphineOnlyfans.json?sort=top&t=week')
+                    .get('https://www.reddit.com/r/belledelphine69.json?sort=top&t=week')
                     .query({ limit: 800 });
             
                 const allowed = body.data.children;
