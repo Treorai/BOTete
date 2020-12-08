@@ -13,9 +13,21 @@ Changes to BOTete Project will be documented in this file.
 - try-catch method to purge error that happens when you try to wipe 2 weeks old messages.
 - music returning before checking chat room.
 - The bot don't need to wait for Discord API to load and send timed posts; (unpatched)
+- help embed fields empty
+- Bank Module fix;
+- Music Module (up to previous version. Still working on minor bugs);
 
+## 6.1.0 | 2020-12-07
+#### Added
+- `belleonlyfans` command.
+- `belleonlyfans` scheduler.
 
-## 6.0.5 | 2020-11-13
+#### Changed
+- Ragdb's potter guide memory usage upgrade;
+- Puppies function accepts args to call specific puppy species;
+- Advertisement command is now Announcement;
+
+## 6.0.7 | 2020-11-13
 #### Added
 - Full implementation of discord.js v12;
 - Common command user errors now call helper automatically;
@@ -24,7 +36,7 @@ Changes to BOTete Project will be documented in this file.
 - Module's version up-to-date;
 - Rework on sourse code to improve performance;
 - Tables are now arrays inside superagent commands;
-- Updated URLs from new host server.
+- Updated URLs from new host server;
 
 #### Fixed
 - Typos;
