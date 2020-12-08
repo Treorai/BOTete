@@ -21,17 +21,17 @@ module.exports = {
             try{
                 const { body } = await superagent
                     .get('https://www.reddit.com/r/belledelphine69.json?sort=top&t=week')
-                    .query({ limit: 800 });
+                    .query({ limit: 4800 });
             
-                const allowed = body.data.children;
+                const obj = body.data.children;
 
-                const randomnumber = Math.floor(Math.random() * allowed.length)
+                const randomnumber = Math.floor(Math.random() * obj.length)
                 const emb34 = new MessageEmbed()
                     .setColor(botconfig.colors.nsfwred)
-                    .setTitle(allowed[randomnumber].data.title)
-                    .setDescription("Author: " + allowed[randomnumber].data.author)
-                    .setImage(allowed[randomnumber].data.url)
-                    .setFooter(`© ${message.guild.me.displayName} | ${allowed[randomnumber].data.subreddit}`, url.imgurls.redditicon);
+                    .setTitle(obj[randomnumber].data.title)
+                    .setDescription("Author: " + obj[randomnumber].data.author)
+                    .setImage(obj[randomnumber].data.url)
+                    .setFooter(`© ${message.guild.me.displayName} | ${obj[randomnumber].data.subreddit}`, url.imgurls.redditicon);
                 
                 message.channel.send(emb34);
                 

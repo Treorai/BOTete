@@ -14,14 +14,19 @@ Changes to BOTete Project will be documented in this file.
 - music returning before checking chat room.
 - The bot don't need to wait for Discord API to load and send timed posts; (unpatched)
 - help embed fields empty
-
-## 6.1.0 | Unreleased
-#### Added
-#### Changed
-
-#### Fixed
 - Bank Module now fully operating;
 - Music Module (up to previous version. Still working on minor bugs);
+
+## 6.1.0 | 2020-12-07
+#### Added
+- `belleonlyfans` command and scheduler;
+
+#### Changed
+- Some variables have been changed;
+- Updated URLs from new host server;
+- Advertisement command is now Announcement;
+- Ragdb's potter guide memory usage upgrade;
+- Puppies function accepts args to call specific puppy species;
 
 ## 6.0.7 | 2020-11-13
 #### Added
@@ -29,13 +34,9 @@ Changes to BOTete Project will be documented in this file.
 - Common command user errors now call helper automatically;
 
 #### Changed
-- Ragdb's potter guide memory usage upgrade;
-- Puppies function accepts args to call specific puppy species;
 - Module's version up-to-date;
 - Rework on sourse code to improve performance;
 - Tables are now arrays inside superagent commands;
-- Updated URLs from new host server;
-- Advertisement command is now Announcement;
 
 #### Fixed
 - Typos;
