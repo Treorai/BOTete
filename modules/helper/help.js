@@ -32,7 +32,7 @@ module.exports = {
                 try {
                     embed.addField(`❯ ${capitalise} [${dir.size}]:`, dir.map(c => `\`${c.config.name}\``).join(" "))
                 } catch(e) {
-                    console.log(`Help command returned an empty embed field while loading ${capitalize} module, which is currently offline.`);
+                    console.log(`Help command returned an empty embed field while loading ${capitalise} module, which is currently offline.`);
                 }
             });
 
