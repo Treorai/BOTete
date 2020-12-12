@@ -9,7 +9,7 @@ module.exports = {
 	config: {
 		name: "onlyfans",
         class: "Putaria",
-        description: `Illegal leaked content.`,
+        description: `Shows a random illegal leaked content from onlyfans.`,
         usage: ""
 	},
 	run: async (bot, message, args) => {

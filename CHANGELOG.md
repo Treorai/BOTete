@@ -2,7 +2,7 @@
 Changes to BOTete Project will be documented in this file.
 
 
-### Unreleased
+### Unreleased (things we are working on)
 - Bank store.
 - Music Scripts.
 - `queue.js` command.
@@ -10,16 +10,18 @@ Changes to BOTete Project will be documented in this file.
 - `nowplaying.js` command.
 - `playlink.js` merge with `play.js`
 - Implementation of purgequeue model.
-- try-catch method to purge error that happens when you try to wipe 2 weeks old messages.
-- music returning before checking chat room.
 - The bot don't need to wait for Discord API to load and send timed posts; (unpatched)
-- help embed fields empty
-- Bank Module now fully operating;
-- Music Module (up to previous version. Still working on minor bugs);
 
-## 6.1.0 | 2020-12-07
+### Known bugs
+- Music Module is down;
+- Music's playlink command is returng before checking chat room.
+- Bank Module server is down;
+- New member greetings are not working;
+
+
+## 6.1.1 | 2020-12-07
 #### Added
-- <removed> command and scheduler;
+- `onlyfans` command;
 
 #### Changed
 - Some variables have been changed;
@@ -27,6 +29,10 @@ Changes to BOTete Project will be documented in this file.
 - Advertisement command is now Announcement;
 - Ragdb's potter guide memory usage upgrade;
 - Puppies function accepts args to call specific puppy species;
+
+#### Fixed
+- Purge command now handles the error thrown when you try to delete 14 days old messages;
+- Help command throwing empty embed fields;
 
 ## 6.0.7 | 2020-11-13
 #### Added
