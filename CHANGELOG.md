@@ -32,7 +32,7 @@ Changes to BOTete Project will be documented in this file.
 
 #### Fixed
 - Purge command now handles the error thrown when you try to delete 14 days old messages;
-- Help command throwing empty embed fields;
+- Help command console handles help errors from empty fields;
 
 ## 6.0.7 | 2020-11-13
 #### Added
