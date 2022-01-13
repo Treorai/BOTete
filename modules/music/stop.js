@@ -7,15 +7,13 @@ const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
-		name: "skip",
+		name: "stop",
         class: "Música",
-		description: "Para a música atual e reproduz a próxima da fila."
+		description: "Para de reproduzir música."
 	},
     run: async (bot, message, args) => {
         if(!message.member.voice.channel) return message.channel.send('Você precisa estar em uma sala pra usar este comando.');
-        if(!server_queue){
-            return message.channel.send("Acabou a lista.");
-        }
+        server_queue.songs = [];
         server_queue.connection.dispatcher.end();
     }
 }
