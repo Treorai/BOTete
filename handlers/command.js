@@ -16,7 +16,7 @@ module.exports = (bot) =>{
         "services",
         "helper",
         //"currency",
-        //"music",
+        "music",
         "nsfw"
     ].forEach(x => load(x));
     
