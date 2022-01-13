@@ -4,6 +4,6 @@ const bot = new Client();
 ["commands", "aliases"].forEach(x => bot[x] = new Collection());
 ["command", "event"].forEach(x => require(`./handlers/${x}`)(bot));
 
-const server_queue;
+global.server_queue;
 
 bot.login(process.env.BOT_TOKEN);
