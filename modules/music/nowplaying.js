@@ -7,11 +7,11 @@ const url = require("../../tables/urltable.json");
 
 module.exports = {
 	config: {
-		name: "clearqueue",
+		name: "nowplaying",
         class: "Música",
-		description: "Limpa a lista de músicas."
+		description: "Mostra detalhes sobre a música atual."
 	},
     run: async (bot, message, args) => {
-        
+        //
     }
 }

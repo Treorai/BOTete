@@ -13,6 +13,7 @@ module.exports = {
 	run: async (bot, message, args) => {
         if(message.guild.voiceConnection){
             message.guild.voiceConnection.disconnect();
+			//+clear queue
         }
 	}
 }

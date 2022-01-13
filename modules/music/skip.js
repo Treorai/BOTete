@@ -12,7 +12,6 @@ module.exports = {
 		description: "Para a música atual e reproduz a próxima da fila."
 	},
     run: async (bot, message, args) => {
-        var server = servers[message.guild.id];
-        if(server.dispatcher) server.dispatcher.end();
+        //
     }
 }
