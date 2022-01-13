@@ -4,7 +4,6 @@ const ytSearch = require("yt-search");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-let commandfile = require('./playlink.js');
 
 const queue = new Map();
 
