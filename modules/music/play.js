@@ -19,7 +19,7 @@ module.exports = {
 		const voice_channel = message.member.voice.channel;
 		if(!voice_channel) return message.channel.send("Você precisa estar em uma sala pra eu tocar musiquinhas.");
 
-		const server_queue = queue.get(message.guild.id);
+		server_queue = queue.get(message.guild.id);
 
 		//play
 		if(!args.length) return message.channel.send('Digite um título para pesquisar.');
