@@ -4,7 +4,7 @@ const ytSearch = require("yt-search");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-const queue = require("./play.js");
+var recqueue = require("./play.js");
 
 module.exports = {
 	config: {
@@ -13,6 +13,8 @@ module.exports = {
 		description: "Para a música atual e reproduz a próxima da fila."
 	},
     run: async (bot, message, args) => {
+        
+        const queue = recqueue.queue;
 
         const server_queue = queue.get(message.guild.id);
         skip_song(message, server_queue);

@@ -7,6 +7,8 @@ const url = require("../../tables/urltable.json");
 
 const queue = new Map();
 
+exports.queue = queue;
+
 module.exports = {
 	config: {
 		name: "play",
