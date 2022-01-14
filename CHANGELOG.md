@@ -3,21 +3,34 @@ Changes to BOTete Project will be documented in this file.
 
 
 ### Unreleased (things we are working on)
+- Bank fix.
 - Bank store.
 - Music Scripts.
-- `queue.js` command.
-- `repeat.js` command.
+- `loop.js` command.
 - `nowplaying.js` command.
-- `playlink.js` merge with `play.js`
 - Implementation of purgequeue model.
-- The bot don't need to wait for Discord API to load and send timed posts; (unpatched)
+- The bot don't need to wait for Discord API to load and send timed posts; (unpatched).
+- Reports.
+- Requests.
+- Discord dedicated logs.
 
-### Known bugs
-- Music Module is down;
-- Music's playlink command is returng before checking chat room.
+
+
+## 7.0.0 | 2022-1-14
+#### Changed
+- Play command upgraded;
+- Skip command upgraded;
+- Stop commando upgraded;
+
+#### Fixed
+- Music Module Upgraded and Fixed;
+
+#### Removed
+- Playlink model;
+
+#### Known Issues
 - Bank Module server is down;
 - New member greetings are not working;
-
 
 ## 6.1.1 | 2020-12-07
 #### Added
@@ -34,6 +47,12 @@ Changes to BOTete Project will be documented in this file.
 - Purge command now handles the error thrown when you try to delete 14 days old messages;
 - Help command console handles help errors from empty fields;
 
+#### Known Issues
+- Music Module is down;
+- Music's playlink command is returng before checking chat room.
+- Bank Module server is down;
+- New member greetings are not working;
+
 ## 6.0.7 | 2020-11-13
 #### Added
 - Full implementation of discord.js v12;
@@ -47,7 +66,7 @@ Changes to BOTete Project will be documented in this file.
 #### Fixed
 - Typos;
 
-#### Known Bugs
+#### Known Issues
 - Due to some problems importing discord.js v12 settings, modules MusicStream(beta) and Currency are temporarely down;
 
 ## 5.3.1 | 2020-06-05
