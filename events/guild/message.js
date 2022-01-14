@@ -4,7 +4,7 @@ const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 const sweartb = require("../../tables/sweartable.json");
 
-module.exports = async (bot, message) => {
+module.exports = async (bot, message, queue) => {
     
     //replies
     if(message.author.id == idtable.users.treorai && message.content.toLowerCase().endsWith('to mentindo?')){
