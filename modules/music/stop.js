@@ -4,7 +4,7 @@ const ytSearch = require("yt-search");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-const {queue} = require("./play.js");
+const queue = require("./play.js");
 
 module.exports = {
 	config: {
