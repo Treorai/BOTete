@@ -5,7 +5,7 @@ const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 
-//const queue = new Map();
+const queue = new Map();
 
 module.exports = {
 	config: {
