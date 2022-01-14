@@ -22,6 +22,7 @@ module.exports = {
 }
 
 const stop_song = (message, server_queue) => {
+    console.log(server_queue);
     
         if(!message.member.voice.channel) return message.channel.send('Você precisa estar em uma sala pra usar este comando.');
         server_queue.songs = [];
