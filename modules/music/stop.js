@@ -12,7 +12,6 @@ module.exports = {
 		description: "Para de reproduzir música."
 	},
     run: async (bot, message, args) => {
-
         const server_queue = queue.get(message.guild.id);
         stop_song(message, server_queue);
 

@@ -12,6 +12,6 @@ module.exports = {
 		description: "Mostra detalhes sobre a música atual."
 	},
     run: async (bot, message, args) => {
-        //
+        return;
     }
 }

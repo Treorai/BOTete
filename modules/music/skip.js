@@ -12,7 +12,6 @@ module.exports = {
 		description: "Para a música atual e reproduz a próxima da fila."
 	},
     run: async (bot, message, args) => {
-
         const server_queue = queue.get(message.guild.id);
         skip_song(message, server_queue);
 

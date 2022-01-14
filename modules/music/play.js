@@ -12,8 +12,7 @@ module.exports = {
 		name: "play",
 		class: "Música",
 		description: "Faz uma busca no youtube e mostra uma lista de músicas para reprodução. Digite o número da música a ser reproduzida.",
-		usage: "<nome de música>"/*,
-		aliases: ["stop", "skip", "nowplaying"]*/
+		usage: "<nome de música>"
 	},
 	run: async (bot, message, args) => {
 

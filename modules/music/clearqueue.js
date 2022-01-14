@@ -12,6 +12,6 @@ module.exports = {
 		description: "Limpa a lista de músicas."
 	},
     run: async (bot, message, args) => {
-        
+        return;
     }
 }
