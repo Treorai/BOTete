@@ -4,8 +4,7 @@ const ytSearch = require("yt-search");
 const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
-
-const queue = new Map();
+const {queue} = require("./play.js");
 
 module.exports = {
 	config: {
@@ -23,6 +22,7 @@ module.exports = {
 
 const skip_song = (message, server_queue) => {
     
+        //return message.channel.send("Error. TT is working on that :C ");
         if(!message.member.voice.channel) return message.channel.send('Você precisa estar em uma sala pra usar este comando.');
         if(!server_queue){
             return message.channel.send("Acabou a lista.");
