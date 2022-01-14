@@ -15,7 +15,7 @@ module.exports = {
 		usage: "<nome de música>"/*,
 		aliases: ["stop", "skip", "nowplaying"]*/
 	},
-	run: async (bot, message, args, queue) => {
+	run: async (bot, message, args) => {
 
 		const voice_channel = message.member.voice.channel;
 		if(!voice_channel) return message.channel.send("Você precisa estar em uma sala pra eu tocar musiquinhas.");

@@ -4,7 +4,7 @@ const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 const sweartb = require("../../tables/sweartable.json");
 
-module.exports = async (bot, message, queue) => {
+module.exports = async (bot, message) => {
     
     //replies
     if(message.author.id == idtable.users.treorai && message.content.toLowerCase().endsWith('to mentindo?')){
@@ -36,6 +36,6 @@ module.exports = async (bot, message, queue) => {
     let cmd = args.shift().toLowerCase();
     if(!message.content.startsWith(botconfig.prefix)) return;
     let commandfile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
-    if(commandfile) commandfile.run(bot, message, args, queue);
+    if(commandfile) commandfile.run(bot, message, args);
     
 }
