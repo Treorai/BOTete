@@ -12,7 +12,10 @@ module.exports = {
 		description: "Para a música atual e reproduz a próxima da fila."
 	},
     run: async (bot, message, args) => {
-        return message.channel.send("Error. TT is working on that :C ");
+
+        const server_queue = queue.get(message.guild.id);
+        
+        //return message.channel.send("Error. TT is working on that :C ");
         if(!message.member.voice.channel) return message.channel.send('Você precisa estar em uma sala pra usar este comando.');
         if(!server_queue){
             return message.channel.send("Acabou a lista.");

@@ -36,6 +36,6 @@ module.exports = async (bot, message) => {
     let cmd = args.shift().toLowerCase();
     if(!message.content.startsWith(botconfig.prefix)) return;
     let commandfile = bot.commands.get(cmd) || bot.commands.get(bot.aliases.get(cmd));
-    if(commandfile) commandfile.run(bot, message, args);
+    if(commandfile) commandfile.run(bot, message, args, queue);
     
 }

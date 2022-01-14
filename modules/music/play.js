@@ -5,16 +5,17 @@ const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 
-const queue = new Map();
+//const queue = new Map();
 
 module.exports = {
 	config: {
 		name: "play",
 		class: "Música",
 		description: "Faz uma busca no youtube e mostra uma lista de músicas para reprodução. Digite o número da música a ser reproduzida.",
-		usage: "<nome de música>"
+		usage: "<nome de música>"/*,
+		aliases: ["stop", "skip", "nowplaying"]*/
 	},
-	run: async (bot, message, args) => {
+	run: async (bot, message, args, queue) => {
 
 		const voice_channel = message.member.voice.channel;
 		if(!voice_channel) return message.channel.send("Você precisa estar em uma sala pra eu tocar musiquinhas.");
