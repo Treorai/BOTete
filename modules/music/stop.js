@@ -15,6 +15,8 @@ module.exports = {
 	},
     run: async (bot, message, args) => {
 
+        console.log(server_queue); //err
+
         const server_queue = queue.get(message.guild.id);
         stop_song(message, server_queue);
 
@@ -22,7 +24,6 @@ module.exports = {
 }
 
 const stop_song = (message, server_queue) => {
-    console.log(server_queue);
     
         if(!message.member.voice.channel) return message.channel.send('Você precisa estar em uma sala pra usar este comando.');
         server_queue.songs = [];
