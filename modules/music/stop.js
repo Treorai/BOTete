@@ -5,6 +5,8 @@ const botconfig = require("../../botconfig.json");
 const idtable = require("../../tables/idtable.json");
 const url = require("../../tables/urltable.json");
 
+const queue = new Map();
+
 module.exports = {
 	config: {
 		name: "stop",
@@ -14,7 +16,7 @@ module.exports = {
     run: async (bot, message, args) => {
 
         const server_queue = queue.get(message.guild.id);
-        
+
         //return message.channel.send("Error. TT is working on that :C ");
         if(!message.member.voice.channel) return message.channel.send('Você precisa estar em uma sala pra usar este comando.');
         server_queue.songs = [];
