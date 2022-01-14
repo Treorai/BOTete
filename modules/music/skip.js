@@ -16,12 +16,16 @@ module.exports = {
     run: async (bot, message, args) => {
 
         const server_queue = queue.get(message.guild.id);
+        skip_song(message, server_queue);
 
-        //return message.channel.send("Error. TT is working on that :C ");
+    }
+}
+
+const skip_song = (message, server_queue) => {
+    
         if(!message.member.voice.channel) return message.channel.send('Você precisa estar em uma sala pra usar este comando.');
         if(!server_queue){
             return message.channel.send("Acabou a lista.");
         }
         server_queue.connection.dispatcher.end();
-    }
 }
