@@ -87,4 +87,6 @@ const video_player = async (guild, song) => {
 		video_player(guild, song_queue.songs[0]);
 	});
 	await song_queue.text_channel.send(`Tocando ${song.title}.`);
+
+	console.log(song);
 }
