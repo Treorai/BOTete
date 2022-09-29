@@ -13,10 +13,24 @@ Changes to BOTete Project will be documented in this file.
 - Reports.
 - Requests.
 - Discord dedicated logs.
+- Music options for searching music to play;
+- queue.js command;
+- nowplaying.js command;
+- Music interface;
+- Search interface;
+- Queue interface;
 
+## 7.1.0 | 2022-9-28 | BOT CURRENTLY OFFLINE
+Our previos server host has terminated. We will be offline for some time untill we find a new server to host the bot.
 
+#### Removed
+- Bank Module (security issues on the server);
 
-## 7.0.0 | 2022-1-14
+#### Known Issues
+- Host shutdown;
+- New member greetings are not working;
+
+## 7.0.8 | 2022-1-14
 #### Changed
 - Play command upgraded;
 - Skip command upgraded;
